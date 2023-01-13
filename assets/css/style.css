@@ -70,7 +70,10 @@ body {
 .middle-column > .column-section {
 	background-color: white;
 	color: black;
-	flex-grow: 1;
+}
+
+#brain {
+	width: 100%;
 }
 
 .right-column {
