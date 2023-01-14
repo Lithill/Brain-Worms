@@ -181,9 +181,9 @@ To clone the Brain Worms repository:
 ### Solved Bugs
 
 1.
-	1. Expected behaviour: 
-   2. Actual bevahiour: 
-   3. Solution: 
+	1. Expected behaviour: Initial alert box does not accept any input that isn't a letter
+   2. Actual bevahiour: Initial alert box accepts ### as a value
+   3. Solution: Build in a function that checks for letters only
 
 2.
 	1. Expected behaviour: 
