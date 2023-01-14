@@ -18,4 +18,14 @@ function playGame() { //alert boxes for getting player name and starting game
 	}
 }
 
-// ********************* 
+// ********************* Pause button functions
+
+function pauseGame() {
+	alert("You pressed the pause button");
+} 
+
+// ********************* Restart button functions
+
+function restartGame() {
+	alert("You pressed the restart button"); //should this go directly to playGame()?
+} 
