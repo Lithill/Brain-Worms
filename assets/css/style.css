@@ -13,11 +13,6 @@ p {
 
 /********************************  */
 
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
 body {
 	color: black;
 	background-color: #E2DEE5;
@@ -26,17 +21,17 @@ body {
 /******************************** Outer flex containers */
 
 .container {
-/* 	background: black; */
+	background: black;
 	padding: 10px;
 	height: 90vh;
-/* 	border: 4px solid red; */
+	border: 4px solid red;
 	display: flex;
 	justify-content: space-evenly;
 	align-content: center;
 }
 
 .column {
-/* 	padding: 7px; */
+	padding: 7px;
 	text-align: center;
 /* 	margin: 5px; */
 	flex-grow: 1;
@@ -45,7 +40,7 @@ body {
 /******************************** Left Column */
 
 .left-column {
-/* 	background-color: red; */
+	background-color: red;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -54,15 +49,15 @@ body {
 .left-column > .column-section {
 	display: flex;
 	flex-direction: column;
-/* 	background-color: yellow;
+	background-color: yellow;
 	border: 4px solid blue;
-	color: black; */
+	color: black;
 }
 
 .left-column > .column-section > .column-text {
-/* 	background-color: white;
+	background-color: white;
 	border: 4px solid green;
-	color: black; */
+	color: black;
 	flex-grow: 1;
 }
 
@@ -70,19 +65,19 @@ body {
 	display: flex;
 	flex-direction: row; 
 	justify-content: space-evenly;
-/* 	background-color: green; */
+	background-color: green;
 }
 
 .game-button {
-/* 	background-color: black;
+	background-color: black;
 	border: 4px solid pink;
-	color: white; */
+	color: white;
 }
 
 /******************************** Middle Column */
 
 .middle-column {
-/* 	background-color: orange; */
+	background-color: orange;
 	align-items: center;
 	flex-basis: 500px;
 	flex-shrink: 0;
@@ -90,8 +85,12 @@ body {
 }
 
 .middle-column > .column-section {
-/* 	background-color: white;
-	color: black; */
+	background-color: white;
+	color: black;
+}
+
+.brain-section {
+	margin: auto;
 }
 
 #brain {
@@ -101,6 +100,37 @@ body {
 /******************************** Right Column */
 
 .right-column {
-/* 	background-color: green; */
+	background-color: green;
 }
 
+/******************************** Media Queries */
+
+@media only screen and (max-width: 1114px) {
+	.container {
+		flex-direction: column;
+		width: 94vw;
+		height: auto;
+		margin: auto;
+	}
+
+	.middle-column {
+		flex-basis: auto;
+		flex-shrink: 1;
+	}
+	
+	#brain {
+		width: 100%;
+	}
+	
+	.column {
+		flex-shrink: 1;
+	}
+	
+	.left-column > .column-section > .game-buttons {
+		justify-content: center;
+	}
+	
+	.game-button {
+		margin: 10px;
+	}
+}
