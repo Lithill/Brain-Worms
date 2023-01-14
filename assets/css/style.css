@@ -90,20 +90,11 @@ body {
 }
 
 .brain-section {
-/* 	margin: auto; */
-	width: 100%;
-	height: auto;
+	margin: auto;
 }
 
-/* .middle-column > .column-section > .worm-section {
-	background-color: pink;
-	height: 50px;
-} */
-
 #brain {
-	background-image: url("../images/brain.webp");
-	background-repeat: no-repeat; 
-	background-size: contain;
+	width: 100%;
 }
 
 /******************************** Right Column */
