@@ -197,7 +197,7 @@ To clone the Brain Worms repository:
 
 ### Known Bugs
 
-* 
+* Worms do not shrink with window on smaller sized screens
 
 ### Lighthouse
 
@@ -209,7 +209,7 @@ To clone the Brain Worms repository:
 
 ### Code Used
 
-* 
+* Code is taken from [W3Docs]([https://stackoverflow.com/questions/5132323/aligning-a-div-to-center-of-page-while-its-position-is-absolute](https://www.w3docs.com/snippets/css/how-to-position-one-image-on-top-of-another-in-html-css.html)) to overlay the brain and worm sections.
 
 ### Content
 
