@@ -139,6 +139,7 @@ HTML5, CSS3 and JavaScript were used to create this website.
 * [Balsamiq](https://balsamiq.com/) was used to grab a screenshot of an iphone SE wireframe template.
 * [Readme.so](https://readme.so/editor) was used to create the early version of the readme.
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) was used for debugging.
+* [Real Favicon Generator](https://realfavicongenerator.net/) was used to create a favicon and generate the code needed to insert it.
 
 ## Deployment & Local Development
 
@@ -209,7 +210,8 @@ To clone the Brain Worms repository:
 
 ### Code Used
 
-* Code is taken from [W3Docs]([https://stackoverflow.com/questions/5132323/aligning-a-div-to-center-of-page-while-its-position-is-absolute](https://www.w3docs.com/snippets/css/how-to-position-one-image-on-top-of-another-in-html-css.html)) to overlay the brain and worm sections.
+* Code is taken from [W3Docs](https://www.w3docs.com/snippets/css/how-to-position-one-image-on-top-of-another-in-html-css.html) & [Garether's code on Stack Overflow](https://stackoverflow.com/questions/5132323/aligning-a-div-to-center-of-page-while-its-position-is-absolute) to help overlay the brain and worm sections.
+* 
 
 ### Content
 

@@ -93,20 +93,12 @@ body {
 	color: black;
 }
 
-/* .brain-section {
-
-} */
-
 #brain {
 	position: relative;
 	width: 700px;
   height: 596px;
   margin: auto;
 }
-
-/* .worms-section {
-
-} */
 
 #worms {
 	position: absolute;
