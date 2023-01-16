@@ -18,6 +18,40 @@ body {
 	text-align: center;
 }
 
+/******************************** Left Column  */
+
+.title { 
+	grid-area: title; 
+}
+
+.instructions { 
+	grid-area: instructions; 
+}
+
+.play-button-div { 
+	grid-area: play-button-div; 
+}
+
+.pause-button-div { 
+	grid-area: pause-button-div; 
+}
+
+.restart-button-div { 
+	grid-area: restart-button-div; 
+}
+
+.start-button-label { 
+	grid-area: start-button-label; 
+}
+
+.pause-button-label { 
+	grid-area: pause-button-label; 
+}
+
+.restart-button-label { 
+	grid-area: restart-button-label; 
+}
+
 /******************************** Grid layout  */
 
 .container { 
@@ -62,6 +96,20 @@ body {
     "anxiety . dread"; 
   grid-area: worm-box; 
 }
+
+.game-buttons {  
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "play-button-div pause-button-div restart-button-div"
+    "start-button-label pause-button-label restart-button-label";
+  grid-area: game-buttons;
+}
+
+/******************************** Worms  */
 
 .fear { 
 	grid-area: fear; 
@@ -109,55 +157,22 @@ body {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: bottom center;
+	animation: slide-in 1000ms;
 }
 
-.title { 
-	grid-area: title; 
+/******************************** Animation */
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
-.instructions { 
-	grid-area: instructions; 
-}
+/******************************** Right column */
 
 .leaderboard { 
 	grid-area: leaderboard; 
 }
-
-.game-buttons {  
-	display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "play-button-div pause-button-div restart-button-div"
-    "start-button-label pause-button-label restart-button-label";
-  grid-area: game-buttons;
-}
-
-.play-button-div { 
-	grid-area: play-button-div; 
-}
-
-.pause-button-div { 
-	grid-area: pause-button-div; 
-}
-
-.restart-button-div { 
-	grid-area: restart-button-div; 
-}
-
-.start-button-label { 
-	grid-area: start-button-label; 
-}
-
-.pause-button-label { 
-	grid-area: pause-button-label; 
-}
-
-.restart-button-label { 
-	grid-area: restart-button-label; 
-}
-
-
-/********************************   */

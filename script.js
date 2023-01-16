@@ -29,3 +29,9 @@ function pauseGame() {
 function restartGame() {
 	alert("You pressed the restart button"); //should this go directly to playGame()?
 } 
+
+// ********************* Worm functions
+
+function worm() {
+	alert("You clicked a worm!");
+}

@@ -212,8 +212,8 @@ To clone the Brain Worms repository:
 
 ### Code Used
 
-* Code is taken from [W3Docs](https://www.w3docs.com/snippets/css/how-to-position-one-image-on-top-of-another-in-html-css.html) & [Garether's code on Stack Overflow](https://stackoverflow.com/questions/5132323/aligning-a-div-to-center-of-page-while-its-position-is-absolute) to help overlay the brain and worm sections.
-* 
+* [This tutorial at Aldo Hadinata's website](https://www.aldohadinata.com/how-to-make-a-simple-whack-a-mole-game-in-javascript/) was used to gain insight into some of the basic game code.
+* [Layoutit!](https://grid.layoutit.com/) was used to create custom css code for the grid.
 
 ### Content
 
