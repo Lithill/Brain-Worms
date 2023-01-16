@@ -39,17 +39,28 @@ body {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
+	display: grid; 
+  grid-template-columns: 1fr 1.5fr 1fr; 
+  grid-template-rows: 1.25fr 2.5fr 1.75fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". worm-box ."
+    ". . ."; 
+  grid-area: brain;
+}
+
+.worm-box {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
     ". fear ."
     "shame . shyness"
     ". embarrassment ."
-    "anxiety . dread";
-  grid-area: brain;
+    "anxiety . dread"; 
+  grid-area: worm-box; 
 }
 
 .fear { 
