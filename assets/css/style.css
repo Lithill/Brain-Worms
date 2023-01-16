@@ -54,26 +54,50 @@ body {
 
 .fear { 
 	grid-area: fear; 
+	background-image: url("../images/fear-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
 .shame { 
 	grid-area: shame; 
+	background-image: url("../images/shame-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
 .shyness { 
-	grid-area: shyness; 
+	grid-area: shyness;
+	background-image: url("../images/shy-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
 .embarrassment { 
-	grid-area: embarrassment; 
+	grid-area: embarrassment;
+	background-image: url("../images/embarrassed-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
 .anxiety { 
-	grid-area: anxiety; 
+	grid-area: anxiety;
+	background-image: url("../images/anxious-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
 .dread { 
 	grid-area: dread; 
+	background-image: url("../images/dread-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
 .title { 

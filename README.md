@@ -200,7 +200,7 @@ To clone the Brain Worms repository:
 
 ### Known Bugs
 
-* Worms do not shrink with window on smaller sized screens
+* 
 
 ### Lighthouse
 
