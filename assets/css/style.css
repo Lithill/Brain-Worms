@@ -14,136 +14,115 @@ p {
 /********************************  */
 
 body {
-	color: black;
 	background-color: #E2DEE5;
-}
-
-/******************************** Outer flex containers */
-
-.container {
-	background: black;
-	padding: 10px;
-	height: 90vh;
-	border: 4px solid red;
-	display: flex;
-	justify-content: space-evenly;
-	align-content: center;
-}
-
-.column {
-	padding: 7px;
 	text-align: center;
-/* 	margin: 5px; */
-	flex-grow: 1;
 }
 
-/******************************** Left Column */
+/******************************** Grid layout  */
 
-.left-column {
-	background-color: red;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
+.container { 
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "title brain leaderboard"
+    "instructions brain leaderboard"
+    "game-buttons brain leaderboard";
 }
 
-.left-column > .column-section {
-	display: flex;
-	flex-direction: column;
-	background-color: yellow;
-	border: 4px solid blue;
-	color: black;
+.brain {  
+	background-image: url("../images/brain.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". fear ."
+    "shame . shyness"
+    ". embarrassment ."
+    "anxiety . dread";
+  grid-area: brain;
 }
 
-.left-column > .column-section > .column-text {
-	background-color: white;
-	border: 4px solid green;
-	color: black;
-	flex-grow: 1;
+.fear { 
+	grid-area: fear; 
 }
 
-.left-column > .column-section > .game-buttons {
-	display: flex;
-	flex-direction: row; 
-	justify-content: space-evenly;
-	background-color: green;
+.shame { 
+	grid-area: shame; 
 }
 
-.game-button {
-	background-color: black;
-	border: 4px solid pink;
-	color: white;
+.shyness { 
+	grid-area: shyness; 
 }
 
-/******************************** Middle Column */
-
-.middle-column {
-	background-color: orange;
-	flex-direction: column;
-	align-items: center;
-	flex-basis: 500px;
-	flex-shrink: 0;
-	display: flex;
-	position: relative;
-	top: 0;
-  left: 0;
+.embarrassment { 
+	grid-area: embarrassment; 
 }
 
-.middle-column > .column-section {
-	background-color: white;
-	color: black;
+.anxiety { 
+	grid-area: anxiety; 
 }
 
-#brain {
-	position: relative;
-	width: 700px;
-  height: 596px;
-  margin: auto;
+.dread { 
+	grid-area: dread; 
 }
 
-#worms {
-	position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 700px;
-  height: 596px;
-  margin-top: -310px;
-  margin-left: -350px;
+.title { 
+	grid-area: title; 
 }
 
-/******************************** Right Column */
-
-.right-column {
-	background-color: green;
+.instructions { 
+	grid-area: instructions; 
 }
 
-/******************************** Media Queries */
-
-@media only screen and (max-width: 1114px) {
-	.container {
-		flex-direction: column;
-		width: 94vw;
-		height: auto;
-		margin: auto;
-	}
-
-	.middle-column {
-		flex-basis: auto;
-		flex-shrink: 1;
-	}
-	
-	#brain {
-		width: 100%;
-	}
-	
-	.column {
-		flex-shrink: 1;
-	}
-	
-	.left-column > .column-section > .game-buttons {
-		justify-content: center;
-	}
-	
-	.game-button {
-		margin: 10px;
-	}
+.leaderboard { 
+	grid-area: leaderboard; 
 }
+
+.game-buttons {  
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "play-button-div pause-button-div restart-button-div"
+    "start-button-label pause-button-label restart-button-label";
+  grid-area: game-buttons;
+}
+
+.play-button-div { 
+	grid-area: play-button-div; 
+}
+
+.pause-button-div { 
+	grid-area: pause-button-div; 
+}
+
+.restart-button-div { 
+	grid-area: restart-button-div; 
+}
+
+.start-button-label { 
+	grid-area: start-button-label; 
+}
+
+.pause-button-label { 
+	grid-area: pause-button-label; 
+}
+
+.restart-button-label { 
+	grid-area: restart-button-label; 
+}
+
+
+/********************************   */

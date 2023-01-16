@@ -140,6 +140,8 @@ HTML5, CSS3 and JavaScript were used to create this website.
 * [Readme.so](https://readme.so/editor) was used to create the early version of the readme.
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) was used for debugging.
 * [Real Favicon Generator](https://realfavicongenerator.net/) was used to create a favicon and generate the code needed to insert it.
+* [Layoutit!](https://grid.layoutit.com/) was used to create the css grid.
+
 
 ## Deployment & Local Development
 
