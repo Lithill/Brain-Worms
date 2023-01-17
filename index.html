@@ -26,55 +26,62 @@
   <div class="container">
 <!-- First column -->
 		<div class="column left-column">
-			<div class="column-section">
-				<div class="column-text game-intro">
-					<h1>Brain Worms</h1>
-					<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
-					<p>Click each worm as it appears</p>
-					<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
-					<p>Don't let the worms eat your brain</p>
-				</div>
+			<div class="title">
+				<h1>Brain Worms</h1>
+				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
 			</div>
-			<div class="column-section">
-				<div class="game-buttons">
-					<div class="game-button">
-						<button id ="playButton" onclick="playGame()">
-							<img src="assets/images/play-button.webp" alt="Play button">
-						</button>
-					</div>
-					<div class="game-button">
-						<button id ="pauseButton" onclick="pauseGame()">
-							<img src="assets/images/pause-button.webp" alt="Pause button">
-						</button>
-					</div>
-					<div class="game-button">
-						<button id ="restartButton" onclick="restartGame()">
-							<img src="assets/images/restart-button.webp" alt="Restart button">
-						</button>
-					</div>
-				</div>
-<!-- 				<div class="game-buttons">
-					<div class="game-button">Play</div>
-					<div class="game-button">Pause</div>
-					<div class="game-button">Restart </div>
-				</div> -->
+		  	<div class="instructions">
+				<p>Click each worm as it appears</p>
+				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
+				<p>Don't let the worms eat your brain</p>
 			</div>
+		  	<div class="game-buttons">
+		    	<div class="play-button-div">
+					<button id ="playButton" onclick="playGame()">
+						<img src="assets/images/play-button.webp" alt="Play button">
+					</button>
+				</div>
+		    	<div class="pause-button-div">
+					<button id ="pauseButton" onclick="pauseGame()">
+						<img src="assets/images/pause-button.webp" alt="Pause button">
+					</button>
+				</div>
+		    	<div class="restart-button-div">
+					<button id ="restartButton" onclick="restartGame()">
+						<img src="assets/images/restart-button.webp" alt="Restart button">
+					</button>
+				</div>
+		    	<div class="start-button-label">
+					<p>Play</p>
+				</div>
+		    	<div class="pause-button-label">
+					<p>Pause</p>
+				</div>
+		    	<div class="restart-button-label">
+					<p>Restart</p>
+				</div>
+		    </div>
 		</div>
 <!-- Second column -->
 		<div class="column middle-column">
-			<div class="column-section brain-section">
-				<img src="assets/images/brain.webp" alt="Brain" id="brain">
-				<img src="assets/images/test-worms.webp" alt="Worms" id="worms">
-			</div>
-<!-- 			<div class="column-section worms-section">
-				<img src="assets/images/test-worms.webp" alt="Worms" id="worms">
-			</div> -->
+			<div class="brain">
+				<div class="worm-box">
+					<div class="fear" onclick="worm()"></div>
+					<div class="shame" onclick="worm()"></div>
+					<div class="shyness" onclick="worm()"></div>
+					<div class="embarrassment" onclick="worm()"></div>
+					<div class="anxiety" onclick="worm()"></div>
+					<div class="dread" onclick="MoveEffect(this)"></div>
+				</div>
+	  		</div>
 		</div>
 <!-- Third column -->
 		<div class="column right-column">
-		<h1>Leaderboard</h1>
-		<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game">
-		<p>Insert names and scores here</p>
+			<div class="leaderboard">
+				<h1>Leaderboard</h1>
+				<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game">
+				<p>Insert names and scores here</p>
+			</div>
 		</div>
 	</div>
   <script src="script.js"></script>
