@@ -75,7 +75,7 @@ body {
 	background-position: center;
 	display: grid; 
   grid-template-columns: 1fr 1.5fr 1fr; 
-  grid-template-rows: 10fr 2.5fr 10fr; 
+  grid-template-rows: 1.25fr 2.5fr 1.75fr; 
   gap: 0px 0px; 
   grid-template-areas: 
     ". . ."
@@ -111,34 +111,53 @@ body {
 
 /******************************** Worms  */
 
-.worm-img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-}
-
-#fear-box { 
+.fear { 
 	grid-area: fear; 
+	background-image: url("../images/fear-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
-#shame-box { 
+.shame { 
 	grid-area: shame; 
+	background-image: url("../images/shame-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
-#shyness-box { 
+.shyness { 
 	grid-area: shyness;
+	background-image: url("../images/shy-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
-#embarrassment-box { 
+.embarrassment { 
 	grid-area: embarrassment;
+	background-image: url("../images/embarrassed-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
-#anxiety-box { 
+.anxiety { 
 	grid-area: anxiety;
+	background-image: url("../images/anxious-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
 }
 
-#dread-box { 
+.dread { 
 	grid-area: dread; 
+	background-image: url("../images/dread-worm.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom center;
+	animation: appear 0.9s;
 }
 
 /******************************** Animation */
