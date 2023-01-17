@@ -35,3 +35,8 @@ function restartGame() {
 function worm() {
 	alert("You clicked a worm!");
 }
+
+function MoveEffect(element){
+  new Effect.MoveBy(element, {x:10,y:10,duration:1})
+}
+

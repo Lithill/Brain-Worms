@@ -200,7 +200,7 @@ To clone the Brain Worms repository:
 
 ### Known Bugs
 
-* 
+* Layout has unintended horizontal and verticle scrollbars on desktop view 
 
 ### Lighthouse
 
@@ -212,7 +212,6 @@ To clone the Brain Worms repository:
 
 ### Code Used
 
-* [This tutorial at Aldo Hadinata's website](https://www.aldohadinata.com/how-to-make-a-simple-whack-a-mole-game-in-javascript/) was used to gain insight into some of the basic game code.
 * [Layoutit!](https://grid.layoutit.com/) was used to create custom css code for the grid.
 
 ### Content

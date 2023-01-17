@@ -18,7 +18,7 @@ body {
 	text-align: center;
 }
 
-/******************************** Left Column  */
+/******************************** Left Column Grid */
 
 .title { 
 	grid-area: title; 
@@ -52,7 +52,7 @@ body {
 	grid-area: restart-button-label; 
 }
 
-/******************************** Grid layout  */
+/******************************** Central Grid layout  */
 
 .container { 
 	height: 100vh;
@@ -157,21 +157,22 @@ body {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: bottom center;
-	animation: slide-in 1000ms;
+	animation: appear 0.9s;
 }
 
 /******************************** Animation */
 
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
+/* @keyframes appear {
+    0% {
+        transform: translateY(130px);
+    }
 
-/******************************** Right column */
+    100% {
+        transform: translateY(0);
+    }
+} */
+
+/******************************** Right column Grid */
 
 .leaderboard { 
 	grid-area: leaderboard; 
