@@ -40,3 +40,18 @@ function MoveEffect(element){
   new Effect.MoveBy(element, {x:10,y:10,duration:1})
 }
 
+// ********************* Timer
+
+// Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
+function generateRandomNum (min, max) {
+    let num1 = Math.floor(Math.random() * (max - min + 1) + min);
+    return num1;
+}
+
+var randomNum = generateRandomNum(500,2000); //stores random number that is then fed into the setInterval
+
+setInterval (function () {
+	console.log("worm appears")//thing that happens whilst setInterval goes
+}, randomNum); //!need randomNum to keep regenerating - currently only picks it once! - use recursion
+
+console.log(randomNum);
