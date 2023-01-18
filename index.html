@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brain Worms</title>
+<!-- for favicon, generated at https://realfavicongenerator.net/ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
+  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+<!-- 	end of favicon info -->
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <meta name="description"
+		content="A Whack-a-Mole game about brain-eating worms.">
+	<meta name="keywords" content="whack, mole, brain, worms, game">
+	<meta name="author" content="Rossanne Hamilton">
+</head>
+
+<body>
+  <div class="container">
+<!-- First column -->
+		<div class="column left-column">
+			<div class="column-section">
+				<div class="column-text game-intro">
+					<h1>Brain Worms</h1>
+					<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
+					<p>Click each worm as it appears</p>
+					<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
+					<p>Don't let the worms eat your brain</p>
+				</div>
+			</div>
+			<div class="column-section">
+				<div class="game-buttons">
+					<div class="game-button">
+						<button id ="playButton" onclick="playGame()">
+							<img src="assets/images/play-button.webp" alt="Play button">
+						</button>
+					</div>
+					<div class="game-button">
+						<button id ="pauseButton" onclick="pauseGame()">
+							<img src="assets/images/pause-button.webp" alt="Pause button">
+						</button>
+					</div>
+					<div class="game-button">
+						<button id ="restartButton" onclick="restartGame()">
+							<img src="assets/images/restart-button.webp" alt="Restart button">
+						</button>
+					</div>
+				</div>
+<!-- 				<div class="game-buttons">
+					<div class="game-button">Play</div>
+					<div class="game-button">Pause</div>
+					<div class="game-button">Restart </div>
+				</div> -->
+			</div>
+		</div>
+<!-- Second column -->
+		<div class="column middle-column">
+			<div class="column-section brain-section">
+				<img src="assets/images/brain.webp" alt="Brain" id="brain">
+				<img src="assets/images/test-worms.webp" alt="Worms" id="worms">
+			</div>
+<!-- 			<div class="column-section worms-section">
+				<img src="assets/images/test-worms.webp" alt="Worms" id="worms">
+			</div> -->
+		</div>
+<!-- Third column -->
+		<div class="column right-column">
+		<h1>Leaderboard</h1>
+		<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game">
+		<p>Insert names and scores here</p>
+		</div>
+	</div>
+  <script src="script.js"></script>
+</body>
+
+</html>

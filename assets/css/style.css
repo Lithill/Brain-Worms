@@ -1,0 +1,149 @@
+/******************************** Font  */
+
+@import url(https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Eater);
+
+h1 {
+	font-family: Eater;
+}
+
+p {
+	font-family: "East Sea Dokdo";
+	font-size: 37px;
+}
+
+/********************************  */
+
+body {
+	color: black;
+	background-color: #E2DEE5;
+}
+
+/******************************** Outer flex containers */
+
+.container {
+	background: black;
+	padding: 10px;
+	height: 90vh;
+	border: 4px solid red;
+	display: flex;
+	justify-content: space-evenly;
+	align-content: center;
+}
+
+.column {
+	padding: 7px;
+	text-align: center;
+/* 	margin: 5px; */
+	flex-grow: 1;
+}
+
+/******************************** Left Column */
+
+.left-column {
+	background-color: red;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.left-column > .column-section {
+	display: flex;
+	flex-direction: column;
+	background-color: yellow;
+	border: 4px solid blue;
+	color: black;
+}
+
+.left-column > .column-section > .column-text {
+	background-color: white;
+	border: 4px solid green;
+	color: black;
+	flex-grow: 1;
+}
+
+.left-column > .column-section > .game-buttons {
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-evenly;
+	background-color: green;
+}
+
+.game-button {
+	background-color: black;
+	border: 4px solid pink;
+	color: white;
+}
+
+/******************************** Middle Column */
+
+.middle-column {
+	background-color: orange;
+	flex-direction: column;
+	align-items: center;
+	flex-basis: 500px;
+	flex-shrink: 0;
+	display: flex;
+	position: relative;
+	top: 0;
+  left: 0;
+}
+
+.middle-column > .column-section {
+	background-color: white;
+	color: black;
+}
+
+#brain {
+	position: relative;
+	width: 700px;
+  height: 596px;
+  margin: auto;
+}
+
+#worms {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 596px;
+  margin-top: -310px;
+  margin-left: -350px;
+}
+
+/******************************** Right Column */
+
+.right-column {
+	background-color: green;
+}
+
+/******************************** Media Queries */
+
+@media only screen and (max-width: 1114px) {
+	.container {
+		flex-direction: column;
+		width: 94vw;
+		height: auto;
+		margin: auto;
+	}
+
+	.middle-column {
+		flex-basis: auto;
+		flex-shrink: 1;
+	}
+	
+	#brain {
+		width: 100%;
+	}
+	
+	.column {
+		flex-shrink: 1;
+	}
+	
+	.left-column > .column-section > .game-buttons {
+		justify-content: center;
+	}
+	
+	.game-button {
+		margin: 10px;
+	}
+}
