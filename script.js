@@ -9,10 +9,9 @@ function onlyLetters(str) { //returns true if string only contains letters, fals
 function playGame() { //alert boxes for getting player name and starting game
   playerName = prompt("Please enter three initials", 'E.g. "HPD"');
 	
-
 	if ((playerName.length === 3) && (onlyLetters(playerName))) {
 		alert("Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?");
-		startAnimation();
+		countdown(2);
 	} else {
 		playGame();
 	}
@@ -50,18 +49,17 @@ function generateRandomNum (min, max) {
 
 var randomNum = generateRandomNum(500,2000); //stores random number that is then fed into the setInterval
 
-setInterval (function () {
-	console.log("worm appears")//thing that happens whilst setInterval goes
-}, randomNum); //!need randomNum to keep regenerating - currently only picks it once! - use recursion
+// setInterval (function () {
+// 	console.log("worm appears")//thing that happens whilst setInterval goes
+// }, randomNum); //!need randomNum to keep regenerating - currently only picks it once! - use recursion
 
 // console.log(randomNum);
 
-// ********************* Game timer
-
-var seconds = 60;
-var mins = minutes
+// ********************* Game start timer
 
 function countdown(minutes) {
+    var seconds = 60;
+    var mins = minutes
     function tick() {
         //This script expects an element with an ID = "counter". You can change that to what ever you want. 
         var counter = document.getElementById("counter");
@@ -79,6 +77,4 @@ function countdown(minutes) {
     tick();
 }
 
-//You can use this script with a call to onclick, onblur or any other attribute you would like to use. 
-countdown(3);//where n is the number of minutes required. 
-
+// countdown(2);
