@@ -11,7 +11,7 @@ function playGame() { //alert boxes for getting player name and starting game
 	
 	if ((playerName.length === 3) && (onlyLetters(playerName))) {
 		alert("Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?");
-		countdown(2);
+		countdown(1);
         startAnimation();
 	} else {
 		playGame();
@@ -75,10 +75,12 @@ function countdown(minutes) {
         if ( seconds > 0 ) {
             setTimeout(tick, 1000);
         } else {
-            if(mins > 1){
+            if (mins > 1) {
                 countdown(mins-1);           
+            } else {
+                stopAnimation();
             }
-        }
+        } 
     }
     tick();
 }
@@ -88,4 +90,8 @@ function countdown(minutes) {
 //When counter inner html isn't 00:00, run the animation
 function startAnimation() {
 	console.log("animation is happening");
+}
+
+function stopAnimation() {
+	console.log("animation is stopping");
 }
