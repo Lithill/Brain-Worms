@@ -40,7 +40,7 @@ function MoveEffect(element){
   new Effect.MoveBy(element, {x:10,y:10,duration:1})
 }
 
-// ********************* Timer
+// ********************* random num and animation
 
 // Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
 function generateRandomNum (min, max) {
@@ -54,4 +54,31 @@ setInterval (function () {
 	console.log("worm appears")//thing that happens whilst setInterval goes
 }, randomNum); //!need randomNum to keep regenerating - currently only picks it once! - use recursion
 
-console.log(randomNum);
+// console.log(randomNum);
+
+// ********************* Game timer
+
+var seconds = 60;
+var mins = minutes
+
+function countdown(minutes) {
+    function tick() {
+        //This script expects an element with an ID = "counter". You can change that to what ever you want. 
+        var counter = document.getElementById("counter");
+        var current_minutes = mins-1
+        seconds--;
+        counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if( seconds > 0 ) {
+            setTimeout(tick, 1000);
+        } else {
+            if(mins > 1){
+                countdown(mins-1);           
+            }
+        }
+    }
+    tick();
+}
+
+//You can use this script with a call to onclick, onblur or any other attribute you would like to use. 
+countdown(3);//where n is the number of minutes required. 
+
