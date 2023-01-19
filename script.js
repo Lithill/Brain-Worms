@@ -57,11 +57,14 @@ var randomNum = generateRandomNum(500,2000); //stores random number that is then
 
 // ********************* Game start timer 
 
+// var countdownIsRunning = (document.getElementById("counter").innerHTML) = !(0:00)
+
 function countdown(minutes) {
     var seconds = 60;
     var mins = minutes;
 
-	if ((mins = 1) && (seconds = 59)) { //this strangely sets timer to 0:59
+
+	if ((mins === 1) && (seconds === 59)) { 
 		startAnimation();
 	}
 
