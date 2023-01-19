@@ -55,18 +55,23 @@ var randomNum = generateRandomNum(500,2000); //stores random number that is then
 
 // console.log(randomNum);
 
-// ********************* Game start timer
+// ********************* Game start timer 
 
 function countdown(minutes) {
     var seconds = 60;
-    var mins = minutes
+    var mins = minutes;
+
+	if ((mins = 1) && (seconds = 59)) { //this strangely sets timer to 0:59
+		startAnimation();
+	}
+
     function tick() {
         //This script expects an element with an ID = "counter". You can change that to what ever you want. 
         var counter = document.getElementById("counter");
         var current_minutes = mins-1
         seconds--;
         counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-        if( seconds > 0 ) {
+        if ( seconds > 0 ) {
             setTimeout(tick, 1000);
         } else {
             if(mins > 1){
@@ -80,8 +85,6 @@ function countdown(minutes) {
 // ********************* Animation
 
 //When counter inner html isn't 00:00, run the animation
-counter.innerHTML.addEventListener("1:55", startAnimation);//this isn't working
-
 function startAnimation() {
-	alert("animation is happening");
+	console.log("animation is happening");
 }
