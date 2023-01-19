@@ -213,6 +213,7 @@ To clone the Brain Worms repository:
 ### Code Used
 
 * [Layoutit!](https://grid.layoutit.com/) was used to create custom css code for the grid.
+* [adhithyan15's countdown.js](https://gist.github.com/adhithyan15/4350689) was used to create game 2-minute countdown.
 
 ### Content
 

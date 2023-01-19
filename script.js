@@ -77,4 +77,11 @@ function countdown(minutes) {
     tick();
 }
 
-// countdown(2);
+// ********************* Animation
+
+//When counter inner html isn't 00:00, run the animation
+counter.innerHTML.addEventListener("1:55", startAnimation);//this isn't working
+
+function startAnimation() {
+	alert("animation is happening");
+}
