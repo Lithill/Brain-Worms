@@ -12,6 +12,7 @@ function playGame() { //alert boxes for getting player name and starting game
 	if ((playerName.length === 3) && (onlyLetters(playerName))) {
 		alert("Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?");
 		countdown(2);
+        startAnimation();
 	} else {
 		playGame();
 	}
@@ -59,14 +60,11 @@ var randomNum = generateRandomNum(500,2000); //stores random number that is then
 
 // var countdownIsRunning = (document.getElementById("counter").innerHTML) = !(0:00)
 
+
+
 function countdown(minutes) {
     var seconds = 60;
     var mins = minutes;
-
-
-	if ((mins === 1) && (seconds === 59)) { 
-		startAnimation();
-	}
 
     function tick() {
         //This script expects an element with an ID = "counter". You can change that to what ever you want. 
