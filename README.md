@@ -208,7 +208,6 @@ To clone the Brain Worms repository:
             let worm = document.querySelector(activeWormString);//assigning picked worm class
 
             worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
-
         }, 1000);
     }
 ```
@@ -218,7 +217,7 @@ To clone the Brain Worms repository:
 3.
 	1. Expected behaviour: Worm animations are always visible when requested by the code
    2. Actual bevahiour: Sometimes some picked worm animations are skipped, even though they are not repeats of the previous picked worm
-   3. Solution: Are there worm gaps because it's taking away the class that it previously gave? Or trying to apply a class to one that already has the class, and therefore toggles it off?
+   3. Solution: Are there worm gaps because it's taking away the class that it previously gave? Or trying to apply a class to one that already has the class, and therefore toggles it off instead of animating?
 
 ### Known Bugs
 

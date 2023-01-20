@@ -74,12 +74,22 @@ function pickWorm () {
 
                 worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
 
+                
+
+                //remove slide class from worm after animation
+                function removeSlide () {
+                    worm.classList.toggle("slide");
+                    console.log("removed slide class")
+                }
+                setTimeout(removeSlide, 2000); //second number should be length of animation
+
+
+
+
                 console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
-                lastWorm = randomWormNumber;
+                lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
             }
-
         }, 1000);
-
     };
 
     animateWormFunction ();
