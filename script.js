@@ -47,15 +47,30 @@ function restartGame() {
 
 // ********************* random num and animation
 
-// // Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
-// function generateRandomNum (min, max) {
-//     let num1 = Math.floor(Math.random() * (max - min + 1) + min);
-//     return num1;
-// }
+// Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
+function generateRandomNum (min, max) {
+    let num1 = Math.floor(Math.random() * (max - min + 1) + min);
+    return num1;
+}
+
+const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
+let activeWorm = wormArr[3];
+let activeWormString = "." + activeWorm;
+
+function pickWorm () {
+ 
+    let randomWormNumber = generateRandomNum(1, 6);
+    
+    
+}
+
+pickWorm();
 
 // var randomNum = generateRandomNum(500,2000); //stores random number that is then fed into the setInterval
 
-const worm = document.querySelector(".worm");
+
+//toggles .animate class on and off on setInterval timer
+const worm = document.querySelector(activeWormString);//the worm is picked via pickWorm function
 const animateWorm = document.querySelector(".btn-animate-worm");
 
 function animateWormFunction () {  
@@ -65,6 +80,8 @@ function animateWormFunction () {
 setInterval(function () {
   animateWormFunction ()
 }, 1000);
+
+
 
 // ********************* Game start timer 
 
