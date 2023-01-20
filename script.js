@@ -32,10 +32,6 @@ function restartGame() {
 
 // ********************* Worm functions
 
-// function worm() {
-// 	alert("You clicked a worm!");
-// }
-
 function MoveEffect(element){
   new Effect.MoveBy(element, {x:10,y:10,duration:1})
 }
@@ -58,16 +54,12 @@ var randomNum = generateRandomNum(500,2000); //stores random number that is then
 
 // ********************* Game start timer 
 
-// var countdownIsRunning = (document.getElementById("counter").innerHTML) = !(0:00)
-
-
-
+//countdown function is edited code from https://gist.github.com/adhithyan15/4350689
 function countdown(minutes) {
     var seconds = 60;
     var mins = minutes;
 
     function tick() {
-        //This script expects an element with an ID = "counter". You can change that to what ever you want. 
         var counter = document.getElementById("counter");
         var current_minutes = mins-1
         seconds--;
@@ -112,6 +104,7 @@ function keepScore() {
         score.innerHTML = playerScore.toString();
     }
     
+    //loop taken from https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur
     for (var i = 0 ; i < wormDivs.length; i++) {
         wormDivs[i].addEventListener('click' , wormClick); 
      }

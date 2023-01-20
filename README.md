@@ -213,7 +213,8 @@ To clone the Brain Worms repository:
 ### Code Used
 
 * [Layoutit!](https://grid.layoutit.com/) was used to create custom css code for the grid.
-* [adhithyan15's countdown.js](https://gist.github.com/adhithyan15/4350689) was used to create game 2-minute countdown.
+* [adhithyan15's countdown.js](https://gist.github.com/adhithyan15/4350689) was used to create game countdown.
+* [Nikhil Aggarwal's for-loop on Stack Overflow](https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur) was used to iterate through the worm class for the click event listner.
 
 ### Content
 
