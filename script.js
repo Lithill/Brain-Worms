@@ -56,17 +56,26 @@ function generateRandomNum (min, max) {
 function pickWorm () {
     const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
 
-    function animateWormFunction () {  
+    function animateWormFunction () { //do I need this function shell anymore? 
     
+        let lastWorm = 0;
+
         setInterval(function () {
             let randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
             let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
             let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
 
-            //assigns .slide class to the picked worm
-            let worm = document.querySelector(activeWormString);//assigning picked worm class
+            if (lastWorm === randomWormNumber ) {
+                console.log("the same");//stops same worm appearing twice in a row
+            } else {
+                //assigns .slide class to the picked worm
+                let worm = document.querySelector(activeWormString);//assigning picked worm class
 
-            worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
+                worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
+
+                console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
+                lastWorm = randomWormNumber;
+            }
 
         }, 1000);
 

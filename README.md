@@ -213,7 +213,7 @@ To clone the Brain Worms repository:
     }
 ```
 
-   3. Solution: 
+   3. Solution: Are there worm gaps because it's taking away the class? Or trying to apply a class to one that already has the class? Or is it because it's trying to do 2 worms in a row?
 
 3.
 	 1. Expected behaviour: 
