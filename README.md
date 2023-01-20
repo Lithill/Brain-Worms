@@ -189,8 +189,8 @@ To clone the Brain Worms repository:
    3. Solution: Build in a function that checks for letters only
 
 2.
-	1. Expected behaviour: Worm animations always smooth and visible
-   2. Actual bevahiour: Sometimes animations don't slide back, and some worms are skipped
+	1. Expected behaviour: Worm animations always smooth 
+   2. Actual bevahiour: Sometimes animations stop halfway through the animation and disapear
 
 ```JavaScript
    function pickWorm () {
@@ -213,12 +213,12 @@ To clone the Brain Worms repository:
     }
 ```
 
-   3. Solution: Are there worm gaps because it's taking away the class? Or trying to apply a class to one that already has the class? Or is it because it's trying to do 2 worms in a row?
+   3. Solution: Stop the function from animating the same worm twice in a row
 
 3.
-	 1. Expected behaviour: 
-   2. Actual bevahiour: 
-   3. Solution:
+	1. Expected behaviour: Worm animations are always visible when requested by the code
+   2. Actual bevahiour: Sometimes some picked worm animations are skipped, even though they are not repeats of the previous picked worm
+   3. Solution: Are there worm gaps because it's taking away the class that it previously gave? Or trying to apply a class to one that already has the class, and therefore toggles it off?
 
 ### Known Bugs
 

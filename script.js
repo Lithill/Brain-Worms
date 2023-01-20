@@ -65,8 +65,9 @@ function pickWorm () {
             let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
             let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
 
-            if (lastWorm === randomWormNumber ) {
-                console.log("the same");//stops same worm appearing twice in a row
+            if (lastWorm === randomWormNumber) {//stops same worm appearing twice in a row
+                console.log("the same");
+                //still waits 1000ms until calling again unfortunately
             } else {
                 //assigns .slide class to the picked worm
                 let worm = document.querySelector(activeWormString);//assigning picked worm class
