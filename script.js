@@ -55,23 +55,25 @@ function generateRandomNum (min, max) {
 
 function pickWorm () {
     const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
-    let randomWormNumber = generateRandomNum(1, 6);
-    let activeWorm = wormArr[randomWormNumber];
-    let activeWormString = "." + activeWorm;
-
-    //assigns .slide class to the picked worm
-    const worm = document.querySelector(activeWormString);//the worm is picked via pickWorm function
-    const animateWorm = document.querySelector(".btn-animate-worm");
 
     function animateWormFunction () {  
-        worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
+    
+        setInterval(function () {
+            let randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
+            let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
+            let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
+
+            //assigns .slide class to the picked worm
+            let worm = document.querySelector(activeWormString);//assigning picked worm class
+
+            worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
+
+        }, 1000);
+
     };
 
     animateWormFunction ();
 }
-
-pickWorm();
-
 
 // ********************* Game start timer 
 
@@ -103,9 +105,7 @@ function countdown(minutes) {
 //When counter inner html isn't 00:00, run the animation
 function startAnimation() {
 	keepScore();
-
-   //put animation here
-
+    pickWorm(); //picks worm and toggles keyframe for animation
 
 }
 

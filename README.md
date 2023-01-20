@@ -189,8 +189,30 @@ To clone the Brain Worms repository:
    3. Solution: Build in a function that checks for letters only
 
 2.
-	1. Expected behaviour: 
-   2. Actual bevahiour: 
+	1. Expected behaviour: Worm animations always smooth and visible
+   2. Actual bevahiour: Sometimes animations don't slide back, and some worms are skipped
+
+```JavaScript
+   function pickWorm () {
+
+      const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
+
+      function animateWormFunction () {  
+    
+        setInterval(function () {
+            let randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
+            let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
+            let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
+
+            //assigns .slide class to the picked worm
+            let worm = document.querySelector(activeWormString);//assigning picked worm class
+
+            worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
+
+        }, 1000);
+    }
+```
+
    3. Solution: 
 
 3.
