@@ -53,34 +53,26 @@ function generateRandomNum (min, max) {
     return num1;
 }
 
-const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
-let activeWorm = wormArr[3];
-let activeWormString = "." + activeWorm;
-
 function pickWorm () {
- 
+    const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
     let randomWormNumber = generateRandomNum(1, 6);
-    
-    
+    let activeWorm = wormArr[randomWormNumber];
+    let activeWormString = "." + activeWorm;
+
+    //toggles .animate class on and off on setInterval timer
+    const worm = document.querySelector(activeWormString);//the worm is picked via pickWorm function
+    const animateWorm = document.querySelector(".btn-animate-worm");
+
+    function animateWormFunction () {  
+        worm.classList.toggle("animate");
+    };
+
+    setInterval(function () {
+        animateWormFunction ()
+    }, 1000);  
 }
 
 pickWorm();
-
-// var randomNum = generateRandomNum(500,2000); //stores random number that is then fed into the setInterval
-
-
-//toggles .animate class on and off on setInterval timer
-const worm = document.querySelector(activeWormString);//the worm is picked via pickWorm function
-const animateWorm = document.querySelector(".btn-animate-worm");
-
-function animateWormFunction () {  
-  worm.classList.toggle("animate");
-};
-
-setInterval(function () {
-  animateWormFunction ()
-}, 1000);
-
 
 
 // ********************* Game start timer 
