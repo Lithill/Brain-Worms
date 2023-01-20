@@ -60,7 +60,7 @@ function pickWorm () {
     
         let lastWorm = 0;
 
-        setInterval(function () {
+        animateWormsInterval = setInterval(function () {
             let randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
             let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
             let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
@@ -82,17 +82,25 @@ function pickWorm () {
                     console.log("removed slide class")
                 }
                 setTimeout(removeSlide, 2000); //second number should be length of animation
-
+                //not sure that the above is working - isn't making animation smoother
 
 
 
                 console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
                 lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
             }
+
         }, 1000);
     };
 
-    animateWormFunction ();
+    counter = document.getElementById("counter");
+
+    if (counter === "0:00") { //to stop animation when counter reaches 0:00
+        console.log("animation is stopping");
+        clearInterval(animateWormsInterval);
+    } else {//to continue animation if counter is still running
+        animateWormFunction ();
+    }
 }
 
 // ********************* Game start timer 
@@ -113,7 +121,7 @@ function countdown(minutes) {
             if (mins > 1) {
                 countdown(mins-1);           
             } else {
-                stopAnimation();
+                // stopAnimation();
             }
         } 
     }
@@ -126,12 +134,12 @@ function countdown(minutes) {
 function startAnimation() {
 	keepScore();
     pickWorm(); //picks worm and toggles keyframe for animation
-
 }
 
-function stopAnimation() {
-	console.log("animation is stopping");
-}
+// function stopAnimation() {
+// 	console.log("animation is stopping");
+//     clearInterval(animateWormsInterval);
+// }
 
 // ********************* Score
 
