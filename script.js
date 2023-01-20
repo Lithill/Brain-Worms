@@ -100,15 +100,19 @@ function stopAnimation() {
 // ********************* Score
 
 function keepScore() {
-    let playerScore = 0; 
 
     //add while animation cycle is happening    
 
-    document.getElementsByClassName('worm').addEventListener("click", showScore);
+    playerScore = 0;
 
-    function showScore() {
+    wormDivs = document.getElementsByClassName("worm");
+    
+    function wormClick() {
         playerScore ++;
         score.innerHTML = playerScore.toString();
     }
     
+    for (var i = 0 ; i < wormDivs.length; i++) {
+        wormDivs[i].addEventListener('click' , wormClick); 
+     }
 }
