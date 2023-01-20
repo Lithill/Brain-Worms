@@ -125,7 +125,7 @@ button:hover {
 	background-image: url("../images/fear-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-position: bottom center;
+	background-position-y: 81px;
 }
 
 .shame { 
@@ -133,7 +133,7 @@ button:hover {
 	background-image: url("../images/shame-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-position: bottom center;
+	background-position-y: 81px;
 }
 
 .shyness { 
@@ -141,7 +141,7 @@ button:hover {
 	background-image: url("../images/shy-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-position: bottom center;
+	background-position-y: 81px;
 }
 
 .embarrassment { 
@@ -149,7 +149,7 @@ button:hover {
 	background-image: url("../images/embarrassed-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-position: bottom center;
+	background-position-y: 81px;
 }
 
 .anxiety { 
@@ -157,7 +157,7 @@ button:hover {
 	background-image: url("../images/anxious-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-position: bottom center;
+	background-position-y: 81px;
 }
 
 .dread { 
@@ -165,33 +165,29 @@ button:hover {
 	background-image: url("../images/dread-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-position: bottom center;
-	animation: appear 0.9s;
+	background-position-y: 81px;
 }
 
 /******************************** Animation */
 
-/* @keyframes appear {
-    0% {
-        transform: translateY(130px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-} */
-
-.worm {
-	transition-property: background-position-y;
-	transition-duration: 750ms;
-  	transition-timing-function: ease-out;
-}
-
-.animate {
+.slide {
 	background-position-y: 81px;
-}
+	animation-name: slide;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+  }
 
-/* Why is this only happening to fear? Need to iterate through all worms? Need to toggle class to random worm?  */
+  @keyframes slide {
+	0% {
+	  background-position-y: 81px;
+	}
+	50% {
+	  background-position-y: 0px;
+	}
+	100% {
+	  background-position-y: 81px;
+	}
+  }
 
 /******************************** Right column Grid */
 

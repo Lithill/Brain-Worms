@@ -59,17 +59,15 @@ function pickWorm () {
     let activeWorm = wormArr[randomWormNumber];
     let activeWormString = "." + activeWorm;
 
-    //toggles .animate class on and off on setInterval timer
+    //assigns .slide class to the picked worm
     const worm = document.querySelector(activeWormString);//the worm is picked via pickWorm function
     const animateWorm = document.querySelector(".btn-animate-worm");
 
     function animateWormFunction () {  
-        worm.classList.toggle("animate");
+        worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
     };
 
-    setInterval(function () {
-        animateWormFunction ()
-    }, 1000);  
+    animateWormFunction ();
 }
 
 pickWorm();
