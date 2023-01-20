@@ -55,6 +55,7 @@ function generateRandomNum (min, max) {
 
 function pickWorm () {
     const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
+    let htmlCounter = "00:00";
 
     function animateWormFunction () { //do I need this function shell anymore? 
     
@@ -88,19 +89,24 @@ function pickWorm () {
 
                 console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
                 lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
-            }
+                htmlCounter = document.getElementById("counter").innerHTML;
+                console.log(htmlCounter);
 
+                if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
+                    console.log("animation is stopping");
+                    clearInterval(animateWormsInterval);
+                }
+            }
         }, 1000);
     };
 
-    counter = document.getElementById("counter");
-
-    if (counter === "0:00") { //to stop animation when counter reaches 0:00
-        console.log("animation is stopping");
-        clearInterval(animateWormsInterval);
-    } else {//to continue animation if counter is still running
+    // if (counter === "0:00") { //to stop animation when counter reaches 0:00
+    //     console.log("animation is stopping");
+    //     clearInterval(animateWormsInterval);
+    // } else {//to continue animation if counter is still running
         animateWormFunction ();
-    }
+    //     console.log("Going round again");
+    // }
 }
 
 // ********************* Game start timer 
