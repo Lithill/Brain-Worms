@@ -47,19 +47,24 @@ function restartGame() {
 
 // ********************* random num and animation
 
-// Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
-function generateRandomNum (min, max) {
-    let num1 = Math.floor(Math.random() * (max - min + 1) + min);
-    return num1;
-}
+// // Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
+// function generateRandomNum (min, max) {
+//     let num1 = Math.floor(Math.random() * (max - min + 1) + min);
+//     return num1;
+// }
 
-var randomNum = generateRandomNum(500,2000); //stores random number that is then fed into the setInterval
+// var randomNum = generateRandomNum(500,2000); //stores random number that is then fed into the setInterval
 
-// setInterval (function () {
-// 	console.log("worm appears")//thing that happens whilst setInterval goes
-// }, randomNum); //!need randomNum to keep regenerating - currently only picks it once! - use recursion
+const worm = document.querySelector(".worm");
+const animateWorm = document.querySelector(".btn-animate-worm");
 
-// console.log(randomNum);
+function animateWormFunction () {  
+  worm.classList.toggle("animate");
+};
+
+setInterval(function () {
+  animateWormFunction ()
+}, 1000);
 
 // ********************* Game start timer 
 

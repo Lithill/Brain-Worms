@@ -185,16 +185,13 @@ button:hover {
 	transition-property: background-position-y;
 	transition-duration: 750ms;
   	transition-timing-function: ease-out;
-	
-	/* transition-property: ;
-    transition-duration: 1s;
-    transition-timing-function: ease-out;
-	transition-delay: ; */
 }
 
-.worm:hover {
+.animate {
 	background-position-y: 81px;
 }
+
+/* Why is this only happening to fear? Need to iterate through all worms? Need to toggle class to random worm?  */
 
 /******************************** Right column Grid */
 
