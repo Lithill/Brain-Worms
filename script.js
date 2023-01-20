@@ -1,6 +1,7 @@
 // ********************* Play button functions
 
 let playerName;
+let gameIsPlaying = false;
 
 function onlyLetters(str) { //returns true if string only contains letters, false if not
 	return /^[A-Za-z]*$/.test(str); 
@@ -13,15 +14,23 @@ function playGame() { //alert boxes for getting player name and starting game
 		alert("Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?");
 		countdown(1);
         startAnimation();
+        gameIsPlaying = true;
 	} else {
 		playGame();
 	}
 }
 
-// ********************* Pause button functions
+// ********************* Pause button function
 
 function pauseGame() {
-	alert("You pressed the pause button");
+
+    if (gameIsPlaying === true) {
+        alert("Game is paused. Press 'OK' when you want to continue");
+    } else if (gameIsPlaying === false) {
+        alert("Game isn't playing! Press play to start the game");
+    } else {
+        alert("gameIsPlaying error");
+    }
 } 
 
 // ********************* Restart button functions

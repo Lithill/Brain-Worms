@@ -18,6 +18,10 @@ body {
 	text-align: center;
 }
 
+button:hover {
+	background-color: #b2e7e9;
+}
+
 /******************************** Left Column Grid */
 
 .title { 
@@ -58,14 +62,14 @@ body {
 	height: 100vh;
 	width: 100vw;
 	display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "title brain leaderboard"
-    "instructions brain leaderboard"
-    "game-buttons brain leaderboard";
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		"title brain leaderboard"
+		"instructions brain leaderboard"
+		"game-buttons brain leaderboard";
 }
 
 .brain {  
@@ -74,14 +78,14 @@ body {
 	background-size: contain;
 	background-position: center;
 	display: grid; 
-  grid-template-columns: 1fr 1.5fr 1fr; 
-  grid-template-rows: 1.25fr 2.5fr 1.75fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". . ."
-    ". worm-box ."
-    ". . ."; 
-  grid-area: brain;
+	grid-template-columns: 1fr 1.5fr 1fr; 
+	grid-template-rows: 1.25fr 2.5fr 1.75fr; 
+	gap: 0px 0px; 
+	grid-template-areas: 
+		". . ."
+		". worm-box ."
+		". . ."; 
+	grid-area: brain;
 }
 
 .worm-box {
@@ -99,14 +103,14 @@ body {
 
 .game-buttons {  
 	display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "play-button-div pause-button-div restart-button-div"
-    "start-button-label pause-button-label restart-button-label";
-  grid-area: game-buttons;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		"play-button-div pause-button-div restart-button-div"
+		"start-button-label pause-button-label restart-button-label";
+	grid-area: game-buttons;
 }
 
 /******************************** Worms  */
