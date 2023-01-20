@@ -18,6 +18,11 @@ body {
 	text-align: center;
 }
 
+button {
+	transition-property: background-color;
+  	transition-duration: 750ms;
+}
+
 button:hover {
 	background-color: #b2e7e9;
 }
@@ -175,6 +180,21 @@ button:hover {
         transform: translateY(0);
     }
 } */
+
+.fear {
+	transition-property: background-position-y;
+	transition-duration: 750ms;
+  	transition-timing-function: ease-out;
+	
+	/* transition-property: ;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+	transition-delay: ; */
+}
+
+.fear:hover {
+	background-position-y: 81px;
+}
 
 /******************************** Right column Grid */
 

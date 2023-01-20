@@ -33,7 +33,7 @@ function pauseGame() {
     }
 } 
 
-// ********************* Restart button functions
+// ********************* Restart button function
 
 function restartGame() {
 	alert("You pressed the restart button"); //should this go directly to playGame()?
@@ -41,9 +41,9 @@ function restartGame() {
 
 // ********************* Worm functions
 
-function MoveEffect(element){
-  new Effect.MoveBy(element, {x:10,y:10,duration:1})
-}
+// function MoveEffect(element){
+//   new Effect.MoveBy(element, {x:10,y:10,duration:1})
+// }
 
 // ********************* random num and animation
 
@@ -90,8 +90,11 @@ function countdown(minutes) {
 
 //When counter inner html isn't 00:00, run the animation
 function startAnimation() {
-	console.log("animation is happening");
-    keepScore();
+	keepScore();
+
+   //put animation here
+
+
 }
 
 function stopAnimation() {
