@@ -88,6 +88,7 @@ function pickWorm () {
             if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
                 console.log("animation is stopping");
                 clearInterval(animateWormsInterval);
+                gameIsPlaying = false;
             }
         }
     }, 1000);
