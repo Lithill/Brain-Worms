@@ -181,7 +181,7 @@ button:hover {
     }
 } */
 
-.fear {
+.worm {
 	transition-property: background-position-y;
 	transition-duration: 750ms;
   	transition-timing-function: ease-out;
@@ -192,7 +192,7 @@ button:hover {
 	transition-delay: ; */
 }
 
-.fear:hover {
+.worm:hover {
 	background-position-y: 81px;
 }
 
