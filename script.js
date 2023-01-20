@@ -1,6 +1,7 @@
 // ********************* Play button functions
 
 let playerName;
+let playerScore = 0;
 let gameIsPlaying = false;
 
 function onlyLetters(str) { //returns true if string only contains letters, false if not
@@ -36,7 +37,16 @@ function pauseGame() {
 // ********************* Restart button function
 
 function restartGame() {
-	alert("You pressed the restart button"); //should this go directly to playGame()?
+	alert("Are you ready to restart the game?"); //should this go directly to playGame()?
+    clearInterval(animateWormsInterval);
+    playerScore = 0; //reset player score
+    document.getElementById("score").innerHTML = playerScore; //reset score on webpage
+    tickMinutes = 1;//change this if change timer elsewhere
+    tickSeconds = 60;
+    document.getElementById("counter").innerHTML = `toString(${tickMinutes}):toString(${tickSeconds})`; //this isn't working to reset timer (or it is but only for a split second)
+
+    //reset timer
+    startAnimation();
 } 
 
 // ********************* Worm functions
@@ -53,12 +63,14 @@ function generateRandomNum (min, max) {
     return num1;
 }
 
+var animateWormsInterval;
+
 function pickWorm () {
     const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
     let htmlCounter = "00:00";
     let lastWorm = 0;
 
-    const animateWormsInterval = setInterval(function () {
+    animateWormsInterval = setInterval(function () {
         let randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
         let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
         let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
@@ -88,7 +100,7 @@ function pickWorm () {
             if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
                 console.log("animation is stopping");
                 clearInterval(animateWormsInterval);
-                gameIsPlaying = false;
+                gameOver();
             }
         }
     }, 1000);
@@ -96,21 +108,25 @@ function pickWorm () {
 
 // ********************* Game start timer 
 
+let tickCounter;//is this necessary here? Put it back in countdown function
+let tickMinutes;
+let tickSeconds = 60;
+
 //countdown function is edited code from https://gist.github.com/adhithyan15/4350689
 function countdown(minutes) {
-    var seconds = 60;
-    var mins = minutes;
+
+    tickMinutes = minutes;
 
     function tick() {
-        var counter = document.getElementById("counter");
-        var current_minutes = mins-1
-        seconds--;
-        counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-        if ( seconds > 0 ) {
+        tickCounter = document.getElementById("counter");
+        var current_minutes = tickMinutes-1
+        tickSeconds--;
+        counter.innerHTML = current_minutes.toString() + ":" + (tickSeconds < 10 ? "0" : "") + String(tickSeconds);
+        if ( tickSeconds > 0 ) {
             setTimeout(tick, 1000);
         } else {
-            if (mins > 1) {
-                countdown(mins-1);           
+            if (tickMinutes > 1) {
+                countdown(tickMinutes-1);           
             } else {
                 // stopAnimation();
             }
@@ -127,18 +143,11 @@ function startAnimation() {
     pickWorm(); //picks worm and toggles keyframe for animation
 }
 
-// function stopAnimation() {
-// 	console.log("animation is stopping");
-//     clearInterval(animateWormsInterval);
-// }
-
 // ********************* Score
 
 function keepScore() {
 
     //add while animation cycle is happening    
-
-    playerScore = 0;
 
     wormDivs = document.getElementsByClassName("worm");
     
@@ -151,4 +160,13 @@ function keepScore() {
     for (var i = 0 ; i < wormDivs.length; i++) {
         wormDivs[i].addEventListener('click' , wormClick); 
      }
+}
+
+// ********************* Game Over
+
+function gameOver() {
+    gameIsPlaying = false;
+    alert(`Game Over. You scored ${playerScore} points!`);
+
+    //Add to leaderboard if scores high enough
 }
