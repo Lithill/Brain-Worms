@@ -32,9 +32,9 @@ function restartGame() {
 
 // ********************* Worm functions
 
-function worm() {
-	alert("You clicked a worm!");
-}
+// function worm() {
+// 	alert("You clicked a worm!");
+// }
 
 function MoveEffect(element){
   new Effect.MoveBy(element, {x:10,y:10,duration:1})
@@ -90,8 +90,25 @@ function countdown(minutes) {
 //When counter inner html isn't 00:00, run the animation
 function startAnimation() {
 	console.log("animation is happening");
+    keepScore();
 }
 
 function stopAnimation() {
 	console.log("animation is stopping");
+}
+
+// ********************* Score
+
+function keepScore() {
+    let playerScore = 0; 
+
+    //add while animation cycle is happening    
+
+    document.getElementsByClassName('worm').addEventListener("click", showScore);
+
+    function showScore() {
+        playerScore ++;
+        score.innerHTML = playerScore.toString();
+    }
+    
 }
