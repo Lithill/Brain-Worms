@@ -11,7 +11,7 @@ function onlyLetters(str) { //returns true if string only contains letters, fals
 function playGame() { //alert boxes for getting player name and starting game
 
     if (gameIsPlaying === true) {
-        alert("Did you mean to pause the game? Game is paused. Press 'OK' when you want to continue, or 'restart' if you want to start a new game");
+        alert("Did you mean to pause the game? Game is paused. Press 'OK' when you want to continue, then 'restart' if you want to start a new game");
     } else {
 		playerName = prompt("Please enter three initials", 'E.g. "HPD"');
 
