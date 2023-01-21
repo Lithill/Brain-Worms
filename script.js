@@ -40,13 +40,10 @@ function restartGame() {
 	alert("Are you ready to restart the game?"); //should this go directly to playGame()?
     clearInterval(animateWormsInterval);
     playerScore = 0; //reset player score
-    document.getElementById("score").innerHTML = playerScore; //reset score on webpage
-    tickMinutes = 1;//change this if change timer elsewhere
+    document.getElementById("score").innerHTML = playerScore; //resets score on webpage
+    tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
     tickSeconds = 60;
-    document.getElementById("counter").innerHTML = `toString(${tickMinutes}):toString(${tickSeconds})`; //this isn't working to reset timer (or it is but only for a split second)
-
-    //reset timer
-    startAnimation();
+    startAnimation();//starts the game again without asking for another 3 initials
 } 
 
 // ********************* Worm functions

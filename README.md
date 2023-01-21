@@ -220,11 +220,13 @@ To clone the Brain Worms repository:
    3. Solution: Are there worm gaps because it's taking away the class that it previously gave? Or trying to apply a class to one that already has the class, and therefore toggles it off instead of animating?
 
 4.
-	1. Expected behaviour: Players should earn the same amount of points when clicking on worms after restarting the game
-   2. Actual bevahiour: Players earn extra points when restarting. After clicking restart once, points per click = 2. After clicking restart for a second time during the same session, points per click = 3. 
+
+	1. Expected behaviour: 
+   2. Actual bevahiour: 
    3. Solution: 
 
 5.
+
 	1. Expected behaviour: 
    2. Actual bevahiour: 
    3. Solution: 
@@ -233,6 +235,10 @@ To clone the Brain Worms repository:
 ### Known Bugs
 
 * Layout has unintended horizontal and verticle scrollbars on desktop view 
+
+	1. Expected behaviour: Players should earn the same amount of points when clicking on worms after restarting the game
+   2. Actual bevahiour: Players earn extra points when restarting. After clicking restart once, points per click = 2. After clicking restart for a second time during the same session, points per click = 3. 
+   3. Solution: 
 
 ### Lighthouse
 
