@@ -46,12 +46,6 @@ function restartGame() {
     startAnimation();//starts the game again without asking for another 3 initials
 } 
 
-// ********************* Worm functions
-
-// function MoveEffect(element){
-//   new Effect.MoveBy(element, {x:10,y:10,duration:1})
-// }
-
 // ********************* random num and animation
 
 // Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
@@ -61,11 +55,11 @@ function generateRandomNum (min, max) {
 }
 
 var animateWormsInterval;
+const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
+let htmlCounter = "00:00";
+let lastWorm = 0;
 
 function pickWorm () {
-    const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
-    let htmlCounter = "00:00";
-    let lastWorm = 0;
 
     animateWormsInterval = setInterval(function () {
         let randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
@@ -164,6 +158,10 @@ function keepScore() {
 function gameOver() {
     gameIsPlaying = false;
     alert(`Game Over. You scored ${playerScore} points!`);
-
-    //Add to leaderboard if scores high enough
+    //Add to leaderboard here if scores high enough
+    playerScore = 0; //reset player score
+    document.getElementById("score").innerHTML = playerScore; //resets score on webpage
+    tickMinutes = 00;//this line and line below resets timer, change these if you change timer elsewhere
+    tickSeconds = 00;
+    document.getElementById("counter").innerHTML = "00:00"; //resets score on webpage
 }
