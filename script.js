@@ -76,13 +76,14 @@ function pickWorm () {
     let randomWormNumber;
 
     animateWormsInterval = setInterval(function () {
+        
         randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
 
         if (lastWorm === 0) {//stops same worm appearing twice in a row, therefore stopping random time gap between worms
             animateWorm(); 
         } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
             console.log("adding 1 to randomWormNumber");
-            randomWormNumber++ ;
+            randomWormNumber++;
             animateWorm();
         } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {//if randomWormNumber is same as lastWorm, and you can subtract from it whilst still ending up picking from wormArr later
             console.log("subtracting 1 from randomWormNumber");
@@ -97,15 +98,17 @@ function pickWorm () {
     function animateWorm () {
         let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
         let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
-
         let worm = document.querySelector(activeWormString);//assigning picked worm class
 
         worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
+
+        worm.addEventListener('click' , wormClick); 
 
         //remove slide class from worm after animation
         function removeSlide () {
             worm.classList.toggle("slide");
             console.log("removed slide class")
+            worm.removeEventListener('click' , wormClick); 
         }
         setTimeout(removeSlide, 2000); //second number should be length of animation
         //not sure that the above is working - isn't making animation smoother
@@ -157,28 +160,24 @@ function countdown(minutes) {
 
 //When counter inner html isn't 00:00, run the animation
 function startAnimation() {
-	keepScore();
     pickWorm(); //picks worm and toggles keyframe for animation
 }
 
 // ********************* Score
 
-function keepScore() {
 
-    //add while animation cycle is happening    
-
-    wormDivs = document.getElementsByClassName("worm");
+    // wormDivs = document.getElementsByClassName("worm");
     
-    function wormClick() {
-        playerScore ++;
-        score.innerHTML = playerScore.toString();
-    }
+function wormClick() {
+    playerScore ++;
+    score.innerHTML = playerScore.toString();
+}
     
     //loop taken from https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur
-    for (var i = 0 ; i < wormDivs.length; i++) {
-        wormDivs[i].addEventListener('click' , wormClick); 
-     }
-}
+    // for (var i = 0 ; i < wormDivs.length; i++) {
+    //     wormDivs[i].addEventListener('click' , wormClick); 
+    //  }
+
 
 // ********************* Game Over
 

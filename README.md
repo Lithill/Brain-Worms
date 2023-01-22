@@ -220,13 +220,16 @@ To clone the Brain Worms repository:
    3. Solution: There seemed to be worm gaps because instead of animating, it was toggling off .slide from worms it had previously been applied to. Applying toggle again at the end of the function helped with this. 
 
 4.
-
 	1. Expected behaviour: Worm animations don't have a gap between them
    2. Actual bevahiour: Sometimes there was a second gap with no worm animation
    3. Solution: Take out the code that skipped animation if the same worm had been animated previously. Instead insert if statement detailing what to do in this instance, and adding or subtracting from randomWormNumbr before running the animateWorm function. 
 
 5.
+	1. Expected behaviour: User gets points whenever they click on an animating worm div
+   2. Actual bevahiour: Sometimes user does not get points when clicking an animating worm div
+   3. Solution: 
 
+6.
 	1. Expected behaviour: 
    2. Actual bevahiour: 
    3. Solution: 
