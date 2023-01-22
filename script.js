@@ -99,19 +99,32 @@ function pickWorm () {
         let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
         let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
         let worm = document.querySelector(activeWormString);//assigning picked worm class
+        let removeWorm;//could use .slide instead?
 
-        worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
+        
+        worm.classList.toggle("slide");
 
         worm.addEventListener('click' , wormClick); 
+        console.log(`added eventlistener to ${randomWormNumber}`)
 
-        //remove slide class from worm after animation
-        function removeSlide () {
-            worm.classList.toggle("slide");
-            console.log("removed slide class")
-            worm.removeEventListener('click' , wormClick); 
+
+
+        function setRemoveWorm () {//assign a variable for worm that is going through animation - can't use worm as that may get changed before this function gets called
+            removeWorm = worm;
+            removeSlide();
         }
-        setTimeout(removeSlide, 2000); //second number should be length of animation
-        //not sure that the above is working - isn't making animation smoother
+
+        //remove slide class from worm after animation - not currently working properly
+        function removeSlide () {
+            removeWorm.classList.toggle("slide");
+            console.log(`removed slide class from ${randomWormNumber}`)
+            removeWorm.removeEventListener('click' , wormClick); 
+            console.log(`removed eventlistener from ${randomWormNumber}`)
+        }
+
+        setTimeout(setRemoveWorm, 2000); //second number should be length of animation
+
+
 
         console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
         lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
