@@ -217,13 +217,13 @@ To clone the Brain Worms repository:
 3.
 	1. Expected behaviour: Worm animations are always visible when requested by the code
    2. Actual bevahiour: Sometimes some picked worm animations are skipped, even though they are not repeats of the previous picked worm
-   3. Solution: Are there worm gaps because it's taking away the class that it previously gave? Or trying to apply a class to one that already has the class, and therefore toggles it off instead of animating?
+   3. Solution: There seemed to be worm gaps because instead of animating, it was toggling off .slide from worms it had previously been applied to. Applying toggle again at the end of the function helped with this. 
 
 4.
 
-	1. Expected behaviour: 
-   2. Actual bevahiour: 
-   3. Solution: 
+	1. Expected behaviour: Worm animations don't have a gap between them
+   2. Actual bevahiour: Sometimes there was a second gap with no worm animation
+   3. Solution: Take out the code that skipped animation if the same worm had been animated previously. Instead insert if statement detailing what to do in this instance, and adding or subtracting from randomWormNumbr before running the animateWorm function. 
 
 5.
 
@@ -268,6 +268,7 @@ Content for the website was written by Rossanne Hamilton.
 I would like to acknowledge the following people who helped me along the way in completing my second milestone project:
 
 - Rimi Hussain for her idea to call it Brain Worms (before the idea included a brain or worms in the design), and to create trophies based on the worms you most consistently hit.
+- Chris Mugridge for suggesting I insert an if statement detailing what to do when randomWormNumber is the same as lastWorm, and adding or subtracting from randomWormNumbr before running the animateWorm function. (Instead of skipping the animateWorm function and trying to change the setInterval time for that specific loop around setInterval.)
 - My tutor Robert Mclaughlin for helpful feedback and sharing links for further learning.
 - My mentor Mitko Bachvarov for helpful feedback and sharing links for further learning.
 

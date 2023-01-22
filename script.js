@@ -73,40 +73,55 @@ let lastWorm = 0;
 
 function pickWorm () {
 
+    let randomWormNumber;
+
     animateWormsInterval = setInterval(function () {
-        let randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
+        randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
+
+        if (lastWorm === 0) {//stops same worm appearing twice in a row, therefore stopping random time gap between worms
+            animateWorm(); 
+        } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
+            console.log("adding 1 to randomWormNumber");
+            randomWormNumber++ ;
+            animateWorm();
+        } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {//if randomWormNumber is same as lastWorm, and you can subtract from it whilst still ending up picking from wormArr later
+            console.log("subtracting 1 from randomWormNumber");
+            randomWormNumber--; 
+            animateWorm(); 
+        } else {
+            animateWorm(); 
+        }
+
+    }, 1000);
+
+    function animateWorm () {
         let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
         let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
 
-        if (lastWorm === randomWormNumber) {//stops same worm appearing twice in a row
-            console.log("the same");
-            //still waits 1000ms until calling again unfortunately
-        } else {
-            //assigns .slide class to the picked worm
-            let worm = document.querySelector(activeWormString);//assigning picked worm class
+        let worm = document.querySelector(activeWormString);//assigning picked worm class
 
-            worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
+        worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
 
-            //remove slide class from worm after animation
-            function removeSlide () {
-                worm.classList.toggle("slide");
-                console.log("removed slide class")
-            }
-            setTimeout(removeSlide, 2000); //second number should be length of animation
-            //not sure that the above is working - isn't making animation smoother
-
-            console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
-            lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
-            htmlCounter = document.getElementById("counter").innerHTML;
-            console.log(htmlCounter);
-
-            if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
-                console.log("animation is stopping");
-                clearInterval(animateWormsInterval);
-                gameOver();
-            }
+        //remove slide class from worm after animation
+        function removeSlide () {
+            worm.classList.toggle("slide");
+            console.log("removed slide class")
         }
-    }, 1000);
+        setTimeout(removeSlide, 2000); //second number should be length of animation
+        //not sure that the above is working - isn't making animation smoother
+
+        console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
+        lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
+        htmlCounter = document.getElementById("counter").innerHTML;
+        console.log(htmlCounter);
+
+        if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
+            console.log("animation is stopping");
+            clearInterval(animateWormsInterval);
+            gameOver();
+        }
+
+    }
 }
 
 // ********************* Game start timer 
