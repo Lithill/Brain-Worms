@@ -40,26 +40,17 @@ button:hover {
 
 .play-button-div { 
 	grid-area: play-button-div; 
+	margin: 10px 5px;
 }
 
 .pause-button-div { 
 	grid-area: pause-button-div; 
+	margin: 10px 5px;
 }
 
 .restart-button-div { 
 	grid-area: restart-button-div; 
-}
-
-.start-button-label { 
-	grid-area: start-button-label; 
-}
-
-.pause-button-label { 
-	grid-area: pause-button-label; 
-}
-
-.restart-button-label { 
-	grid-area: restart-button-label; 
+	margin: 10px 5px;
 }
 
 /******************************** Central Grid layout  */
@@ -110,12 +101,11 @@ button:hover {
 .game-buttons {  
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	/* grid-template-rows: 1fr 1fr; */
 	gap: 0px 0px;
 	grid-auto-flow: row;
 	grid-template-areas:
-		"play-button-div pause-button-div restart-button-div"
-		"start-button-label pause-button-label restart-button-label";
+		"play-button-div pause-button-div restart-button-div";
 	grid-area: game-buttons;
 }
 
@@ -201,3 +191,67 @@ button:hover {
 	/* margin-top: 10px;
 	margin-bottom: 10px; */
 }
+
+/******************************** Media Queries */
+
+@media (max-width: 1045px) {
+	.container { 
+		height: auto;
+		/* grid-template-columns: minmax(0, 1fr) 300px; */
+		grid-template-rows: 1fr; 
+		grid-template-columns: 1fr;
+		gap: 0px 0px;
+		grid-auto-flow: column;
+		grid-template-areas:
+			"title"
+			"instructions"
+			"game-buttons"
+			"brain"
+			"brain"
+			"brain"
+			"leaderboard";
+	}
+
+	.brain {  
+		background-image: url("../images/brain.webp");
+		background-repeat: no-repeat;
+		/* background-size: contain, auto; */
+		height: 70vw;
+		width: auto;
+		background-position: center;
+		display: grid; 
+		/* grid-template-columns: minmax(0, 1fr) 300px; */
+		gap: 0px 0px; 
+		grid-template-areas: 
+			". . ."
+			". worm-box ."
+			". . ."; 
+		grid-area: brain;
+	}
+
+	.worm-box {
+		/* grid-template-columns: minmax(0, 1fr) 300px; */
+	}
+
+	.game-buttons {  
+		/* display: grid; */
+		grid-template-columns: 3fr 1fr 3fr;
+		/* grid-template-rows: 1fr 1fr;
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-areas:
+			"play-button-div pause-button-div restart-button-div"
+			"start-button-label pause-button-label restart-button-label";
+		grid-area: game-buttons; */
+	}
+
+	.play-button-div {
+		text-align: right;
+	}
+
+	.restart-button-div {
+		text-align: left;
+	}
+
+}
+
