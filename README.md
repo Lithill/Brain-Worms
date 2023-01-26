@@ -225,23 +225,21 @@ To clone the Brain Worms repository:
    3. Solution: Take out the code that skipped animation if the same worm had been animated previously. Instead insert if statement detailing what to do in this instance, and adding or subtracting from randomWormNumbr before running the animateWorm function. 
 
 5.
+	1. Expected behaviour: Players should earn the same amount of points when clicking on worms after restarting the game
+   2. Actual bevahiour: Players earn extra points when restarting. After clicking restart once, points per click = 2. After clicking restart for a second time during the same session, points per click = 3. 
+   3. Solution: I didn't notice when this got fixed, as I think it was linked to something else I fixed. I think the game-run code was duplicating itself rather than stopping and starting again, causing interesting bugs in the process. 
+
+6.
 	1. Expected behaviour: User gets points whenever they click on an animating worm div
    2. Actual bevahiour: Sometimes user does not get points when clicking an animating worm div
    3. Solution: 
 
-6.
+7.
 	1. Expected behaviour: 
    2. Actual bevahiour: 
    3. Solution: 
    
-
 ### Known Bugs
-
-* Layout has unintended horizontal and verticle scrollbars on desktop view 
-
-	1. Expected behaviour: Players should earn the same amount of points when clicking on worms after restarting the game
-   2. Actual bevahiour: Players earn extra points when restarting. After clicking restart once, points per click = 2. After clicking restart for a second time during the same session, points per click = 3. 
-   3. Solution: 
 
 ### Lighthouse
 
