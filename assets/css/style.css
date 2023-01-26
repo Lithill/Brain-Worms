@@ -9,6 +9,7 @@ h1 {
 p {
 	font-family: "East Sea Dokdo";
 	font-size: 37px;
+	margin: 10px 10px;
 }
 
 /********************************  */
@@ -64,8 +65,8 @@ button:hover {
 /******************************** Central Grid layout  */
 
 .container { 
-	height: 100vh;
-	width: 100vw;
+	height: 96vh;
+	width: 98vw;
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr;
 	grid-template-rows: 1fr 2fr 1fr;
@@ -193,4 +194,10 @@ button:hover {
 
 .leaderboard { 
 	grid-area: leaderboard; 
+	height: 100%;
+	width: 100%;
+	/* margin-right: 20px; */
+	/* margin-left: 10px; */
+	/* margin-top: 10px;
+	margin-bottom: 10px; */
 }
