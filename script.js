@@ -138,7 +138,7 @@ function pickWorm () {
 
         if (htmlCounter === "0:30") {
             console.log("animation is speeding up");
-            clearInterval(animateWormsInterval);
+            clearInterval(animateWormsInterval);//this doesn't seem to be working
             intervalNum = 500;
             pickWorm();
         } else if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00

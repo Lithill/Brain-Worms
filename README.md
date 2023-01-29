@@ -245,6 +245,18 @@ To clone the Brain Worms repository:
    2. Actual bevahiour: When pausing the game and navigating away from the page, the worm animation continues and the timer starts counting down from where it was set. 
    3. Solution: 
 
+   1. Expected behaviour: Worm divs stay over brain picture in different screen sizes
+   2. Actual bevahiour: Worm divs are not always on brain picture in different screen sizes
+   3. Solution: 
+
+   1. Expected behaviour: Worms cannot be seen before animation
+   2. Actual bevahiour: Worms can sometimes be seen before animation on bigger screen sizes
+   3. Solution: 
+
+   1. Expected behaviour: On iPhone, user isn't given the option to stop the alert boxes popping up. 
+   2. Actual bevahiour: On iPhone, user is given the option to "supress dialogs", which can break the game.
+   3. Solution: 
+
 ### Lighthouse
 
 ### Full Testing
