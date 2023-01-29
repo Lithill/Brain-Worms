@@ -70,11 +70,11 @@ var animateWormsInterval;
 const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
 let htmlCounter = "00:00";
 let lastWorm = 0;
+let intervalNum = 1000;
 
 function pickWorm () {
-    let intervalNum = 1000;
     let randomWormNumber;
-    console.log(`Interval number is ${intervalNum}`);
+    console.log(`Interval number at pickWorm is ${intervalNum}`);
 
 
     animateWormsInterval = setInterval(function () {
@@ -119,7 +119,7 @@ function pickWorm () {
             removeSlide();
         }
 
-        //remove slide class from worm after animation - not currently working properly
+        //remove slide class from worm after animation - not currently working properly for first few worms
         function removeSlide () {
             removeWorm.classList.toggle("slide");
             console.log(`removed slide class from ${randomWormNumber}`)
@@ -136,11 +136,12 @@ function pickWorm () {
         htmlCounter = document.getElementById("counter").innerHTML;
         console.log(htmlCounter);
 
-        if (htmlCounter === "0:30") {
-            console.log("animation is speeding up");
-            clearInterval(animateWormsInterval);//this doesn't seem to be working
-            intervalNum = 500;
-            pickWorm();
+        if (htmlCounter === "0:50") {
+            // console.log("animation is speeding up");
+            // clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+            // intervalNum = 500;
+            // console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+            // pickWorm();
         } else if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
             console.log("animation is stopping");
             clearInterval(animateWormsInterval);

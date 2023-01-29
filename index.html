@@ -29,33 +29,33 @@
 				<h1>Brain Worms</h1>
 				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
 			</div>
-		<div class="instructions">
+			<div class="instructions">
 				<p>Click each worm as it appears</p>
 				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
 				<p>Don't let the worms eat your brain</p>
 			</div>
-		  <div class="game-buttons">
-		    <div class="play-button-div">
+		  	<div class="game-buttons">
+		    	<div class="play-button-div">
 					<button id ="playButton" onclick="playGame()">
 						<img src="assets/images/play-button.webp" alt="Play button">
-						<p>Play</p>
+						<p class="hide">Play</p>
 					</button>
 				</div>
-		    <div class="pause-button-div">
+				<div class="pause-button-div">
 					<button id ="pauseButton" onclick="pauseGame()">
 						<img src="assets/images/pause-button.webp" alt="Pause button">
-						<p>Pause</p>
+						<p class="hide">Pause</p>
 					</button>
 				</div>
-		    <div class="restart-button-div">
+				<div class="restart-button-div">
 					<button id ="restartButton" onclick="restartGame()">
 						<img src="assets/images/restart-button.webp" alt="Restart button">
-						<p>Restart</p>
+						<p class="hide">Restart</p>
 					</button>
 				</div>
-		  </div>
+		    </div>
 <!-- Middle column -->
-	  	<div class="brain">
+	  		<div class="brain">
 				<div class="worm-box">
 					<div class="fear worm"></div>
 					<div class="shame worm"></div>
@@ -64,18 +64,18 @@
 					<div class="anxiety worm"></div>
 					<div class="dread worm"></div>
 				</div>
-	  	</div>
+	  		</div>
 <!-- Right column -->
 			<div class="leaderboard">
 <!-- Game timer -->
-				<h1>Timer</h1>
-				<p id="counter">00:00</p>
-				<h1>Score</h1>
-				<p id="score">0</p>
+				<h1 class="timer-name">Timer</h1>
+				<p id="counter" class="counter-class">00:00</p>
+				<h1 class="score-word">Score</h1>
+				<p id="score" class="score-class">0</p>
 <!-- Leaderboard -->
-				<h1>Leaderboard</h1>
-				<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game">
-				<p>Insert names and scores here</p>
+				<h1 class="hide">Leaderboard</h1>
+				<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game" class="hide">
+				<p class="hide">Insert names and scores here</p>
 			</div>
 		</div>
 		
