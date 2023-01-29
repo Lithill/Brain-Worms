@@ -72,14 +72,17 @@ let htmlCounter = "00:00";
 let lastWorm = 0;
 
 function pickWorm () {
-
+    let intervalNum = 1000;
     let randomWormNumber;
+    console.log(`Interval number is ${intervalNum}`);
+
 
     animateWormsInterval = setInterval(function () {
         
         randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
 
-        if (lastWorm === 0) {//stops same worm appearing twice in a row, therefore stopping random time gap between worms
+        //stops same worm appearing twice in a row, therefore stopping random time gap between worms
+        if (lastWorm === 0) {
             animateWorm(); 
         } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
             console.log("adding 1 to randomWormNumber");
@@ -93,7 +96,9 @@ function pickWorm () {
             animateWorm(); 
         }
 
-    }, 1000);
+    }, intervalNum);
+
+    
 
     function animateWorm () {
         let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
@@ -102,9 +107,9 @@ function pickWorm () {
         let removeWorm;//could use .slide instead?
 
         
-        worm.classList.toggle("slide");
+        worm.classList.toggle("slide");//toggles .slide on and off to trigger the animation
 
-        worm.addEventListener('click' , wormClick); 
+        worm.addEventListener('click' , wormClick);//adds eventListener to worms that have been toggled for animation
         console.log(`added eventlistener to ${randomWormNumber}`)
 
 
@@ -131,7 +136,12 @@ function pickWorm () {
         htmlCounter = document.getElementById("counter").innerHTML;
         console.log(htmlCounter);
 
-        if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
+        if (htmlCounter === "0:30") {
+            console.log("animation is speeding up");
+            clearInterval(animateWormsInterval);
+            intervalNum = 500;
+            pickWorm();
+        } else if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
             console.log("animation is stopping");
             clearInterval(animateWormsInterval);
             gameOver();

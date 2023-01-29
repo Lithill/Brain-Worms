@@ -241,6 +241,10 @@ To clone the Brain Worms repository:
    
 ### Known Bugs
 
+	1. Expected behaviour: When pausing the game and navigating away from the page, everything should be paused still when you come back to the page.
+   2. Actual bevahiour: When pausing the game and navigating away from the page, the worm animation continues and the timer starts counting down from where it was set. 
+   3. Solution: 
+
 ### Lighthouse
 
 ### Full Testing
