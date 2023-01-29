@@ -1,8 +1,8 @@
 // ********************* Play button functions
 
-let playerName;
-let playerScore = 0;
-let gameIsPlaying = false;
+var playerName;
+var playerScore = 0;
+var gameIsPlaying = false;
 
 function onlyLetters(str) { //returns true if string only contains letters, false if not
 	return /^[A-Za-z]*$/.test(str); 
@@ -58,103 +58,113 @@ function restartGame() {
     }	
 } 
 
-// ********************* random num and animation
+// ********************* Pick Worm
 
-// Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
+var animateWormsInterval;
+var wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
+var htmlCounter = "00:00";
+var lastWorm = 0;
+var randomWormNumber;
+var intervalNum = 1000;
+    
+// Generate a random number for setInterval timer. Remember it is for milliseconds and use "clearInterval()" to stop the setInterval timer from going on forever
 function generateRandomNum (min, max) {
     let num1 = Math.floor(Math.random() * (max - min + 1) + min);
     return num1;
 }
 
-var animateWormsInterval;
-const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
-let htmlCounter = "00:00";
-let lastWorm = 0;
-
 function pickWorm () {
-    let intervalNum = 1000;
-    let randomWormNumber;
     console.log(`Interval number is ${intervalNum}`);
 
+    animateWormsInterval = setInterval(animateWormsFunction, intervalNum);
+}
 
-    animateWormsInterval = setInterval(function () {
+function animateWormsFunction() {
+    intervalCounter++;
+    randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
+    console.log(`randomWormNumber in animateWormsFunction is ${randomWormNumber}`)
+    console.log(`lastWorm in animateWormsFunction is ${lastWorm}`)
+
+    //stops same worm appearing twice in a row, therefore stopping random time gap between worms
+     if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
+        console.log("adding 1 to randomWormNumber");
+        randomWormNumber++;
+    } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {//if randomWormNumber is same as lastWorm, and you can subtract from it whilst still ending up picking from wormArr later
+        console.log("subtracting 1 from randomWormNumber");
+        randomWormNumber--; 
+    } 
         
-        randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
+    animateWorm(); 
 
-        //stops same worm appearing twice in a row, therefore stopping random time gap between worms
-        if (lastWorm === 0) {
-            animateWorm(); 
-        } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
-            console.log("adding 1 to randomWormNumber");
-            randomWormNumber++;
-            animateWorm();
-        } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {//if randomWormNumber is same as lastWorm, and you can subtract from it whilst still ending up picking from wormArr later
-            console.log("subtracting 1 from randomWormNumber");
-            randomWormNumber--; 
-            animateWorm(); 
-        } else {
-            animateWorm(); 
-        }
+    console.log("SET INTERVAL  COUNTER = "+intervalCounter);
+    console.log("CLEAR INTERVAL COUNTER = "+clearIntervalCounter);
+}
 
-    }, intervalNum);
+// ********************* Run Animation
+var activeWorm;
+var activeWormString;
+var worm;
+
+function animateWorm () {
+
+    let removeWorm;//could use .slide instead?
+    activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
+    console.log(`wormArr is ${wormArr}`);
+    console.log(`Active worm is ${activeWorm}`);
+    console.log(`randomWormNumber in animateWorm is ${randomWormNumber}`);
+
+    activeWormString = "." + activeWorm; //creates class name for worm that has been picked
+    worm = document.querySelector(activeWormString);//assigning picked worm class
+    
+    worm.classList.toggle("slide");//toggles .slide on and off to trigger the animation
+
+    worm.addEventListener('click' , wormClick);//adds eventListener to worms that have been toggled for animation
+    console.log(`added eventlistener to ${randomWormNumber}`)
+
+    function setRemoveWorm () {//assign a variable for worm that is going through animation - can't use worm as that may get changed before this function gets called
+        removeWorm = worm;
+        removeSlide();
+    }
+
 
     
-
-    function animateWorm () {
-        let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
-        let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
-        let worm = document.querySelector(activeWormString);//assigning picked worm class
-        let removeWorm;//could use .slide instead?
-
-        
-        worm.classList.toggle("slide");//toggles .slide on and off to trigger the animation
-
-        worm.addEventListener('click' , wormClick);//adds eventListener to worms that have been toggled for animation
-        console.log(`added eventlistener to ${randomWormNumber}`)
-
-
-
-        function setRemoveWorm () {//assign a variable for worm that is going through animation - can't use worm as that may get changed before this function gets called
-            removeWorm = worm;
-            removeSlide();
-        }
-
-        //remove slide class from worm after animation - not currently working properly
-        function removeSlide () {
-            removeWorm.classList.toggle("slide");
-            console.log(`removed slide class from ${randomWormNumber}`)
-            removeWorm.removeEventListener('click' , wormClick); 
-            console.log(`removed eventlistener from ${randomWormNumber}`)
-        }
-
-        setTimeout(setRemoveWorm, 2000); //second number should be length of animation
-
-
-
-        console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
-        lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
-        htmlCounter = document.getElementById("counter").innerHTML;
-        console.log(htmlCounter);
-
-        if (htmlCounter === "0:30") {
-            console.log("animation is speeding up");
-            clearInterval(animateWormsInterval);
-            intervalNum = 500;
-            pickWorm();
-        } else if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
-            console.log("animation is stopping");
-            clearInterval(animateWormsInterval);
-            gameOver();
-        }
-
+    //remove slide class from worm after animation - not currently working properly
+    function removeSlide () {
+        removeWorm.classList.toggle("slide");
+        console.log(`removed slide class from ${randomWormNumber}`)
+        removeWorm.removeEventListener('click' , wormClick); 
+        console.log(`removed eventlistener from ${randomWormNumber}`)
     }
+
+    setTimeout(setRemoveWorm, 2000); //second number should be length of animation
+
+
+
+    console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
+    lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
+    htmlCounter = document.getElementById("counter").innerHTML;
+    console.log(htmlCounter);
+
+    if (htmlCounter === "0:50") {
+        console.log("animation is speeding up");
+        clearInterval(animateWormsInterval);
+        clearIntervalCounter++;
+        intervalNum = 500;
+        pickWorm();
+    } else if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
+        console.log("animation is stopping");
+        clearInterval(animateWormsInterval);
+        clearIntervalCounter++;
+        gameOver();
+    }
+
 }
 
 // ********************* Game start timer 
 
-let tickCounter;//is this necessary here? Put it back in countdown function
-let tickMinutes;
-let tickSeconds = 60;
+var tickCounter;//is this necessary here? Put it back in countdown function
+var tickMinutes;
+var tickSeconds = 60;
 
 //countdown function is edited code from https://gist.github.com/adhithyan15/4350689
 function countdown(minutes) {
