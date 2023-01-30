@@ -10,7 +10,7 @@ function onlyLetters(str) { //returns true if string only contains letters, fals
 
 function playGame() { //alert boxes for getting player name and starting game
 
-    if (gameIsPlaying === true) {
+    if (gameIsPlaying) {
         alert("Did you mean to pause the game? Game is paused. Press 'OK' when you want to continue, then 'restart' if you want to start a new game");
     } else {
 		playerName = prompt("Please enter three initials", 'E.g. "HPD"');
@@ -119,7 +119,7 @@ function pickWorm () {
             removeSlide();
         }
 
-        //remove slide class from worm after animation - not currently working properly for first few worms
+        //remove slide class from worm after animation 
         function removeSlide () {
             removeWorm.classList.toggle("slide");
             console.log(`removed slide class from ${randomWormNumber}`)
@@ -136,18 +136,52 @@ function pickWorm () {
         htmlCounter = document.getElementById("counter").innerHTML;
         console.log(htmlCounter);
 
-        if (htmlCounter === "0:50") {
-            // console.log("animation is speeding up");
-            // clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
-            // intervalNum = 500;
-            // console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
-            // pickWorm();
-        } else if (htmlCounter === "0:00") { //to stop animation when counter reaches 0:00
-            console.log("animation is stopping");
-            clearInterval(animateWormsInterval);
-            gameOver();
-        }
 
+
+        switch (htmlCounter) {//make animation speed up
+            case "0:50":
+                console.log("animation is speeding up");
+                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                intervalNum = 950;
+                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                pickWorm();
+                break;
+            case "0:40":
+                console.log("animation is speeding up");
+                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                intervalNum = 900;
+                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                pickWorm();
+                break;
+            case "0:30":
+                console.log("animation is speeding up");
+                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                intervalNum = 850;
+                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                pickWorm();
+                break;
+            case "0:20":
+                console.log("animation is speeding up");
+                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                intervalNum = 800;
+                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                pickWorm();
+                break; 
+            case "0:10":
+                console.log("animation is speeding up");
+                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                intervalNum = 800;
+                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                pickWorm();
+                break;   
+            case "0:00":
+                console.log("animation is stopping");
+                clearInterval(animateWormsInterval);
+                gameOver();
+                break;  
+            default:
+                break;
+        }
     }
 }
 
