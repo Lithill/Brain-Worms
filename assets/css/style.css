@@ -266,19 +266,12 @@ button:hover {
 		text-align: justify;
 	}
 
-	h1 {
-		/* text-align: center; */
-	}
-
-	.leaderboard, .game-buttons {
-		/* background-color:  rgba(255, 255, 255, 0.748); */
-		/* margin: auto; */
-	}
-
 	.title, .instructions, .hide {
 		display: none;
 	}
-	 
+
+	/* ****************** */
+/* 	 
 	.container {  
 		display: grid;
 		background-image: url("../images/mobile-brain.webp");
@@ -369,7 +362,76 @@ button:hover {
 	.worm-box {
 		width: 95vw;
 		height: auto;
-	}	
+	}	 */
+	/* *********** */
+	.container {
+		display: grid; 
+		grid-template-columns: 1fr; 
+		grid-template-rows: 1fr 8fr; 
+		gap: 0px 0px; 
+		grid-template-areas: 
+		  "leaderboard"
+		  "brain-image"; 
+	  }
+	  .leaderboard {
+		display: grid; 
+		grid-template-columns: 1fr 1fr 1fr 1fr; 
+		grid-template-rows: 1fr; 
+		gap: 0px 0px; 
+		grid-template-areas: 
+		  "timer-name counter-class score-word score-class"; 
+		grid-area: leaderboard; 
+	  }
+	  .timer-name { grid-area: timer-name; }
+	  .counter-class { grid-area: counter-class; }
+	  .score-word { grid-area: score-word; }
+	  .score-class { grid-area: score-class; }
+	  .brain-image {
+		background-image: url("../images/mobile-brain.webp");
+		background-size: cover;
+		background-position: bottom;
+		height: 100vh;
+		width: 100vw;
+		display: grid; 
+		grid-template-columns: 1fr; 
+		grid-template-rows: 1fr 6fr 2fr; 
+		gap: 0px 0px; 
+		grid-template-areas: 
+		  "game-buttons"
+		  "worm-box"
+		  "."; 
+		grid-area: brain-image; 
+	  }
+	  .game-buttons {
+		display: grid; 
+		grid-template-columns: 1fr 1fr 1fr; 
+		grid-template-rows: 1fr; 
+		gap: 0px 0px; 
+		grid-template-areas: 
+		  "play-button-div pause-button-div restart-button-div"; 
+		grid-area: game-buttons; 
+	  }
+	  .play-button-div { grid-area: play-button-div; }
+	  .pause-button-div { grid-area: pause-button-div; }
+	  .restart-button-div { grid-area: restart-button-div; }
+	  .worm-box {
+		display: grid; 
+		grid-template-columns: 1fr 1fr 1fr; 
+		grid-template-rows: 1fr 1fr 1fr 1fr; 
+		gap: 0px 0px; 
+		grid-template-areas: 
+		  ". fear ."
+		  "shame . shyness"
+		  ". embarrassment ."
+		  "anxiety . dread"; 
+		grid-area: worm-box; 
+	  }
+	  .fear { grid-area: fear; }
+	  .shame { grid-area: shame; }
+	  .shyness { grid-area: shyness; }
+	  .embarrassment { grid-area: embarrassment; }
+	  .anxiety { grid-area: anxiety; }
+	  .dread { grid-area: dread; }
 }
 
 
