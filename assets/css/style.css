@@ -271,7 +271,7 @@ button:hover {
 	}
 
 	.leaderboard, .game-buttons {
-		background-color:  rgba(255, 255, 255, 0.5);
+		/* background-color:  rgba(255, 255, 255, 0.748); */
 		/* margin: auto; */
 	}
 
@@ -288,14 +288,14 @@ button:hover {
 		width: 100vw;
 		background-repeat: no-repeat;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr 6fr 1fr;
+		grid-template-rows: 1fr 1fr 4.5fr 2.5fr;
 		gap: 0px 0px;
 		grid-auto-flow: row;
 		grid-template-areas:
-		  "game-buttons"
-		  "leaderboard"
-		  "brain"
-		  ".";
+			"leaderboard"
+			"game-buttons"
+		  	"brain"
+		  	".";
 	}
 	  
 	.game-buttons {  
@@ -325,6 +325,7 @@ button:hover {
 	  
 	.leaderboard {  
 		display: grid;
+		margin: auto;
 		width: 95vw;
 		height: auto;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -337,7 +338,8 @@ button:hover {
 	}
 	  
 	.timer-name { 
-		grid-area: timer-name; 
+		grid-area: timer-name;
+		
 	}
 	  
 	.counter-class { 

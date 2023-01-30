@@ -257,6 +257,10 @@ To clone the Brain Worms repository:
    2. Actual bevahiour: On iPhone, user is given the option to "supress dialogs", which can break the game.
    3. Solution: 
 
+   1. Expected behaviour: Changing background-position-y on slide keyframe doesn't make the worms dissapear in mobile view
+   2. Actual bevahiour: 
+   3. Solution: 
+
 ### Lighthouse
 
 ### Full Testing
