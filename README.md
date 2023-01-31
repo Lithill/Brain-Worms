@@ -230,9 +230,9 @@ To clone the Brain Worms repository:
    3. Solution: I didn't notice when this got fixed, as I think it was linked to something else I fixed. I think the game-run code was duplicating itself rather than stopping and starting again, causing interesting bugs in the process. 
 
 6.
-	1. Expected behaviour: User gets points whenever they click on an animating worm div
-   2. Actual bevahiour: Sometimes user does not get points when clicking an animating worm div
-   3. Solution: 
+	1. Expected behaviour: Worm animations are smooth and do not blink off.
+   2. Actual bevahiour: When speed of setInterval increases, some worm animations disapear without running through the whoe animation.
+   3. Solution: Add an if statement to see if the chosen worm is currently going through it's animation (e.g. if it has the "switch" class applied to it), and if it is, do not go to the animateWorm function for that setInterval round. 
 
 7.
 	1. Expected behaviour: 
