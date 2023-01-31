@@ -74,15 +74,20 @@ let intervalNum = 1000;
 
 function pickWorm () {
     let randomWormNumber;
-    console.log(`Interval number at pickWorm is ${intervalNum}`);
+    // console.log(`Interval number at pickWorm is ${intervalNum}`);
 
 
     animateWormsInterval = setInterval(function () {
         
         randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
+        let wormClass = "." + wormArr[randomWormNumber];
+        let div = document.querySelector(wormClass);
 
         //stops same worm appearing twice in a row, therefore stopping random time gap between worms
-        if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
+        if (div.classList.contains('slide')) {
+            console.log(`Worm is already animating`);
+            // pickWorm();
+        } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
             console.log("adding 1 to randomWormNumber");
             randomWormNumber++;
             animateWorm();
@@ -96,17 +101,19 @@ function pickWorm () {
 
     }, intervalNum); 
 
-    function assignWormClass(num) {//pass in randomWormNumber
+    function findWorm(num) {//pass in randomWormNumber
         let activeWorm = wormArr[num]; //assigns this number to wormArr index
         let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
-        let wormClass = document.querySelector(activeWormString);//assigning picked worm class
-        return wormClass;
+        let findWorm = document.querySelector(activeWormString);//assigning picked worm class
+        return findWorm;
     }
 
     function animateWorm () {
 
-        let worm = assignWormClass(randomWormNumber);
         let removeWorm;//could use .slide instead?
+        
+        let worm = findWorm(randomWormNumber);
+
 
         
         worm.classList.toggle("slide");//toggles .slide on and off to trigger the animation
@@ -141,13 +148,13 @@ function pickWorm () {
 
 
         switch (htmlCounter) {//make animation speed up
-            // case "0:50":
-            //     console.log("animation is speeding up");
-            //     clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
-            //     intervalNum = 950;
-            //     console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
-            //     pickWorm();
-            //     break;
+            case "0:50":
+                console.log("animation is speeding up");
+                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                intervalNum = 500;
+                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                pickWorm();
+                break;
             // case "0:40":
             //     console.log("animation is speeding up");
             //     clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
