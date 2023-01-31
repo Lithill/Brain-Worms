@@ -82,9 +82,7 @@ function pickWorm () {
         randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
 
         //stops same worm appearing twice in a row, therefore stopping random time gap between worms
-        if (lastWorm === 0) {
-            animateWorm(); 
-        } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
+        if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
             console.log("adding 1 to randomWormNumber");
             randomWormNumber++;
             animateWorm();
@@ -96,14 +94,18 @@ function pickWorm () {
             animateWorm(); 
         }
 
-    }, intervalNum);
+    }, intervalNum); 
 
-    
+    function assignWormClass(num) {//pass in randomWormNumber
+        let activeWorm = wormArr[num]; //assigns this number to wormArr index
+        let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
+        let wormClass = document.querySelector(activeWormString);//assigning picked worm class
+        return wormClass;
+    }
 
     function animateWorm () {
-        let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
-        let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
-        let worm = document.querySelector(activeWormString);//assigning picked worm class
+
+        let worm = assignWormClass(randomWormNumber);
         let removeWorm;//could use .slide instead?
 
         
@@ -139,41 +141,41 @@ function pickWorm () {
 
 
         switch (htmlCounter) {//make animation speed up
-            case "0:50":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
-                intervalNum = 950;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
-                pickWorm();
-                break;
-            case "0:40":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
-                intervalNum = 900;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
-                pickWorm();
-                break;
-            case "0:30":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
-                intervalNum = 850;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
-                pickWorm();
-                break;
-            case "0:20":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
-                intervalNum = 800;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
-                pickWorm();
-                break; 
-            case "0:10":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
-                intervalNum = 800;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
-                pickWorm();
-                break;   
+            // case "0:50":
+            //     console.log("animation is speeding up");
+            //     clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+            //     intervalNum = 950;
+            //     console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+            //     pickWorm();
+            //     break;
+            // case "0:40":
+            //     console.log("animation is speeding up");
+            //     clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+            //     intervalNum = 900;
+            //     console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+            //     pickWorm();
+            //     break;
+            // case "0:30":
+            //     console.log("animation is speeding up");
+            //     clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+            //     intervalNum = 850;
+            //     console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+            //     pickWorm();
+            //     break;
+            // case "0:20":
+            //     console.log("animation is speeding up");
+            //     clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+            //     intervalNum = 800;
+            //     console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+            //     pickWorm();
+            //     break; 
+            // case "0:10":
+            //     console.log("animation is speeding up");
+            //     clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+            //     intervalNum = 800;
+            //     console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+            //     pickWorm();
+            //     break;   
             case "0:00":
                 console.log("animation is stopping");
                 clearInterval(animateWormsInterval);

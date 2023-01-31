@@ -257,6 +257,10 @@ To clone the Brain Worms repository:
    2. Actual bevahiour: On iPhone, user is given the option to "supress dialogs", which can break the game.
    3. Solution: 
 
+   1. Expected behaviour: User can click more than once on each worm whilst it is animated
+   2. Actual bevahiour: 
+   3. Solution: 
+
 ### Lighthouse
 
 ### Full Testing
