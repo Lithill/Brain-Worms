@@ -235,6 +235,11 @@ To clone the Brain Worms repository:
    3. Solution: Add an if statement to see if the chosen worm is currently going through it's animation (e.g. if it has the "switch" class applied to it), and if it is, do not go to the animateWorm function for that setInterval round. 
 
 7.
+   1. Expected behaviour: When player finishes game, and presses play again, the game works the same way it did the first time around.
+   2. Actual bevahiour: When player finishes game, and presses play again, the timer is broken and reads "0:0-1", and there are too many worm animations triggered.
+   3. Solution: Reset tickMinutes, tickSeconds and intervalNum before game is played again.
+
+8.
 	1. Expected behaviour: 
    2. Actual bevahiour: 
    3. Solution: 

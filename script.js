@@ -43,19 +43,18 @@ function pauseGame() {
 
 function restartGame() {
 
-    if (gameIsPlaying === true) {
+    if (gameIsPlaying) {
         alert("Are you ready to restart the game?"); //should this go directly to playGame()?
         clearInterval(animateWormsInterval);
         playerScore = 0; //reset player score
         document.getElementById("score").innerHTML = playerScore; //resets score on webpage
         tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
         tickSeconds = 60;
+        intervalNum = 1000;
         startAnimation();//starts the game again without asking for another 3 initials
-    } else if (gameIsPlaying === false) {
-        alert("Game isn't playing! Press play to start the game");
     } else {
-        alert("gameIsPlaying error");
-    }	
+        alert("Game isn't playing! Press play to start the game");
+    } 
 } 
 
 // ********************* random num and animation
@@ -159,28 +158,28 @@ function pickWorm () {
                 console.log("animation is speeding up");
                 clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
                 intervalNum = 500;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                console.log(`intervalNum at 0:40 if statement is ${intervalNum}`)
                 pickWorm();
                 break;
             case "0:30":
                 console.log("animation is speeding up");
                 clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
                 intervalNum = 425;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                console.log(`intervalNum at 0:30 if statement is ${intervalNum}`)
                 pickWorm();
                 break;
             case "0:20":
                 console.log("animation is speeding up");
                 clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
                 intervalNum = 250;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                console.log(`intervalNum at 0:20 if statement is ${intervalNum}`)
                 pickWorm();
                 break; 
             case "0:10":
                 console.log("animation is speeding up");
                 clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
                 intervalNum = 100;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
+                console.log(`intervalNum at 0:10 if statement is ${intervalNum}`)
                 pickWorm();
                 break;   
             case "0:00":
@@ -254,7 +253,8 @@ function gameOver() {
     //Add to leaderboard here if scores high enough
     playerScore = 0; //reset player score
     document.getElementById("score").innerHTML = playerScore; //resets score on webpage
-    tickMinutes = 00;//this line and line below resets timer, change these if you change timer elsewhere
-    tickSeconds = 00;
+    tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
+    tickSeconds = 60;
     document.getElementById("counter").innerHTML = "00:00"; //resets score on webpage
+    intervalNum = 1000;
 }
