@@ -9,9 +9,9 @@ function onlyLetters(str) { //returns true if string only contains letters, fals
 }
 
 function doublePlay() {
-    document.getElementById("double-play").style.display = "none";
-    //start animation
-    //start timer
+    document.getElementById("double-play").style.display = "none";//hides overlay
+    pickWorm();//starts animation
+    countdown(1);//starts timer
 }
 
 function playGame() { //alert boxes for getting player name and starting game
@@ -47,8 +47,8 @@ function pauseGame() {
 } 
 
 function newPauseGame() {
-    //stop animation
-    //stop timer
+    clearInterval(animateWormsInterval);//Stops animation. Would be nice to also abruptly stop animation, but for that I need to take setRemoveWorm() out of animateWorm()
+    clearTimeout(clockTimeout);//stops timer
 }
 
 // ********************* Restart button function
@@ -210,19 +210,20 @@ function pickWorm () {
 let tickCounter;//is this necessary here? Put it back in countdown function
 let tickMinutes;
 let tickSeconds = 60;
+let clockTimeout;
 
 //countdown function is edited code from https://gist.github.com/adhithyan15/4350689
 function countdown(minutes) {
 
     tickMinutes = minutes;
-
+    
     function tick() {
         tickCounter = document.getElementById("counter");
         var current_minutes = tickMinutes-1
         tickSeconds--;
         counter.innerHTML = current_minutes.toString() + ":" + (tickSeconds < 10 ? "0" : "") + String(tickSeconds);
         if ( tickSeconds > 0 ) {
-            setTimeout(tick, 1000);
+            clockTimeout = setTimeout(tick, 1000);
         } else {
             if (tickMinutes > 1) {
                 countdown(tickMinutes-1);           
