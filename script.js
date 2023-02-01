@@ -8,10 +8,17 @@ function onlyLetters(str) { //returns true if string only contains letters, fals
 	return /^[A-Za-z]*$/.test(str); 
 }
 
+function doublePlay() {
+    document.getElementById("double-play").style.display = "none";
+    //start animation
+    //start timer
+}
+
 function playGame() { //alert boxes for getting player name and starting game
 
     if (gameIsPlaying) {
-        alert("Did you mean to pause the game? Game is paused. Press 'OK' when you want to continue, then 'restart' if you want to start a new game");
+        document.getElementById("double-play").style.display = "block";
+        newPauseGame();
     } else {
 		playerName = prompt("Please enter three initials", 'E.g. "HPD"');
 
@@ -38,6 +45,11 @@ function pauseGame() {
         alert("gameIsPlaying error");
     }
 } 
+
+function newPauseGame() {
+    //stop animation
+    //stop timer
+}
 
 // ********************* Restart button function
 

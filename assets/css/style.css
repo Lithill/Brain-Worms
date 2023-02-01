@@ -100,6 +100,7 @@ button:hover {
     ". embarrassment ."
     "anxiety . dread"; 
   grid-area: worm-box; 
+  cursor: pointer;
 }
 
 .game-buttons {  
@@ -111,6 +112,7 @@ button:hover {
 	grid-template-areas:
 		"play-button-div pause-button-div restart-button-div";
 	grid-area: game-buttons;
+	/* cursor: pointer; */
 }
 
 /******************************** Worms  */
@@ -163,6 +165,34 @@ button:hover {
 	background-position-y: 81px;
 }
 
+/******************************** Overlay  */
+
+.overlay {
+	position: fixed; /* Sit on top of the page content */
+	display: none; 
+	width: 50%; /* Full width (cover the whole page) */
+	height: 50%; /* Full height (cover the whole page) */
+	background-color: whitesmoke; /* Black background with opacity */
+	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+	border: 4px solid black;
+}
+
+#double-play { 
+
+}
+
+#ok-button {
+	background-color:  rgba(255, 255, 255, 0.5);
+	transition-property: background-color;
+  	transition-duration: 750ms;
+}
+
+#ok-button:hover {
+	background-color: #b2e7e9;
+}
+
+
+
 /******************************** Animation */
 
 .slide {
@@ -170,6 +200,7 @@ button:hover {
 	animation-name: slide;
 	animation-duration: 2s;
 	animation-iteration-count: 1;
+	cursor: pointer;
   }
 
   @keyframes slide {
