@@ -177,17 +177,14 @@ button:hover {
 	border: 4px solid black;
 }
 
-#double-play { 
 
-}
-
-#ok-button {
+#ok-button, #smash-button, #overlay-play-button {
 	background-color:  rgba(255, 255, 255, 0.5);
 	transition-property: background-color;
   	transition-duration: 750ms;
 }
 
-#ok-button:hover {
+#ok-button:hover, #smash-button:hover, #overlay-play-button:hover {
 	background-color: #b2e7e9;
 }
 

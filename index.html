@@ -25,9 +25,13 @@
 <body>
 		<div class="container">
 <!-- Left column -->
-		    <div class="title">
-				<h1>Brain Worms</h1>
-				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
+<!-------------------- Overlays -->
+			<div class="overlay" id="play-game">
+				<form method="GET" id="form"> <!-- Do I need more in here? Is GET right? -->
+					<label for="playerName">Please enter three initials.</label><br>
+  					<input type="text" id="playerName" name="playerName" placeholder='E.g. "HPD"' required><br>
+					<button type="submit" id ="overlay-play-button"><strong>Show Me the Worms</strong></button> <!--Does this button need an onclick?-->
+				</form>
 			</div>
 			<div class="overlay" id="double-play">
 				<p>Did you mean to pause the game?</p>
@@ -36,6 +40,18 @@
 				<button id ="ok-button" onclick="doublePlay()">
 					<p>OK</p>
 				</button>
+			</div>
+			<!-- <div class="overlay" id="smash-worms">
+				<p>Thank you ${playerName}!</p>
+				<p><strong>Are you ready to smash some worms?</strong></p>
+				<button id ="smash-button" onclick="smashWorms()">
+					<p>OK</p>
+				</button>
+			</div> -->
+<!-- Visible Left Column -->
+		    <div class="title">
+				<h1>Brain Worms</h1>
+				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
 			</div>
 			<div class="instructions">
 				<p>Click each worm as it appears</p>

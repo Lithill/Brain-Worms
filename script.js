@@ -20,10 +20,12 @@ function playGame() { //alert boxes for getting player name and starting game
         document.getElementById("double-play").style.display = "block";
         newPauseGame();
     } else {
-		playerName = prompt("Please enter three initials", 'E.g. "HPD"');
+		playerName = "need to get this";
+        document.getElementById("play-game").style.display = "block";
 
         if ((playerName.length === 3) && (onlyLetters(playerName))) {
-            alert("Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?");
+
+            alert("Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?");//already in index commented out
             countdown(1);
             startAnimation();
             gameIsPlaying = true;
