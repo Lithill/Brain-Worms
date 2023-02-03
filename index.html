@@ -35,15 +35,21 @@
 			</div>
 			<div class="overlay" id="hello-div">
 				<p id="hello-text">Insert text here</p>
-				<button id ="ok-button">
+				<button class ="ok-button">
 					<p onclick="playGame()">OK</p>
+				</button>
+			</div>
+			<div class="overlay" id="pause-game">
+				<p id="pause-text">Insert text here</p>
+				<button class ="ok-button" onclick="playGame()">
+					<p>OK</p>
 				</button>
 			</div>
 			<div class="overlay" id="double-play">
 				<p>Did you mean to pause the game?</p>
 				<p><strong>Game is paused.</strong></p>
 				<p>Press 'OK' when you want to resume, then 'restart' if you want to start a new game.</p>
-				<button id ="ok-button" onclick="doublePlay()">
+				<button class ="ok-button" onclick="doublePlay()">
 					<p>OK</p>
 				</button>
 			</div>
@@ -73,7 +79,7 @@
 						</button>
 					</div>
 					<div class="pause-button-div">
-						<button id ="pauseButton" onclick="pauseGame()">
+						<button id ="pauseButton" onclick="pauseButton()">
 							<img src="assets/images/pause-button.webp" alt="Pause button">
 							<p class="hide">Pause</p>
 						</button>

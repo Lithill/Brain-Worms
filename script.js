@@ -18,24 +18,21 @@ function pressPlay() { //alert boxes for getting player name and starting game
 
     if (gameIsPlaying) {
         document.getElementById("double-play").style.display = "block";
-        newPauseGame();
+        pauseGame();
     } else {
         document.getElementById("play-game").style.display = "block";
     }
 }
 
-
-
-
-
 function hello() {
     playerName = document.getElementById('playerName').value;
-    console.log(playerName);
     document.getElementById("play-game").style.display = "none";
+
 
     if ((playerName.length === 3) && (onlyLetters(playerName))) {
         document.getElementById("hello-text").innerHTML = "Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?";
-        document.getElementById("hello-div").style.display = "block";       
+        document.getElementById("hello-div").style.display = "block";
+        // document.getElementById("playerName").focus();//Why isn't this line working?    
         playGame();
     } else {
         hello();
@@ -45,6 +42,7 @@ function hello() {
 
 function playGame() {
     document.getElementById("hello-div").style.display = "none";
+    document.getElementById("pause-game").style.display = "none";
     countdown(1);
     startAnimation();
     gameIsPlaying = true;
@@ -53,18 +51,18 @@ function playGame() {
 
 // ********************* Pause button function
 
-function pauseGame() {
+function pauseButton() {
+    document.getElementById("pause-game").style.display = "block";
 
-    if (gameIsPlaying === true) {
-        alert("Game is paused. Press 'OK' when you want to continue");
-    } else if (gameIsPlaying === false) {
-        alert("Game isn't playing! Press play to start the game");
+    if (gameIsPlaying) {
+        pauseGame();
+        document.getElementById("pause-text").innerHTML = "Game is paused. Press 'OK' when you want to continue";
     } else {
-        alert("gameIsPlaying error");
+        document.getElementById("pause-text").innerHTML = "Game isn't playing! Press play to start the game";//need to make a differet overlay because of the button?
     }
-} 
+}
 
-function newPauseGame() {
+function pauseGame() {
     clearInterval(animateWormsInterval);//Stops animation. Would be nice to also abruptly stop animation, but for that I need to take setRemoveWorm() out of animateWorm()
     clearTimeout(clockTimeout);//stops timer
 }
