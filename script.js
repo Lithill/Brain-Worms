@@ -286,8 +286,13 @@ function wormClick() {
 
 function gameOver() {
     gameIsPlaying = false;
-    alert(`Game Over. You scored ${playerScore} points!`);
+    document.getElementById("game-over-text").innerHTML = `Game Over. You scored ${playerScore} points!`;
+    document.getElementById("game-over").style.display = "block";
+}
+
+function okGameOver() {
     //Add to leaderboard here if scores high enough
+    document.getElementById("game-over").style.display = "none";
     playerScore = 0; //reset player score
     document.getElementById("score").innerHTML = playerScore; //resets score on webpage
     tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
