@@ -27,11 +27,17 @@
 <!-- Left column -->
 <!-------------------- Overlays -->
 			<div class="overlay" id="play-game">
-				<form method="GET" id="form"> <!-- Do I need more in here? Is GET right? -->
+				<form id="form" onsubmit="return false"> 
 					<label for="playerName">Please enter three initials.</label><br>
-  					<input type="text" id="playerName" name="playerName" placeholder='E.g. "HPD"' required><br>
-					<button type="submit" id ="overlay-play-button"><strong>Show Me the Worms</strong></button> <!--Does this button need an onclick?-->
+					<input type="text" id="playerName" name="playerName" placeholder='E.g. "HPD"' required><br>
+					<input type="submit" id ="overlay-play-button" onclick="hello();"><strong>Show Me the Worms</strong></input> <!--Does this button need an onclick?-->
 				</form>
+			</div>
+			<div class="overlay" id="hello-div">
+				<p id="hello-text">Insert text here</p>
+				<button id ="ok-button" onclick="doublePlay()">
+					<p>OK</p>
+				</button>
 			</div>
 			<div class="overlay" id="double-play">
 				<p>Did you mean to pause the game?</p>

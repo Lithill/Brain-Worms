@@ -274,6 +274,8 @@ To clone the Brain Worms repository:
 
 ## Credits
 
+* Thanks are given to [CodeBrainer](https://www.codebrainer.com/blog/contact-form-in-javascript) for their tutorial on building working forms.
+
 ### Code Used
 
 * [Layoutit!](https://grid.layoutit.com/) was used to create custom css code for the grid.
