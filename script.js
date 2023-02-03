@@ -14,7 +14,7 @@ function doublePlay() {
     countdown(1);//starts timer
 }
 
-function pressPlay() { //alert boxes for getting player name and starting game
+function pressPlay() { //getting player name and starting game
 
     if (gameIsPlaying) {
         document.getElementById("double-play").style.display = "block";
@@ -67,23 +67,31 @@ function pauseGame() {
     clearTimeout(clockTimeout);//stops timer
 }
 
-// ********************* Restart button function
+// ********************* Restart button functions
 
 function restartGame() {
 
+    document.getElementById("restart-game").style.display = "block";
+
     if (gameIsPlaying) {
-        alert("Are you ready to restart the game?"); //should this go directly to playGame()?
-        clearInterval(animateWormsInterval);
-        playerScore = 0; //reset player score
-        document.getElementById("score").innerHTML = playerScore; //resets score on webpage
-        tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
-        tickSeconds = 60;
-        intervalNum = 1000;
-        startAnimation();//starts the game again without asking for another 3 initials
+        document.getElementById("restart-text").innerHTML = "Are you ready to restart the game?";
+        pauseGame();
     } else {
-        alert("Game isn't playing! Press play to start the game");
+        document.getElementById("restart-text").innerHTML = "Game isn't playing! Press OK to start the game";
     } 
 } 
+
+function okRestartGame() {
+    document.getElementById("restart-game").style.display = "none";
+    clearInterval(animateWormsInterval);
+    playerScore = 0; //reset player score
+    document.getElementById("score").innerHTML = playerScore; //resets score on webpage
+    tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
+    tickSeconds = 60;
+    intervalNum = 1000;
+    countdown(1);
+    startAnimation();//starts the game again without asking for another 3 initials
+}
 
 // ********************* random num and animation
 
