@@ -1,3 +1,17 @@
+// ********************* Disable/Enable Game Buttons
+
+function disableButtons() {
+    document.querySelector('#playButton').disabled = true;
+    document.querySelector('#pauseButton').disabled = true;
+    document.querySelector('#restartButton').disabled = true;
+}
+
+function enableButtons() {
+    document.querySelector('#playButton').disabled = false;
+    document.querySelector('#pauseButton').disabled = false;
+    document.querySelector('#restartButton').disabled = false;
+}
+
 // ********************* Play button functions
 
 let playerName;
@@ -68,6 +82,9 @@ function pauseButton() {
 }
 
 function pauseGame() {
+    // document.querySelector('#playButton').disabled = false;
+    // document.querySelector('#pauseButton').disabled = false;
+    // document.querySelector('#restartButton').disabled = false;
     clearInterval(animateWormsInterval);//Stops animation. Would be nice to also abruptly stop animation, but for that I need to take setRemoveWorm() out of animateWorm()
     clearTimeout(clockTimeout);//stops timer
 }
