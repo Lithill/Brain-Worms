@@ -41,13 +41,13 @@
 		</div>
 		<div class="overlay" id="pause-game">
 			<p id="pause-text">Insert text here</p>
-			<button class ="ok-button" onclick="playGame()">
+			<button class ="ok-button" id ="pause-overlay" onclick="playGame()">
 				<p>OK</p>
 			</button>
 		</div>
 		<div class="overlay" id="restart-game">
 			<p id="restart-text">Insert text here</p>
-			<button class ="ok-button" onclick="okRestartGame()">
+			<button class ="ok-button" id ="restart-overlay" onclick="okRestartGame()">
 				<p>OK</p>
 			</button>
 		</div>
@@ -65,24 +65,18 @@
 					<p>OK</p>
 				</button>
 		</div>
-		<!-- <div class="overlay" id="smash-worms">
-				<p>Thank you ${playerName}!</p>
-				<p><strong>Are you ready to smash some worms?</strong></p>
-				<button id ="smash-button" onclick="smashWorms()">
-					<p>OK</p>
-				</button>
-			</div> -->
-<!-- Visible Left Column -->
+<!-- Game Title -->
 		<div class="title">
 				<h1>Brain Worms</h1>
 				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
 		</div>
+<!-- Instructions -->
 		<div class="instructions">
 				<p>Click each worm as it appears</p>
 				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
 				<p>Don't let the worms eat your brain</p>
 		</div>
-			
+<!-- Game Buttons -->			
 		<div class="game-buttons">
 			<div class="play-button-div">
 				<button id ="playButton" onclick="pressPlay()">

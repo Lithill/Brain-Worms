@@ -10,6 +10,8 @@ function enableButtons() {
     document.querySelector('#playButton').disabled = false;
     document.querySelector('#pauseButton').disabled = false;
     document.querySelector('#restartButton').disabled = false;
+    document.getElementById("pause-game").style.display = "none";
+    document.getElementById("restart-game").style.display = "none";
 }
 
 // ********************* Play button functions
@@ -24,11 +26,13 @@ function onlyLetters(str) { //returns true if string only contains letters, fals
 
 function doublePlay() {
     document.getElementById("double-play").style.display = "none";//hides overlay
+    enableButtons();
     pickWorm();//starts animation
     countdown(1);//starts timer
 }
 
 function pressPlay() { //getting player name and starting game
+    disableButtons();
 
     if (gameIsPlaying) {
         document.getElementById("double-play").style.display = "block";
@@ -56,12 +60,14 @@ function greeting() {
 
 function smashWorms() {
     document.getElementById("hello-div").style.display = "none";
+    enableButtons();
     playGame();
 }
 
 function playGame() {
     document.getElementById("hello-div").style.display = "none";
     document.getElementById("pause-game").style.display = "none";
+    enableButtons();
     countdown(1);
     startAnimation();
     gameIsPlaying = true;
@@ -72,19 +78,18 @@ function playGame() {
 
 function pauseButton() {
     document.getElementById("pause-game").style.display = "block";
+    disableButtons();
 
     if (gameIsPlaying) {
         pauseGame();
         document.getElementById("pause-text").innerHTML = "Game is paused. Press 'OK' when you want to continue";
     } else {
-        document.getElementById("pause-text").innerHTML = "Game isn't playing! Press play to start the game";//need to make a differet overlay because of the button?
+        document.getElementById("pause-text").innerHTML = "Game isn't playing! Press play to start the game";
+        document.getElementById("pause-overlay").onclick = enableButtons;
     }
 }
 
 function pauseGame() {
-    // document.querySelector('#playButton').disabled = false;
-    // document.querySelector('#pauseButton').disabled = false;
-    // document.querySelector('#restartButton').disabled = false;
     clearInterval(animateWormsInterval);//Stops animation. Would be nice to also abruptly stop animation, but for that I need to take setRemoveWorm() out of animateWorm()
     clearTimeout(clockTimeout);//stops timer
 }
@@ -94,17 +99,20 @@ function pauseGame() {
 function restartGame() {
 
     document.getElementById("restart-game").style.display = "block";
+    disableButtons();
 
     if (gameIsPlaying) {
         document.getElementById("restart-text").innerHTML = "Are you ready to restart the game?";
         pauseGame();
     } else {
-        document.getElementById("restart-text").innerHTML = "Game isn't playing! Press OK to start the game";
+        document.getElementById("restart-text").innerHTML = "Game isn't playing! Press 'Play' to start the game";
+        document.getElementById("restart-overlay").onclick = enableButtons;
     } 
 } 
 
 function okRestartGame() {
     document.getElementById("restart-game").style.display = "none";
+    enableButtons();
     clearInterval(animateWormsInterval);
     playerScore = 0; //reset player score
     document.getElementById("score").innerHTML = playerScore; //resets score on webpage
@@ -310,10 +318,13 @@ function gameOver() {
     gameIsPlaying = false;
     document.getElementById("game-over-text").innerHTML = `Game Over. You scored ${playerScore} points!`;
     document.getElementById("game-over").style.display = "block";
+    disableButtons();
 }
 
 function okGameOver() {
+
     //Add to leaderboard here if scores high enough
+    enableButtons();//take this out of here and put after leaderboard - when leaderboard is a thing
     document.getElementById("game-over").style.display = "none";
     playerScore = 0; //reset player score
     document.getElementById("score").innerHTML = playerScore; //resets score on webpage
