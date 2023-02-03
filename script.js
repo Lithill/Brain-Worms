@@ -14,27 +14,16 @@ function doublePlay() {
     countdown(1);//starts timer
 }
 
-function playGame() { //alert boxes for getting player name and starting game
+function pressPlay() { //alert boxes for getting player name and starting game
 
     if (gameIsPlaying) {
         document.getElementById("double-play").style.display = "block";
         newPauseGame();
     } else {
         document.getElementById("play-game").style.display = "block";
-        // playerName = document.getElementById("playerName").value;
-
-    //     if ((playerName.length === 3) && (onlyLetters(playerName))) {
-
-    //         alert("Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?");//already in index commented out
-    //         countdown(1);
-    //         startAnimation();
-    //         gameIsPlaying = true;
-    //     } else {
-    //         playGame();
-    //     }
-    // }
     }
 }
+
 
 
 
@@ -43,21 +32,23 @@ function hello() {
     playerName = document.getElementById('playerName').value;
     console.log(playerName);
     document.getElementById("play-game").style.display = "none";
-    document.getElementById("hello-div").style.display = "block";
-    // if ((playerName.length === 3) && (onlyLetters(playerName))) {
-    //     // document.getElementById("hello-text").innerHTML = "Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?";
-    //     document.getElementById("hello-div").style.display = "block";//put new overlay on here to say hi, and the if statement based on name 
-        
-        
-    //     countdown(1);
-    //     startAnimation();
-    //     gameIsPlaying = true;
-    // } else {
-    //     playGame();
-    // }
 
-    
+    if ((playerName.length === 3) && (onlyLetters(playerName))) {
+        document.getElementById("hello-text").innerHTML = "Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?";
+        document.getElementById("hello-div").style.display = "block";       
+        playGame();
+    } else {
+        hello();
     }
+
+}
+
+function playGame() {
+    document.getElementById("hello-div").style.display = "none";
+    countdown(1);
+    startAnimation();
+    gameIsPlaying = true;
+}
 
 
 // ********************* Pause button function
