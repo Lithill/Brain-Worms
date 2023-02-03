@@ -28,16 +28,21 @@ function hello() {
     playerName = document.getElementById('playerName').value;
     document.getElementById("play-game").style.display = "none";
 
-
     if ((playerName.length === 3) && (onlyLetters(playerName))) {
-        document.getElementById("hello-text").innerHTML = "Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?";
-        document.getElementById("hello-div").style.display = "block";
-        // document.getElementById("playerName").focus();//Why isn't this line working?    
-        playGame();
+        greeting()
     } else {
         hello();
     }
+}
 
+function greeting() {
+    document.getElementById("hello-text").innerHTML = "Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?";
+    document.getElementById("hello-div").style.display = "block";
+}
+
+function smashWorms() {
+    document.getElementById("hello-div").style.display = "none";
+    playGame();
 }
 
 function playGame() {
