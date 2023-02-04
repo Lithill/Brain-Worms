@@ -323,11 +323,10 @@ function gameOver() {
     disableButtons();
 }
 
-function okGameOver() {
+function exitLeaderboard() {
 
-    //Add to leaderboard here if scores high enough
-    enableButtons();//take this out of here and put after leaderboard - when leaderboard is a thing
-    document.getElementById("game-over").style.display = "none";
+    enableButtons();
+    document.getElementById("leaderboard-overlay").style.display = "none";    
     playerScore = 0; //reset player score
     document.getElementById("score").innerHTML = playerScore; //resets score on webpage
     tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
@@ -337,23 +336,43 @@ function okGameOver() {
 }
 
 // ********************* Leaderboard
+let leaderboardArr = [];
 
-function storeLeaderboard() {
-    let leaderboardArr = [];
+function ifHighScore() {
+    document.getElementById("game-over").style.display = "none";
+    // playerName = playerName.toUpperCase();
     
-}
-
-function openLeaderboard() {
-    document.getElementById("leaderboard-overlay-text").innerHTML = `Well done ${playerName}, you scored ${playerScore}`;
+    leaderboardArr.push({player: playerName.toUpperCase(), score: playerScore});//add playerScore to array
+    
+    leaderboardArr.sort(function(a, b){//https://stackoverflow.com/questions/17684921/sort-json-object-in-javascript
+      return b.score - a.score;//this sorts highest score to lowest
+    });
+    
+    //if more than 10 items, get rid of smallest score
+    if (leaderboardArr.length > 10) {
+      leaderboardArr.pop();
+    }
+    
+    //send to local storage
+    // localStorage.setItem('topTen', JSON.stringify(leaderboardArr));
+    
+    leaderboardHTML();
+    
+  }
+  
+  
+  function leaderboardHTML() {//save to arr before the variables get wiped 
+    let paragraphs = '';
+    
+    for (let i in leaderboardArr) {
+      paragraphs += `<p>${leaderboardArr[i]['player']}: ${leaderboardArr[i]['score']}</p>`;
+    }
+    
+    document.getElementById("leaderboard-overlay-text").innerHTML = paragraphs;
     document.getElementById("leaderboard-overlay").style.display = "block";
-    disableButtons();
-}
+    
+  }
 
-function exitLeaderboard() {
-    document.getElementById("leaderboard-overlay").style.display = "none";
-    enableButtons();
-}
-
-function showHighScores() {
-    // document.getElementById("leaderboard-overlay-text").innerHTML = `Well done ${playerName}, you scored ${playerScore}`;
-}
+  function openLeaderboard() {
+    document.getElementById("leaderboard-overlay").style.display = "block";
+  }
