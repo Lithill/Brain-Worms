@@ -100,6 +100,13 @@
 		</div>
 	<!-- Middle column -->
 		<div class="brain">
+			<div class="overlay" id="leaderboard-overlay">
+				<p id="leaderboard-overlay-text">Insert highscores here</p>
+				<br>
+				<button class ="ok-button">
+					<p onclick="exitLeaderboard()">Exit Leaderboard</p>
+				</button>
+			</div>
 			<div class="worm-box">
 				<div class="fear worm"></div>
 				<div class="shame worm"></div>
@@ -109,7 +116,6 @@
 				<div class="dread worm"></div>
 			</div>
 		</div>
-			
 <!-- Right column -->
 		<div class="leaderboard">
 <!-- Game timer -->
@@ -117,10 +123,13 @@
 			<p id="counter" class="counter-class">00:00</p>
 			<h1 class="score-word">Score</h1>
 			<p id="score" class="score-class">0</p>
-<!-- Leaderboard -->
-			<h1 class="hide">Leaderboard</h1>
 			<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game" class="hide">
-			<p class="hide">Insert names and scores here</p>
+<!-- Leaderboard -->
+			<br>
+			<br>
+			<button id ="leaderboard-button" class="hide" onclick="leaderboard()">
+				<h1>Leaderboard</h1>
+			</button>
 		</div>
 	</div>
 		

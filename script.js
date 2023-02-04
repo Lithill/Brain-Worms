@@ -333,3 +333,13 @@ function okGameOver() {
     document.getElementById("counter").innerHTML = "00:00"; //resets score on webpage
     intervalNum = 1000;
 }
+
+// ********************* Leaderboard
+
+function leaderboard() {
+    document.getElementById("leaderboard-overlay").style.display = "block";
+}
+
+function exitLeaderboard() {
+    document.getElementById("leaderboard-overlay").style.display = "none";
+}

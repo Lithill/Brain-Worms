@@ -177,15 +177,30 @@ button:hover {
 	border: 4px solid black;
 }
 
-.ok-button, #smash-button, #overlay-play-button {
+#leaderboard-overlay {
+	position: fixed; /* Sit on top of the page content */
+	display: none; 
+	width: 50%; 
+	height: 50%; 
+	background-color: whitesmoke; /* Black background with opacity */
+	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+	border: 4px solid black;
+}
+
+.ok-button, #smash-button, #overlay-play-button, #leaderboard-button {
 	background-color:  rgba(255, 255, 255, 0.5);
 	transition-property: background-color;
   	transition-duration: 750ms;
 }
 
-.ok-button:hover, #smash-button:hover, #overlay-play-button:hover {
+.ok-button:hover, #smash-button:hover, #overlay-play-button:hover, #leaderboard-button:hover {
 	background-color: #b2e7e9;
 }
+
+#leaderboard-button {
+
+}
+
 
 
 
