@@ -338,7 +338,13 @@ function okGameOver() {
 
 // ********************* Leaderboard
 
-function leaderboard() {
+function storeLeaderboard() {
+    let leaderboardArr = [];
+    
+}
+
+function openLeaderboard() {
+    document.getElementById("leaderboard-overlay-text").innerHTML = `Well done ${playerName}, you scored ${playerScore}`;
     document.getElementById("leaderboard-overlay").style.display = "block";
     disableButtons();
 }
@@ -346,4 +352,8 @@ function leaderboard() {
 function exitLeaderboard() {
     document.getElementById("leaderboard-overlay").style.display = "none";
     enableButtons();
+}
+
+function showHighScores() {
+    // document.getElementById("leaderboard-overlay-text").innerHTML = `Well done ${playerName}, you scored ${playerScore}`;
 }

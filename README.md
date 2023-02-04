@@ -275,6 +275,7 @@ To clone the Brain Worms repository:
 ## Credits
 
 * Thanks are given to [CodeBrainer](https://www.codebrainer.com/blog/contact-form-in-javascript) for their tutorial on building working forms.
+* Thanks are given to [W3Schools](https://www.w3schools.com/js/js_json_objects.asp) for their information on JSON Object Literals.
 
 ### Code Used
 
