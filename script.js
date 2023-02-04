@@ -4,12 +4,14 @@ function disableButtons() {
     document.querySelector('#playButton').disabled = true;
     document.querySelector('#pauseButton').disabled = true;
     document.querySelector('#restartButton').disabled = true;
+    document.querySelector('#leaderboard-button').disabled = true;
 }
 
 function enableButtons() {
     document.querySelector('#playButton').disabled = false;
     document.querySelector('#pauseButton').disabled = false;
     document.querySelector('#restartButton').disabled = false;
+    document.querySelector('#leaderboard-button').disabled = false;
     document.getElementById("pause-game").style.display = "none";
     document.getElementById("restart-game").style.display = "none";
 }
@@ -338,8 +340,10 @@ function okGameOver() {
 
 function leaderboard() {
     document.getElementById("leaderboard-overlay").style.display = "block";
+    disableButtons();
 }
 
 function exitLeaderboard() {
     document.getElementById("leaderboard-overlay").style.display = "none";
+    enableButtons();
 }
