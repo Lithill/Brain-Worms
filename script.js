@@ -363,9 +363,11 @@ function ifHighScore() {
   
   function leaderboardHTML() {//save to arr before the variables get wiped 
     let paragraphs = '';
+    let index = 0;
     
     for (let i in leaderboardArr) {
-      paragraphs += `<p>${leaderboardArr[i]['player']}: ${leaderboardArr[i]['score']}</p>`;
+      index ++;  
+      paragraphs += `<p>${(index)}- ${leaderboardArr[i]['player']}: ${leaderboardArr[i]['score']}</p>`;
     }
     
     document.getElementById("leaderboard-overlay-text").innerHTML = paragraphs;
