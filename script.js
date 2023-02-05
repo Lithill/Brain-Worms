@@ -296,38 +296,6 @@ function pickWorm () {
 
 // ******************* POW
 
-function powOn(event) {
-
-    if (gameIsPlaying) {
-        printMousePos(event);  
-        setTimeout(powOff, 400);
-        console.log("weird");
-    }
-
-    // let object = document.getElementById("worm-box");
-    // console.log(object);
-
-    // if (object.onmouseover = function(){
-        // printMousePos(event);  
-        // setTimeout(powOff, 400);
-    // });
-
-}
-  
-function powOff() {
-    document.getElementById("pow").style.display = "none";
-}
-  
-  
-// https://stackoverflow.com/questions/23744605/javascript-get-x-and-y-coordinates-on-mouse-click & https://www.geeksforgeeks.org/how-to-position-a-div-at-specific-coordinates/
-function printMousePos(event) {
-    pow.style.left = (event.clientX - 70) + 'px';
-    pow.style.top = (event.clientY - 100) + 'px';
-    document.getElementById("pow").style.display = "block";
-}
-  
-document.addEventListener("click", printMousePos);
-
 
 // ********************* Game start timer 
 
