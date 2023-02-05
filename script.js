@@ -297,8 +297,21 @@ function pickWorm () {
 // ******************* POW
 
 function powOn(event) {
-    printMousePos(event);  
-    setTimeout(powOff, 400);
+
+    if (gameIsPlaying) {
+        printMousePos(event);  
+        setTimeout(powOff, 400);
+        console.log("weird");
+    }
+
+    // let object = document.getElementById("worm-box");
+    // console.log(object);
+
+    // if (object.onmouseover = function(){
+        // printMousePos(event);  
+        // setTimeout(powOff, 400);
+    // });
+
 }
   
 function powOff() {
