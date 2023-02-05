@@ -250,6 +250,11 @@ To clone the Brain Worms repository:
    3. Solution: Swap alert boxes for overlays.
 
 10.
+   1. Expected behaviour: User can't gain more points by multiply clicks per animation.
+   2. Actual bevahiour: Users can get multiple points by clicking on the same animation.
+   3. Solution: Insert click counter and if statement - if clicked once then add point.
+
+11.
    1. Expected behaviour: 
    2. Actual bevahiour: 
    3. Solution: 
@@ -262,10 +267,6 @@ To clone the Brain Worms repository:
 
    1. Expected behaviour: Worms cannot be seen before animation
    2. Actual bevahiour: Worms can sometimes be seen before animation on bigger screen sizes
-   3. Solution: 
-
-   1. Expected behaviour: User can click more than once on each worm whilst it is animated
-   2. Actual bevahiour: 
    3. Solution: 
 
    1. Expected behaviour: 

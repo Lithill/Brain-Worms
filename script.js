@@ -177,6 +177,7 @@ function pickWorm () {
     }
 
     function animateWorm () {
+        let clickNumber = 0;
 
         let removeWorm;//could use .slide instead?
         
@@ -214,6 +215,16 @@ function pickWorm () {
         console.log(htmlCounter);
 
 
+        function wormClick() {
+
+            clickNumber ++;
+        
+            if (clickNumber === 1) {
+                playerScore ++;
+                score.innerHTML = playerScore.toString();
+            } 
+        
+        }
 
         switch (htmlCounter) {//make animation speed up
             case "0:50":
@@ -301,13 +312,8 @@ function startAnimation() {
 
 // ********************* Score
 
-
     // wormDivs = document.getElementsByClassName("worm");
     
-function wormClick() {
-    playerScore ++;
-    score.innerHTML = playerScore.toString();
-}
     
     //loop taken from https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur
     // for (var i = 0 ; i < wormDivs.length; i++) {
