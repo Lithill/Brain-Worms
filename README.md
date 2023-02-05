@@ -240,15 +240,21 @@ To clone the Brain Worms repository:
    3. Solution: Reset tickMinutes, tickSeconds and intervalNum before game is played again.
 
 8.
-	1. Expected behaviour: 
+	1. Expected behaviour: When pausing the game and navigating away from the page, everything should be paused still when you come back to the page.
+   2. Actual bevahiour: When pausing the game and navigating away from the page, the worm animation continues and the timer starts counting down from where it was set. 
+   3. Solution: Swap alert boxes for overlays.
+
+9.
+	1. Expected behaviour: On iPhone, user isn't given the option to stop the alert boxes popping up. 
+   2. Actual bevahiour: On iPhone, user is given the option to "supress dialogs", which can break the game.
+   3. Solution: Swap alert boxes for overlays.
+
+10.
+   1. Expected behaviour: 
    2. Actual bevahiour: 
    3. Solution: 
    
 ### Known Bugs
-
-	1. Expected behaviour: When pausing the game and navigating away from the page, everything should be paused still when you come back to the page.
-   2. Actual bevahiour: When pausing the game and navigating away from the page, the worm animation continues and the timer starts counting down from where it was set. 
-   3. Solution: 
 
    1. Expected behaviour: Worm divs stay over brain picture in different screen sizes
    2. Actual bevahiour: Worm divs are not always on brain picture in different screen sizes
@@ -258,11 +264,11 @@ To clone the Brain Worms repository:
    2. Actual bevahiour: Worms can sometimes be seen before animation on bigger screen sizes
    3. Solution: 
 
-   1. Expected behaviour: On iPhone, user isn't given the option to stop the alert boxes popping up. 
-   2. Actual bevahiour: On iPhone, user is given the option to "supress dialogs", which can break the game.
+   1. Expected behaviour: User can click more than once on each worm whilst it is animated
+   2. Actual bevahiour: 
    3. Solution: 
 
-   1. Expected behaviour: User can click more than once on each worm whilst it is animated
+   1. Expected behaviour: 
    2. Actual bevahiour: 
    3. Solution: 
 
@@ -275,7 +281,7 @@ To clone the Brain Worms repository:
 ## Credits
 
 * Thanks are given to [CodeBrainer](https://www.codebrainer.com/blog/contact-form-in-javascript) for their tutorial on building working forms.
-* Thanks are given to [W3Schools](https://www.w3schools.com/js/js_json_objects.asp) for their information on JSON Object Literals.
+* Thanks are given to [Catalin Pit](https://catalins.tech/store-array-in-localstorage/) for their tutorial on local storage.
 
 ### Code Used
 
