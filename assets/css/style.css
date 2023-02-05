@@ -165,7 +165,7 @@ button:hover {
 	background-position-y: 81px;
 }
 
-/******************************** Overlay  */
+/******************************** Overlays  */
 
 .overlay {
 	position: fixed; /* Sit on top of the page content */
@@ -197,12 +197,16 @@ button:hover {
 	background-color: #b2e7e9;
 }
 
-#leaderboard-button {
-
-}
-
-
-
+#pow {
+	background-image: url("../images/pow.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: fixed; /* Sit on top of the page content */
+	display: none; 
+	width: 25%; /* Full width (cover the whole page) */
+	height: 25%; /* Full height (cover the whole page) */
+	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  }
 
 /******************************** Animation */
 
