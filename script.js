@@ -321,6 +321,10 @@ function gameOver() {
     gameIsPlaying = false;
     document.getElementById("game-over-text").innerHTML = `Game Over. You scored ${playerScore} points!`;
     document.getElementById("game-over").style.display = "block";
+
+    //retrieve and parse array from local storage
+    leaderboardArr = JSON.parse(localStorage.getItem('topTen'));
+
     disableButtons();
 }
 
@@ -342,7 +346,7 @@ let leaderboardArr = [];
 function ifHighScore() {
     document.getElementById("game-over").style.display = "none";
     // playerName = playerName.toUpperCase();
-    
+
     leaderboardArr.push({player: playerName.toUpperCase(), score: playerScore});//add playerScore to array
     
     leaderboardArr.sort(function(a, b){//https://stackoverflow.com/questions/17684921/sort-json-object-in-javascript
@@ -355,9 +359,9 @@ function ifHighScore() {
     }
     
     //send to local storage
-    // localStorage.setItem('topTen', JSON.stringify(leaderboardArr));
+    localStorage.setItem('topTen', JSON.stringify(leaderboardArr));
     
-    leaderboardHTML();
+    openLeaderboard();
     
   }
   
@@ -372,11 +376,12 @@ function ifHighScore() {
     }
     
     document.getElementById("leaderboard-overlay-text").innerHTML = paragraphs;
-    document.getElementById("leaderboard-overlay").style.display = "block";
     
   }
 
   function openLeaderboard() {
+    leaderboardArr = JSON.parse(localStorage.getItem('topTen'));
     document.getElementById("leaderboard-overlay").style.display = "block";
     disableButtons();
+    leaderboardHTML();
   }
