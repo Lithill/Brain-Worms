@@ -73,6 +73,7 @@ function playGame() {
     countdown(1);
     startAnimation();
     gameIsPlaying = true;
+    document.querySelector('#leaderboard-button').disabled = true;
 }
 
 
@@ -377,4 +378,5 @@ function ifHighScore() {
 
   function openLeaderboard() {
     document.getElementById("leaderboard-overlay").style.display = "block";
+    disableButtons();
   }
