@@ -265,7 +265,7 @@ function pickWorm () {
             case "0:00":
                 console.log("animation is stopping");
                 clearInterval(animateWormsInterval);
-                gameOver();
+                setTimeout(gameOver, 2000);
                 break;  
             default:
                 break;

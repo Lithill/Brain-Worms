@@ -255,6 +255,11 @@ To clone the Brain Worms repository:
    3. Solution: Insert click counter and if statement - if clicked once then add point.
 
 11.
+   1. Expected behaviour: Player's "You scored x" number is the same across different parts of the page.
+   2. Actual bevahiour: Player's "You scored x" overlay number can be less than the actual score due to animation still being clickable after the overlay uses the playerScore. 
+   3. Solution: setTimeout on game-over overlay.
+
+12.
    1. Expected behaviour: 
    2. Actual bevahiour: 
    3. Solution: 
