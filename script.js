@@ -220,7 +220,28 @@ function pickWorm () {
             clickNumber ++;
         
             if (clickNumber === 1) {
-                playerScore ++;
+
+                switch (intervalNum) {
+                    case 1000:
+                        playerScore += 62;
+                        break;
+                    case 625:
+                        playerScore += 75;
+                        break;
+                    case 500:
+                        playerScore += 112;
+                        break;
+                    case 425:
+                        playerScore += 150;
+                        break;
+                    case 250:
+                        playerScore += 225;
+                        break;
+                    case 100:
+                        playerScore += 375;
+                        break;
+                }
+
                 score.innerHTML = playerScore.toString();
             } 
         
