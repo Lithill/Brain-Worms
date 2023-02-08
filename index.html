@@ -29,15 +29,15 @@
 <!-------------------- Overlays -->
 		<div class="overlay" id="play-game">
 			<form id="form" onsubmit="return false"> 
-				<label for="playerName">Please enter three initials.</label><br>
-				<input type="text" id="playerName" name="playerName" placeholder='E.g. "HPD"' required><br>
-				<input type="submit" id ="overlay-play-button" onclick="hello();"><strong>Show Me the Worms</strong></input> <!--Does this button need an onclick?-->
+				<label for="playerName"><p>Please enter three initials</p></label><br>
+				<input type="text" id="playerName" name="playerName" placeholder='E.g. "HPD"' required><br><br>
+				<input type="submit" id ="overlay-play-button" onclick="hello();"></input> <!--Does this button need an onclick?-->
 			</form>
 		</div>
 		<div class="overlay" id="hello-div">
 			<p id="hello-text">Insert text here</p>
-			<button class ="ok-button">
-				<p onclick="smashWorms()">OK</p>
+			<button class ="ok-button" onclick="smashWorms()">
+				<p>Show Me the Worms</p>
 			</button>
 		</div>
 		<div class="overlay" id="pause-game">
