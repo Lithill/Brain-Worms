@@ -185,12 +185,12 @@ To clone the Brain Worms repository:
 
 1.
 	1. Expected behaviour: Initial alert box does not accept any input that isn't a letter
-   2. Actual bevahiour: Initial alert box accepts ### as a value
+   2. Actual behaviour: Initial alert box accepts ### as a value
    3. Solution: Build in a function that checks for letters only
 
 2.
 	1. Expected behaviour: Worm animations always smooth 
-   2. Actual bevahiour: Sometimes animations stop halfway through the animation and disapear
+   2. Actual behaviour: Sometimes animations stop halfway through the animation and disapear
 
 ```JavaScript
    function pickWorm () {
@@ -216,66 +216,71 @@ To clone the Brain Worms repository:
 
 3.
 	1. Expected behaviour: Worm animations are always visible when requested by the code
-   2. Actual bevahiour: Sometimes some picked worm animations are skipped, even though they are not repeats of the previous picked worm
+   2. Actual behaviour: Sometimes some picked worm animations are skipped, even though they are not repeats of the previous picked worm
    3. Solution: There seemed to be worm gaps because instead of animating, it was toggling off .slide from worms it had previously been applied to. Applying toggle again at the end of the function helped with this. 
 
 4.
 	1. Expected behaviour: Worm animations don't have a gap between them
-   2. Actual bevahiour: Sometimes there was a second gap with no worm animation
+   2. Actual behaviour: Sometimes there was a second gap with no worm animation
    3. Solution: Take out the code that skipped animation if the same worm had been animated previously. Instead insert if statement detailing what to do in this instance, and adding or subtracting from randomWormNumbr before running the animateWorm function. 
 
 5.
 	1. Expected behaviour: Players should earn the same amount of points when clicking on worms after restarting the game
-   2. Actual bevahiour: Players earn extra points when restarting. After clicking restart once, points per click = 2. After clicking restart for a second time during the same session, points per click = 3. 
+   2. Actual behaviour: Players earn extra points when restarting. After clicking restart once, points per click = 2. After clicking restart for a second time during the same session, points per click = 3. 
    3. Solution: I didn't notice when this got fixed, as I think it was linked to something else I fixed. I think the game-run code was duplicating itself rather than stopping and starting again, causing interesting bugs in the process. 
 
 6.
 	1. Expected behaviour: Worm animations are smooth and do not blink off.
-   2. Actual bevahiour: When speed of setInterval increases, some worm animations disapear without running through the whoe animation.
+   2. Actual behaviour: When speed of setInterval increases, some worm animations disapear without running through the whoe animation.
    3. Solution: Add an if statement to see if the chosen worm is currently going through it's animation (e.g. if it has the "switch" class applied to it), and if it is, do not go to the animateWorm function for that setInterval round. 
 
 7.
    1. Expected behaviour: When player finishes game, and presses play again, the game works the same way it did the first time around.
-   2. Actual bevahiour: When player finishes game, and presses play again, the timer is broken and reads "0:0-1", and there are too many worm animations triggered.
+   2. Actual behaviour: When player finishes game, and presses play again, the timer is broken and reads "0:0-1", and there are too many worm animations triggered.
    3. Solution: Reset tickMinutes, tickSeconds and intervalNum before game is played again.
 
 8.
 	1. Expected behaviour: When pausing the game and navigating away from the page, everything should be paused still when you come back to the page.
-   2. Actual bevahiour: When pausing the game and navigating away from the page, the worm animation continues and the timer starts counting down from where it was set. 
+   2. Actual behaviour: When pausing the game and navigating away from the page, the worm animation continues and the timer starts counting down from where it was set. 
    3. Solution: Swap alert boxes for overlays.
 
 9.
 	1. Expected behaviour: On iPhone, user isn't given the option to stop the alert boxes popping up. 
-   2. Actual bevahiour: On iPhone, user is given the option to "supress dialogs", which can break the game.
+   2. Actual behaviour: On iPhone, user is given the option to "supress dialogs", which can break the game.
    3. Solution: Swap alert boxes for overlays.
 
 10.
    1. Expected behaviour: User can't gain more points by multiply clicks per animation.
-   2. Actual bevahiour: Users can get multiple points by clicking on the same animation.
+   2. Actual behaviour: Users can get multiple points by clicking on the same animation.
    3. Solution: Insert click counter and if statement - if clicked once then add point.
 
 11.
    1. Expected behaviour: Player's "You scored x" number is the same across different parts of the page.
-   2. Actual bevahiour: Player's "You scored x" overlay number can be less than the actual score due to animation still being clickable after the overlay uses the playerScore. 
+   2. Actual behaviour: Player's "You scored x" overlay number can be less than the actual score due to animation still being clickable after the overlay uses the playerScore. 
    3. Solution: setTimeout on game-over overlay.
 
 12.
+   1. Expected behaviour: Leaderboard to appear and buttons to unfreeze after game ends.
+   2. Actual behaviour: Leaderboard did not appear and buttons did not unfreeze after game ends. 
+   3. Solution: Create if statement to check if leaderboardArr is null. 
+
+13.
    1. Expected behaviour: 
-   2. Actual bevahiour: 
+   2. Actual behaviour: 
    3. Solution: 
    
 ### Known Bugs
 
    1. Expected behaviour: Worm divs stay over brain picture in different screen sizes
-   2. Actual bevahiour: Worm divs are not always on brain picture in different screen sizes
+   2. Actual behaviour: Worm divs are not always on brain picture in different screen sizes
    3. Solution: 
 
    1. Expected behaviour: Worms cannot be seen before animation
-   2. Actual bevahiour: Worms can sometimes be seen before animation on bigger screen sizes
+   2. Actual behaviour: Worms can sometimes be seen before animation on bigger screen sizes
    3. Solution: 
 
    1. Expected behaviour: 
-   2. Actual bevahiour: 
+   2. Actual behaviour: 
    3. Solution: 
 
 ### Lighthouse

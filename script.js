@@ -354,6 +354,9 @@ function gameOver() {
 
     //retrieve and parse array from local storage
     leaderboardArr = JSON.parse(localStorage.getItem('topTen'));
+    if (leaderboardArr === null) {
+        leaderboardArr = [];
+    }
 
     disableButtons();
 }
