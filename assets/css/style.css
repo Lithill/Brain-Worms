@@ -240,6 +240,7 @@ button:hover {
 	grid-area: leaderboard; 
 	height: 100%;
 	width: 100%;
+	align-items: baseline;
 	/* margin-right: 20px; */
 	/* margin-left: 10px; */
 	/* margin-top: 10px;
@@ -310,118 +311,116 @@ button:hover {
 }
 
 @media (max-width: 500px) {
+
 	body {
-		background-color: #b8eaeb;
-	}
+        background-color: #b8eaeb;
+    }
 
-	p {
-		margin-top: 30px;
-		margin-left: 10px;
-		text-align: justify;
-	}
-
-	h1 {
-		/* text-align: center; */
-	}
-
-	.leaderboard, .game-buttons {
-		background-color:  rgba(255, 255, 255, 0.5);
-		/* margin: auto; */
-	}
 
 	.title, .instructions, .hide {
-		display: none;
-	}
-	 
+        display: none;
+    }
+
 	.container {  
 		display: grid;
-		background-image: url("../images/mobile-brain.webp");
-		background-size: cover;
-		background-position: bottom;
-		height: 100vh;
-		width: 100vw;
-		background-repeat: no-repeat;
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr 6fr 1fr;
+		height: auto;
+		width: 95vw;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 7fr;
 		gap: 0px 0px;
 		grid-auto-flow: row;
+
 		grid-template-areas:
-		  "game-buttons"
-		  "leaderboard"
-		  "brain"
-		  ".";
+			"game-buttons game-buttons game-buttons"
+			"brain brain brain"
+			"brain brain brain";
 	}
-	  
+
 	.game-buttons {  
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr;
-		width: 95vw;
-		height: auto;
 		gap: 0px 0px;
 		grid-auto-flow: row;
 		grid-template-areas:
-		  "play-button-div pause-button-div restart-button-div";
+			"play-button-div pause-button-div restart-button-div";
 		grid-area: game-buttons;
 	}
-	  
-	.play-button-div { 
-		grid-area: play-button-div; 
-	}
-	  
-	.pause-button-div { 
-		grid-area: pause-button-div; 
-	}
-	  
-	.restart-button-div { 
-		grid-area: restart-button-div; 
-	}
-	  
-	.leaderboard {  
+
+	.play-button-div { grid-area: play-button-div; }
+
+	.pause-button-div { grid-area: pause-button-div; }
+
+	.restart-button-div { grid-area: restart-button-div; }
+
+	.brain {  
 		display: grid;
+		background-image: url("../images/mobile-brain.webp");
+		background-size: cover;
+		background-position: bottom;
+		height: 95vh;
 		width: 95vw;
-		height: auto;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
+		background-repeat: no-repeat;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 2fr 6fr 1fr;
 		gap: 0px 0px;
-		grid-auto-flow: row;
+		grid-auto-flow: column;
 		grid-template-areas:
-		  "timer-name counter-class score-word score-class";
-		grid-area: leaderboard;
-	}
-	  
-	.timer-name { 
-		grid-area: timer-name; 
-	}
-	  
-	.counter-class { 
-		grid-area: counter-class; 
-	}
-	  
-	.score-word { 
-		grid-area: score-word; 
-	}
-	  
-	.score-class { 
-		grid-area: score-class; 
-	}
-	  
-	.brain {
-		background-image: none;
-		width: 95vw;
-		height: auto;
-		display: grid; 
-		grid-template-columns: 1fr; 
-		grid-template-rows: 1fr; 
-		grid-template-areas: 
-			"worm-box";
+			"leaderboard leaderboard leaderboard"
+			"worm-box worm-box worm-box"
+			". . .";
 		grid-area: brain;
 	}
 
-	.worm-box {
-		width: 95vw;
-		height: auto;
-	}	
+	.leaderboard {  
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		/* height: auto;
+		width: auto; */
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-areas:
+			"timer-name counter-class score-word score-class";
+		grid-area: leaderboard;
+	}
+
+	.timer-name { grid-area: timer-name; }
+
+	.counter-class { grid-area: counter-class; }
+
+	.score-word { grid-area: score-word; }
+
+	.score-class { grid-area: score-class; }
+
+	.worm-box {  
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-areas:
+			". fear ."
+			"shame . shyness"
+			". embarrassment ."
+			"anxiety . dread";
+		grid-area: worm-box;
+	}
+
+	.fear { grid-area: fear; }
+
+	.shame { grid-area: shame; }
+
+	.shyness { grid-area: shyness; }
+
+	.embarrassment { grid-area: embarrassment; }
+
+	.anxiety { grid-area: anxiety; }
+
+	.dread { grid-area: dread; }
+
+
 }
+
 
 
