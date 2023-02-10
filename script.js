@@ -46,12 +46,13 @@ function pressPlay() { //getting player name and starting game
 
 function hello() {
     playerName = document.getElementById('playerName').value;
-    document.getElementById("play-game").style.display = "none";
 
     if ((playerName.length === 3) && (onlyLetters(playerName))) {
         greeting()
+        document.getElementById("play-game").style.display = "none";
     } else {
         hello();
+        document.getElementById("play-game").style.display = "block";
     }
 }
 
