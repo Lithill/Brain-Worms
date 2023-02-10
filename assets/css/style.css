@@ -370,20 +370,20 @@ button:hover {
 	  
 
 	  /* https://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements */
-	  .timer-name { 
+	.timer-name { 
 		grid-area: timer-name; 
 		margin-left: auto; 
 		margin-right: 0;
 		white-space: nowrap;
 	}
 	  
-	  .counter-class { 
+	.counter-class { 
 		grid-area: counter-class;
 		margin-left: 20; 
 		margin-right: auto;
 	}
 	  
-	  .score-word { 
+	.score-word { 
 		grid-area: score-word;
 		margin-left: auto; 
 		margin-right: 0;
@@ -396,8 +396,7 @@ button:hover {
 		margin-right: auto;
 	}
 	  
-	  .brain {  
-		
+	.brain {  
 		background-image: url("../images/brain.webp");
 		background-repeat: no-repeat;
 		background-size: contain;
@@ -413,9 +412,9 @@ button:hover {
 			". worm-box ."
 			". . ."; 
 		grid-area: brain;
-	  }
+	}
 	  
-	  .worm-box {  display: grid;
+	.worm-box {  display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
 		gap: 0px 0px;
@@ -426,7 +425,7 @@ button:hover {
 		  ". embarrassment ."
 		  "anxiety . dread";
 		grid-area: worm-box;
-	  }
+	}
 	  
 	  .fear { grid-area: fear; }
 	  
@@ -443,5 +442,92 @@ button:hover {
 
 }
 
+@media (max-width: 557px) {
 
+	.container {  display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 5fr;
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-areas:
+		  "right-column"
+		  "brain";
+	}
 
+	.brain {  
+		background-image: url("../images/mobile-brain.webp");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		border: 5px solid black;
+		display: grid;
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-columns: 1fr 6fr 1fr; 
+		grid-template-rows: 0fr 4fr 1.5fr; 
+		gap: 0px 0px; 
+		grid-template-areas: 
+			". . ."
+			"worm-box"
+			". . ."; 
+		grid-area: brain;
+		width: 95vw;
+		height: auto;
+		
+	}
+
+	.game-buttons {
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+
+	@media (max-width: 424px) {
+
+		.container {
+			width: 95vw;
+		}
+
+		.right-column {
+			/* width: 50vw;
+			height: auto; */
+			grid-template-rows: 1fr 1.5fr;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+		.brain {
+			width: 89vw;
+			height: auto;
+		}
+
+		h2 {
+			font-size: 5vmin;
+		}
+
+		p {
+			font-size: 8vmin;
+		}
+
+		.counter-class {
+			margin-right: 10px;
+		}
+
+		.container {
+			justify-items: center;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 4fr 1fr;
+			grid-template-areas:
+	  			"right-column"
+	  			"brain"
+				".";
+		}
+
+	}
+
+	@media (max-width: 360px) {
+		.brain {  
+			grid-template-columns: 1fr 6fr 1fr; 
+			grid-template-rows: 1fr 4fr 2.5fr; 			
+		}
+	}
+
+}
