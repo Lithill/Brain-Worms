@@ -321,10 +321,6 @@ button:hover {
 
 @media (max-width: 956px) {
 
-	body {
-        background-color: #b8eaeb;
-    }
-
 	.instructions-title, .instructions, .hide {
         display: none;
     }
@@ -448,6 +444,8 @@ button:hover {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 5fr;
 		gap: 0px 0px;
+		width: 95vw;
+		height: 95vh;
 		grid-auto-flow: row;
 		grid-template-areas:
 		  "right-column"
@@ -514,11 +512,10 @@ button:hover {
 		.container {
 			justify-items: center;
 			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 4fr 1fr;
+			grid-template-rows: 1fr 4fr;
 			grid-template-areas:
 	  			"right-column"
-	  			"brain"
-				".";
+	  			"brain";
 		}
 
 	}
