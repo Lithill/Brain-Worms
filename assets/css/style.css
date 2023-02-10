@@ -6,6 +6,8 @@ h1, h2 {
 	font-family: Eater;
 }
 
+
+/* Taken from https://css-tricks.com/examples/hrs/ */
 hr {
     border: 0;
     height: 3px;
@@ -58,8 +60,19 @@ body {
 }
 
 button {
+	background-color: #f0f0f0; 
 	transition-property: background-color;
   	transition-duration: 750ms;
+	border: 2px solid black;
+	border-radius: 8px;
+	opacity: 0.9;
+    filter: alpha(opacity=90);
+	/* -webkit-appearance: none;
+	border-radius: 0; */
+}
+
+button p, button h2 {
+	color: black;
 }
 
 button:hover {

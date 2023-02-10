@@ -309,7 +309,7 @@ function countdown(minutes) {
 //shows game-over overlay and gets leaderboard from local storage
 function gameOver() {
     gameIsPlaying = false;
-    document.getElementById("game-over-text").innerHTML = `Game Over. You scored ${playerScore} points!`;
+    document.getElementById("game-over-text").innerHTML = `You scored ${playerScore} points!`;
     document.getElementById("game-over").style.display = "block";
 
     leaderboardArr = JSON.parse(localStorage.getItem('topTen'));
