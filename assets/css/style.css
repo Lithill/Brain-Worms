@@ -62,7 +62,7 @@ button:hover {
 
 #intro-overlay {
 	overflow-y:auto;
-	height: 60vh;
+	height: 70vh;
 	width: 70vw;
 }
 
@@ -420,7 +420,7 @@ button:hover {
 		display: grid;
 		gap: 0px 0px;
 		grid-auto-flow: row;
-		grid-template-columns: 0.5fr 1fr 0.5fr; 
+		grid-template-columns: 0.8fr 1fr 0.8fr; 
 		grid-template-rows: 0.6fr 1fr 0.9fr; 
 		gap: 0px 0px; 
 		grid-template-areas: 
