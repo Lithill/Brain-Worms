@@ -60,6 +60,12 @@ button:hover {
 	background-color: #b2e7e9;
 }
 
+#intro-overlay {
+	overflow-y:auto;
+	height: 60vh;
+	width: 70vw;
+}
+
 /******************************** Left Column Grid */
 
 .left-column {
@@ -334,6 +340,10 @@ button:hover {
 	.instructions-title, .instructions, .hide {
         display: none;
     }
+
+	#intro-overlay {
+		display: block;
+	}
 
 	.container {  display: grid;
 		grid-template-columns: 1fr;

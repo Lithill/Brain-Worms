@@ -15,6 +15,11 @@ function enableButtons() {
     document.getElementById("pause-game").style.display = "none";
     document.getElementById("restart-game").style.display = "none";
 }
+// ********************* intro overlay (mobile view)
+
+function introOverlay() {
+    document.getElementById("intro-overlay").style.display = "none";
+}
 
 // ********************* Play button functions
 
