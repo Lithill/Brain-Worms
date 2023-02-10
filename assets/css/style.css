@@ -395,6 +395,7 @@ button:hover {
 		  "game-buttons game-buttons game-buttons game-buttons";
 		grid-area: right-column;
 		justify-items: center;
+		align-items: end;
 
 	}
 	  
