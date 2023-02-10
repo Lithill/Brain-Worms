@@ -12,8 +12,13 @@ p {
 	margin: 10px 10px;
 }
 
+#leaderboard-overlay-text p {
+	font-size: 5vmin;
+}
+
 #overlay-play-button {
 	font-family: Eater;
+	margin-bottom: 10px;
 }
 
 #leaderboard-button {
@@ -27,6 +32,16 @@ p {
 	margin-bottom: 20px;
 	height: 25px;
 	width: auto;
+}
+
+/* https://www.w3schools.com/howto/howto_css_responsive_form.asp */
+input[type=text] {
+	width: 50%;
+  	padding: 12px;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+  	resize: vertical;
 }
 
 /********************************  */
@@ -203,29 +218,24 @@ button:hover {
 /******************************** Overlays  */
 
 .overlay {
-	position: fixed; /* Sit on top of the page content */
-	display: none; 
-	width: 50%; /* Full width (cover the whole page) */
-	height: 50%; /* Full height (cover the whole page) */
-	background-color: whitesmoke; /* Black background with opacity */
-	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-	border: 4px solid black;
-}
-
-#leaderboard-overlay {
-	position: fixed; /* Sit on top of the page content */
 	display: none; 
 	width: 50%; 
-	height: 50%; 
-	background-color: whitesmoke; /* Black background with opacity */
-	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+	height: auto; 
+	max-height: 98vh;
+	background-color: whitesmoke; 
+	z-index: 2; 
 	border: 4px solid black;
+	position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
 }
 
 .ok-button, #smash-button, #overlay-play-button, #leaderboard-button {
 	background-color:  rgba(255, 255, 255, 0.5);
 	transition-property: background-color;
   	transition-duration: 750ms;
+	margin-bottom: 10px;
 }
 
 .ok-button:hover, #smash-button:hover, #overlay-play-button:hover, #leaderboard-button:hover {
@@ -401,7 +411,7 @@ button:hover {
 		gap: 0px 0px;
 		grid-auto-flow: row;
 		grid-template-columns: 1fr 1fr 1fr; 
-		grid-template-rows: 1fr 1fr 1fr; 
+		grid-template-rows: 0.3fr 1fr 0.7fr; 
 		gap: 0px 0px; 
 		grid-template-areas: 
 			". . ."

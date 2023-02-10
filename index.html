@@ -31,7 +31,7 @@
 			<form id="form" onsubmit="return false"> 
 				<label for="playerName"><p>Please enter three initials</p></label><br>
 				<input type="text" id="playerName" name="playerName" placeholder='E.g. "HPD"' required><br><br>
-				<input type="submit" id ="overlay-play-button" onclick="hello();"></input> <!--Does this button need an onclick?-->
+				<input type="submit" id ="overlay-play-button" onclick="hello();"></input>
 			</form>
 		</div>
 		<div class="overlay" id="hello-div">
@@ -94,8 +94,8 @@
 					<h2>Leaderboard</h2>
 					<p id="leaderboard-overlay-text">You don't have any high scores yet! Play the game to add some.</p>
 					<br>
-					<button class ="ok-button">
-						<p onclick="exitLeaderboard()">Exit Leaderboard</p>
+					<button class ="ok-button" onclick="exitLeaderboard()">
+						<p>Exit Leaderboard</p>
 					</button>
 			</div>
 			<div class="worm-box" id="worm-box">
