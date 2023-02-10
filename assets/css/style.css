@@ -363,6 +363,10 @@ button:hover {
 
 @media (max-width: 956px) {
 
+	button, #overlay-play-button {
+		background-color: white;
+	}
+
 	.instructions-title, .instructions, .hide {
         display: none;
     }
@@ -485,6 +489,10 @@ button:hover {
 }
 
 @media (max-width: 557px) {
+
+	button, .ok-button, #overlay-play-button {
+		background-color: #b2e7e9;
+	}
 
 	.container {  display: grid;
 		grid-template-columns: 1fr;
