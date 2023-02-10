@@ -2,7 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Eater);
 
-h1 {
+h1, h2 {
 	font-family: Eater;
 }
 
@@ -44,13 +44,13 @@ button:hover {
 	display: grid; 
 	gap: 0px 0px; 
 	grid-template-areas: 
-		"title"
+		"instructions-title"
 		"instructions"
 		"leaderboard";
 }
 
-.title { 
-	grid-area: title; 
+.instructions-title { 
+	grid-area: instructions-title; 
 }
 
 .instructions { 
@@ -79,13 +79,22 @@ button:hover {
 	width: 98vw;
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr;
-	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-rows: 0.5fr 2fr 1fr;
 	gap: 0px 0px;
 	grid-auto-flow: row;
 	grid-template-areas:
-		"left-column brain right-column"
+		"left-column title right-column"
 		"left-column brain right-column"
 		"left-column brain right-column";
+}
+
+.title {
+	grid-area: title;
+}
+
+#title-o {
+	width: 40px;
+	height: auto;
 }
 
 .brain-image {
@@ -287,7 +296,7 @@ button:hover {
         background-color: #b8eaeb;
     }
 
-	.title, .instructions, .hide {
+	.instructions-title, .instructions, .hide {
         display: none;
     }
 

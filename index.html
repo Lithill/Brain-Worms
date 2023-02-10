@@ -67,9 +67,9 @@
 				</button>
 		</div>
 		<div class="left-column">
-			<!-- Game Title -->
-			<div class="title">
-				<h1>How to Play:</h1>
+			<!-- Instructions Heading -->
+			<div class="instructions-title">
+				<h2>How to Play:</h2>
 				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
 			</div>
 			<!-- Instructions -->
@@ -81,21 +81,24 @@
 			<!-- Leaderboard -->
 			<div class="leaderboard" class="hide">
 				<button id ="leaderboard-button" class="hide" onclick="openLeaderboard()">
-					<h1>Leaderboard</h1>
+					<h2>Leaderboard</h2>
 				</button>
 			</div>
 		</div>
 		<!-- Middle column -->
+		<div class="title hide">
+			<h1>Brain W<span><img src="assets/images/title-o.webp" alt="o" id="title-o"></span>rms</h1>
+		</div>
 		<div class="brain">
-				<div class="overlay" id="leaderboard-overlay">
-					<h1>Leaderboard</h1>
+			<div class="overlay" id="leaderboard-overlay">
+					<h2>Leaderboard</h2>
 					<p id="leaderboard-overlay-text">You don't have any high scores yet! Play the game to add some.</p>
 					<br>
 					<button class ="ok-button">
 						<p onclick="exitLeaderboard()">Exit Leaderboard</p>
 					</button>
-				</div>
-				<div class="worm-box" id="worm-box">
+			</div>
+			<div class="worm-box" id="worm-box">
 					<div id="pow"></div> 
 					<div class="fear worm"></div>
 					<div class="shame worm"></div>
@@ -103,15 +106,15 @@
 					<div class="embarrassment worm"></div>
 					<div class="anxiety worm"></div>
 					<div class="dread worm"></div>
-				</div>
+			</div>
 		</div>
 	<!-- Right column -->
 		<div class="right-column">
 			<!-- Game timer -->
-			<h1 class="timer-name">Timer : </h1>
+			<h2 class="timer-name">Timer : </h2>
 			<p id="counter" class="counter-class">00:00</p>
 			<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game" class="hide reverse-tilde">
-			<h1 class="score-word">Score : </h1>
+			<h2 class="score-word">Score : </h2>
 			<p id="score" class="score-class">0</p>
 			<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game" class="hide reverse-tilde">
 			<!-- Game Buttons -->			
