@@ -15,6 +15,7 @@ function enableButtons() {
     document.getElementById("pause-game").style.display = "none";
     document.getElementById("restart-game").style.display = "none";
 }
+
 // ********************* intro overlay (mobile view)
 
 function introOverlay() {
@@ -27,18 +28,20 @@ let playerName;
 let playerScore = 0;
 let gameIsPlaying = false;
 
-function onlyLetters(str) { //returns true if string only contains letters, false if not
+//returns true if string only contains letters, false if not
+function onlyLetters(str) {
 	return /^[A-Za-z]*$/.test(str); 
 }
 
 function doublePlay() {
-    document.getElementById("double-play").style.display = "none";//hides overlay
+    document.getElementById("double-play").style.display = "none";
     enableButtons();
-    pickWorm();//starts animation
-    countdown(1);//starts timer
+    pickWorm();
+    countdown(1);
 }
 
-function pressPlay() { //getting player name and starting game
+//getting player name and starting game
+function pressPlay() { 
     disableButtons();
 
     if (gameIsPlaying) {
@@ -49,6 +52,8 @@ function pressPlay() { //getting player name and starting game
     }
 }
 
+
+//allowing only three letters as a username
 function hello() {
     playerName = document.getElementById('playerName').value;
 
@@ -72,16 +77,16 @@ function smashWorms() {
     playGame();
 }
 
+//hiding overlays, enabling game buttons, and starting countdown timer and animation
 function playGame() {
     document.getElementById("hello-div").style.display = "none";
     document.getElementById("pause-game").style.display = "none";
     enableButtons();
     countdown(1);
-    startAnimation();
+    pickWorm();
     gameIsPlaying = true;
     document.querySelector('#leaderboard-button').disabled = true;
 }
-
 
 // ********************* Pause button function
 
@@ -98,15 +103,15 @@ function pauseButton() {
     }
 }
 
+//stops animation and countdown timer
 function pauseGame() {
-    clearInterval(animateWormsInterval);//Stops animation. Would be nice to also abruptly stop animation, but for that I need to take setRemoveWorm() out of animateWorm()
-    clearTimeout(clockTimeout);//stops timer
+    clearInterval(animateWormsInterval);
+    clearTimeout(clockTimeout);
 }
 
 // ********************* Restart button functions
 
 function restartGame() {
-
     document.getElementById("restart-game").style.display = "block";
     disableButtons();
 
@@ -119,25 +124,26 @@ function restartGame() {
     } 
 } 
 
+//resets and plays game if player wants to restart halfway through a game
 function okRestartGame() {
     document.getElementById("restart-game").style.display = "none";
     enableButtons();
     clearInterval(animateWormsInterval);
-    playerScore = 0; //reset player score
-    document.getElementById("score").innerHTML = playerScore; //resets score on webpage
-    tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
+    playerScore = 0; 
+    document.getElementById("score").innerHTML = playerScore;
+    tickMinutes = 1;//this line and line below resets timer, change these if you change the timer elsewhere
     tickSeconds = 60;
     intervalNum = 1000;
     countdown(1);
-    startAnimation();//starts the game again without asking for another 3 initials
+    pickWorm();
 }
 
 // ********************* random num and animation
 
-// Generate a random number for interval timer. Remember it is for milliseconds and use "clearInterval()" to stop the interval timer from going on forever
+//generates a random number
 function generateRandomNum (min, max) {
-    let num1 = Math.floor(Math.random() * (max - min + 1) + min);
-    return num1;
+    let random = Math.floor(Math.random() * (max - min + 1) + min);
+    return random;
 }
 
 var animateWormsInterval;
@@ -146,151 +152,121 @@ let htmlCounter = "00:00";
 let lastWorm = 0;
 let intervalNum = 1000;
 
+//handles the animation
 function pickWorm () {
     let randomWormNumber;
-    // console.log(`Interval number at pickWorm is ${intervalNum}`);
 
-
+    //chooses a random worm to animate, and triggers animation function
     animateWormsInterval = setInterval(function () {
         
-        randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
+        randomWormNumber = generateRandomNum(1, 6);
         let wormClass = "." + wormArr[randomWormNumber];
         let div = document.querySelector(wormClass);
 
-        //stops same worm appearing twice in a row, therefore stopping random time gap between worms
+        //prevents the same worm from appearing twice in a row
         if (div.classList.contains('slide')) {
-            console.log(`Worm is already animating`);
-            // pickWorm();
-        } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {//if randomWormNumber is same as lastWorm, and you can add 1 to it whilst still ending up picking from wormArr later
-            console.log("adding 1 to randomWormNumber");
+            return;
+        } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {
             randomWormNumber++;
             animateWorm();
-        } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {//if randomWormNumber is same as lastWorm, and you can subtract from it whilst still ending up picking from wormArr later
-            console.log("subtracting 1 from randomWormNumber");
+        } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {
             randomWormNumber--; 
             animateWorm(); 
         } else {
             animateWorm(); 
         }
-
     }, intervalNum); 
 
-    function findWorm(num) {//pass in randomWormNumber
-        let activeWorm = wormArr[num]; //assigns this number to wormArr index
-        let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
-        let findWorm = document.querySelector(activeWormString);//assigning picked worm class
+    //returns the currently animating worm
+    function findWorm(num) {
+        let activeWorm = wormArr[num]; 
+        let activeWormString = "." + activeWorm; 
+        let findWorm = document.querySelector(activeWormString);
         return findWorm;
     }
 
+    //toggles the animation on and off for the selected worm
     function animateWorm () {
         let clickNumber = 0;
-
-        let removeWorm;//could use .slide instead?
-        
+        let removeWorm;
         let worm = findWorm(randomWormNumber);
+        worm.classList.toggle("slide");
+        worm.addEventListener('click' , wormClick);
 
-
-        
-        worm.classList.toggle("slide");//toggles .slide on and off to trigger the animation
-
-        worm.addEventListener('click' , wormClick);//adds eventListener to worms that have been toggled for animation
-        console.log(`added eventlistener to ${randomWormNumber}`)
-
-
-
-        function setRemoveWorm () {//assign a variable for worm that is going through animation - can't use worm as that may get changed before this function gets called
+        //assigns a new variable for the worm that is going through animation. This allows the old variable to be changed for overlapping animations 
+        function setRemoveWorm () {
             removeWorm = worm;
             removeSlide();
         }
 
-        //remove slide class from worm after animation 
+        //toggles animation off
         function removeSlide () {
             removeWorm.classList.toggle("slide");
-            console.log(`removed slide class from ${randomWormNumber}`)
             removeWorm.removeEventListener('click' , wormClick); 
-            console.log(`removed eventlistener from ${randomWormNumber}`)
         }
 
         setTimeout(setRemoveWorm, 2000); //second number should be length of animation
-
-
-
-        console.log(`Last worm was: ${lastWorm} active worm is: ${randomWormNumber}`);
-        lastWorm = randomWormNumber; //assigns randomNumber to lastWorm so that the if statement works
+        lastWorm = randomWormNumber;
         htmlCounter = document.getElementById("counter").innerHTML;
-        console.log(htmlCounter);
 
-
+        //controls players score
         function wormClick() {
-
             clickNumber ++;
         
             if (clickNumber === 1) {
-
                 switch (intervalNum) {
                     case 1000:
-                        playerScore += 62;
+                        playerScore += 15;
                         break;
                     case 625:
-                        playerScore += 75;
+                        playerScore += 32;
                         break;
                     case 500:
-                        playerScore += 112;
+                        playerScore += 56;
                         break;
                     case 425:
-                        playerScore += 150;
+                        playerScore += 75;
                         break;
                     case 250:
-                        playerScore += 225;
+                        playerScore += 113;
                         break;
                     case 100:
-                        playerScore += 375;
+                        playerScore += 226;
                         break;
                 }
 
                 score.innerHTML = playerScore.toString();
             } 
-        
         }
 
-        switch (htmlCounter) {//make animation speed up
+        //controls animation speed over time
+        switch (htmlCounter) {
             case "0:50":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                clearInterval(animateWormsInterval);
                 intervalNum = 625;
-                console.log(`intervalNum at 0:50 if statement is ${intervalNum}`)
                 pickWorm();
                 break;
             case "0:40":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                clearInterval(animateWormsInterval);
                 intervalNum = 500;
-                console.log(`intervalNum at 0:40 if statement is ${intervalNum}`)
                 pickWorm();
                 break;
             case "0:30":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                clearInterval(animateWormsInterval);
                 intervalNum = 425;
-                console.log(`intervalNum at 0:30 if statement is ${intervalNum}`)
                 pickWorm();
                 break;
             case "0:20":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                clearInterval(animateWormsInterval);
                 intervalNum = 250;
-                console.log(`intervalNum at 0:20 if statement is ${intervalNum}`)
                 pickWorm();
                 break; 
             case "0:10":
-                console.log("animation is speeding up");
-                clearInterval(animateWormsInterval);//this seems to be working but still somehow it is being run twice
+                clearInterval(animateWormsInterval);
                 intervalNum = 100;
-                console.log(`intervalNum at 0:10 if statement is ${intervalNum}`)
                 pickWorm();
                 break;   
             case "0:00":
-                console.log("animation is stopping");
                 clearInterval(animateWormsInterval);
                 setTimeout(gameOver, 2000);
                 break;  
@@ -300,19 +276,16 @@ function pickWorm () {
     }
 }
 
-// ******************* POW
+// ********************* Game timer 
 
-
-// ********************* Game start timer 
-
-let tickCounter;//is this necessary here? Put it back in countdown function
+let tickCounter;
 let tickMinutes;
 let tickSeconds = 60;
 let clockTimeout;
 
+//creates countdown timer
 //countdown function is edited code from https://gist.github.com/adhithyan15/4350689
 function countdown(minutes) {
-
     tickMinutes = minutes;
     
     function tick() {
@@ -325,40 +298,20 @@ function countdown(minutes) {
         } else {
             if (tickMinutes > 1) {
                 countdown(tickMinutes-1);           
-            } else {
-                // stopAnimation();
-            }
+            } 
         } 
     }
     tick();
 }
 
-// ********************* Animation
-
-//When counter inner html isn't 00:00, run the animation
-function startAnimation() {
-    pickWorm(); //picks worm and toggles keyframe for animation
-}
-
-// ********************* Score
-
-    // wormDivs = document.getElementsByClassName("worm");
-    
-    
-    //loop taken from https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur
-    // for (var i = 0 ; i < wormDivs.length; i++) {
-    //     wormDivs[i].addEventListener('click' , wormClick); 
-    //  }
-
-
 // ********************* Game Over
 
+//shows game-over overlay and gets leaderboard from local storage
 function gameOver() {
     gameIsPlaying = false;
     document.getElementById("game-over-text").innerHTML = `Game Over. You scored ${playerScore} points!`;
     document.getElementById("game-over").style.display = "block";
 
-    //retrieve and parse array from local storage
     leaderboardArr = JSON.parse(localStorage.getItem('topTen'));
     if (leaderboardArr === null) {
         leaderboardArr = [];
@@ -367,45 +320,43 @@ function gameOver() {
     disableButtons();
 }
 
+//hides leaderboard overlay and resets game
 function exitLeaderboard() {
-
     enableButtons();
     document.getElementById("leaderboard-overlay").style.display = "none";    
-    playerScore = 0; //reset player score
-    document.getElementById("score").innerHTML = playerScore; //resets score on webpage
+    playerScore = 0; 
+    document.getElementById("score").innerHTML = playerScore; 
     tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
     tickSeconds = 60;
-    document.getElementById("counter").innerHTML = "00:00"; //resets score on webpage
+    document.getElementById("counter").innerHTML = "00:00"; 
     intervalNum = 1000;
 }
 
 // ********************* Leaderboard
 let leaderboardArr = [];
 
+//adds players score to leaderboard if high enough, and sends it to local storage
 function ifHighScore() {
     document.getElementById("game-over").style.display = "none";
-    // playerName = playerName.toUpperCase();
 
-    leaderboardArr.push({player: playerName.toUpperCase(), score: playerScore});//add playerScore to array
+    leaderboardArr.push({player: playerName.toUpperCase(), score: playerScore});
     
+    //returns highest - lowest scores
     leaderboardArr.sort(function(a, b){//https://stackoverflow.com/questions/17684921/sort-json-object-in-javascript
-      return b.score - a.score;//this sorts highest score to lowest
+      return b.score - a.score;
     });
     
-    //if more than 10 items, get rid of smallest score
+    //if more than 10 items, gets rid of smallest score
     if (leaderboardArr.length > 10) {
       leaderboardArr.pop();
     }
     
-    //send to local storage
     localStorage.setItem('topTen', JSON.stringify(leaderboardArr));
-    
     openLeaderboard();
-    
-  }
-  
-  
-  function leaderboardHTML() {//save to arr before the variables get wiped 
+}
+
+//adds player score to leaderboard html if high enough
+function leaderboardHTML() {
     let paragraphs = '';
     let index = 0;
     
@@ -415,12 +366,12 @@ function ifHighScore() {
     }
     
     document.getElementById("leaderboard-overlay-text").innerHTML = paragraphs;
-    
-  }
+}
 
-  function openLeaderboard() {
+//populates leaderboard overlay and makes visible
+function openLeaderboard() {
     leaderboardArr = JSON.parse(localStorage.getItem('topTen'));
     document.getElementById("leaderboard-overlay").style.display = "block";
     disableButtons();
     leaderboardHTML();
-  }
+}
