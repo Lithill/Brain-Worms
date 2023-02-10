@@ -34,6 +34,21 @@ button:hover {
 
 /******************************** Left Column Grid */
 
+.left-column {
+	grid-area: left-column; 
+	/* height: 100%;
+	width: 100%; */
+	align-items: baseline;
+	justify-items: center;
+	align-content: center;
+	display: grid; 
+	gap: 0px 0px; 
+	grid-template-areas: 
+		"title"
+		"instructions"
+		"leaderboard";
+}
+
 .title { 
 	grid-area: title; 
 }
@@ -68,9 +83,9 @@ button:hover {
 	gap: 0px 0px;
 	grid-auto-flow: row;
 	grid-template-areas:
-		"title brain leaderboard"
-		"instructions brain leaderboard"
-		"game-buttons brain leaderboard";
+		"left-column brain right-column"
+		"left-column brain right-column"
+		"left-column brain right-column";
 }
 
 .brain-image {
@@ -107,18 +122,6 @@ button:hover {
   cursor: pointer;
 }
 
-.game-buttons {  
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	/* grid-template-rows: 1fr 1fr; */
-	gap: 0px 0px;
-	grid-auto-flow: row;
-	grid-template-areas:
-		"play-button-div pause-button-div restart-button-div";
-	grid-area: game-buttons;
-	/* cursor: pointer; */
-}
-
 /******************************** Worms  */
 
 .fear { 
@@ -126,6 +129,7 @@ button:hover {
 	background-image: url("../images/fear-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center;
 	background-position-y: 81px;
 }
 
@@ -134,6 +138,7 @@ button:hover {
 	background-image: url("../images/shame-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center;
 	background-position-y: 81px;
 }
 
@@ -142,6 +147,7 @@ button:hover {
 	background-image: url("../images/shy-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center;
 	background-position-y: 81px;
 }
 
@@ -150,6 +156,7 @@ button:hover {
 	background-image: url("../images/embarrassed-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center;
 	background-position-y: 81px;
 }
 
@@ -158,6 +165,7 @@ button:hover {
 	background-image: url("../images/anxious-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center;
 	background-position-y: 81px;
 }
 
@@ -166,6 +174,7 @@ button:hover {
 	background-image: url("../images/dread-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center;
 	background-position-y: 81px;
 }
 
@@ -236,189 +245,163 @@ button:hover {
 
 /******************************** Right column Grid */
 
-.leaderboard { 
-	grid-area: leaderboard; 
-	height: 100%;
-	width: 100%;
+.right-column { 
+	grid-area: right-column; 
+	/* height: 100%;
+	width: 100%; */
 	align-items: baseline;
-	/* margin-right: 20px; */
-	/* margin-left: 10px; */
-	/* margin-top: 10px;
-	margin-bottom: 10px; */
+	justify-items: center;
+	align-content: center;
+	display: grid; 
+	gap: 0px 0px; 
+	grid-template-areas: 
+		"timer-name"
+		"counter-class"
+		"score-word"
+		"score-class"
+		"game-buttons"; 
+}
+
+.game-buttons {  
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	/* grid-template-rows: 1fr 1fr; */
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		"play-button-div pause-button-div restart-button-div";
+	/* grid-area: game-buttons; */
+	/* cursor: pointer; */
+}
+
+.reverse-tilde {
+	margin-left: auto;
+  	margin-right: auto;
 }
 
 /******************************** Media Queries */
 
-@media (max-width: 1045px) {
-	.container { 
-		height: auto;
-		/* grid-template-columns: minmax(0, 1fr) 300px; */
-		grid-template-rows: 1fr; 
-		grid-template-columns: 1fr;
-		gap: 0px 0px;
-		grid-auto-flow: column;
-		grid-template-areas:
-			"title"
-			"instructions"
-			"game-buttons"
-			"brain"
-			"brain"
-			"brain"
-			"leaderboard";
-	}
+@media (max-width: 956px) {
 
-	.brain {  
+	body {
+        background-color: #b8eaeb;
+    }
+
+	.title, .instructions, .hide {
+        display: none;
+    }
+
+	.container {  display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 4fr;
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-areas:
+		  "right-column"
+		  "brain";
+	  }
+	  
+	.right-column {  display: grid;
+		grid-template-columns: 1.6fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-areas:
+		  "timer-name counter-class score-word score-class"
+		  "game-buttons game-buttons game-buttons game-buttons";
+		grid-area: right-column;
+		justify-items: center;
+
+	}
+	  
+	.game-buttons {  display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-areas:
+		  "play-button-div pause-button-div restart-button-div";
+		grid-area: game-buttons;
+	  }
+	  
+	  .play-button-div { grid-area: play-button-div; }
+	  
+	  .pause-button-div { grid-area: pause-button-div; }
+	  
+	  .restart-button-div { grid-area: restart-button-div; }
+	  
+
+	  /* https://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements */
+	  .timer-name { 
+		grid-area: timer-name; 
+		margin-left: auto; 
+		margin-right: 0;
+		white-space: nowrap;
+	}
+	  
+	  .counter-class { 
+		grid-area: counter-class;
+		margin-left: 20; 
+		margin-right: auto;
+	}
+	  
+	  .score-word { 
+		grid-area: score-word;
+		margin-left: auto; 
+		margin-right: 0;
+		white-space: nowrap;
+	}
+	  
+	  .score-class { 
+		grid-area: score-class; 
+		margin-left: 20; 
+		margin-right: auto;
+	}
+	  
+	  .brain {  
+		
 		background-image: url("../images/brain.webp");
 		background-repeat: no-repeat;
-		/* background-size: contain, auto; */
-		height: 70vw;
-		width: auto;
+		background-size: contain;
 		background-position: center;
-		display: grid; 
-		/* grid-template-columns: minmax(0, 1fr) 300px; */
+		display: grid;
+		gap: 0px 0px;
+		grid-auto-flow: row;
+		grid-template-columns: 1fr 1fr 1fr; 
+		grid-template-rows: 1fr 1fr 1fr; 
 		gap: 0px 0px; 
 		grid-template-areas: 
 			". . ."
 			". worm-box ."
 			". . ."; 
 		grid-area: brain;
-	}
-
-	.worm-box {
-		/* grid-template-columns: minmax(0, 1fr) 300px; */
-	}
-
-	.game-buttons {  
-		/* display: grid; */
-		grid-template-columns: 3fr 1fr 3fr;
-		/* grid-template-rows: 1fr 1fr;
-		gap: 0px 0px;
-		grid-auto-flow: row;
-		grid-template-areas:
-			"play-button-div pause-button-div restart-button-div"
-			"start-button-label pause-button-label restart-button-label";
-		grid-area: game-buttons; */
-	}
-
-	.play-button-div {
-		text-align: right;
-	}
-
-	.restart-button-div {
-		text-align: left;
-	}
-
-}
-
-@media (max-width: 500px) {
-
-	body {
-        background-color: #b8eaeb;
-    }
-
-
-	.title, .instructions, .hide {
-        display: none;
-    }
-
-	.container {  
-		display: grid;
-		height: auto;
-		width: 95vw;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 7fr;
-		gap: 0px 0px;
-		grid-auto-flow: row;
-
-		grid-template-areas:
-			"game-buttons game-buttons game-buttons"
-			"brain brain brain"
-			"brain brain brain";
-	}
-
-	.game-buttons {  
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
-		gap: 0px 0px;
-		grid-auto-flow: row;
-		grid-template-areas:
-			"play-button-div pause-button-div restart-button-div";
-		grid-area: game-buttons;
-	}
-
-	.play-button-div { grid-area: play-button-div; }
-
-	.pause-button-div { grid-area: pause-button-div; }
-
-	.restart-button-div { grid-area: restart-button-div; }
-
-	.brain {  
-		display: grid;
-		background-image: url("../images/mobile-brain.webp");
-		background-size: cover;
-		background-position: bottom;
-		height: 95vh;
-		width: 95vw;
-		background-repeat: no-repeat;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 2fr 6fr 1fr;
-		gap: 0px 0px;
-		grid-auto-flow: column;
-		grid-template-areas:
-			"leaderboard leaderboard leaderboard"
-			"worm-box worm-box worm-box"
-			". . .";
-		grid-area: brain;
-	}
-
-	.leaderboard {  
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
-		/* height: auto;
-		width: auto; */
-		gap: 0px 0px;
-		grid-auto-flow: row;
-		grid-template-areas:
-			"timer-name counter-class score-word score-class";
-		grid-area: leaderboard;
-	}
-
-	.timer-name { grid-area: timer-name; }
-
-	.counter-class { grid-area: counter-class; }
-
-	.score-word { grid-area: score-word; }
-
-	.score-class { grid-area: score-class; }
-
-	.worm-box {  
-		display: grid;
+	  }
+	  
+	  .worm-box {  display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
 		gap: 0px 0px;
 		grid-auto-flow: row;
 		grid-template-areas:
-			". fear ."
-			"shame . shyness"
-			". embarrassment ."
-			"anxiety . dread";
+		  ". fear ."
+		  "shame . shyness"
+		  ". embarrassment ."
+		  "anxiety . dread";
 		grid-area: worm-box;
-	}
-
-	.fear { grid-area: fear; }
-
-	.shame { grid-area: shame; }
-
-	.shyness { grid-area: shyness; }
-
-	.embarrassment { grid-area: embarrassment; }
-
-	.anxiety { grid-area: anxiety; }
-
-	.dread { grid-area: dread; }
-
+	  }
+	  
+	  .fear { grid-area: fear; }
+	  
+	  .shame { grid-area: shame; }
+	  
+	  .shyness { grid-area: shyness; }
+	  
+	  .embarrassment { grid-area: embarrassment; }
+	  
+	  .anxiety { grid-area: anxiety; }
+	  
+	  .dread { grid-area: dread; }
+	  
 
 }
 
