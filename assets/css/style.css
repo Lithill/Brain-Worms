@@ -13,7 +13,7 @@ p {
 }
 
 #leaderboard-overlay-text p {
-	font-size: 5vmin;
+	font-size: 4vmin;
 }
 
 #overlay-play-button {
@@ -152,8 +152,8 @@ button:hover {
   gap: 0px 0px; 
   grid-template-areas: 
     ". fear ."
-    "shame . shyness"
-    ". embarrassment ."
+    "shame . greed"
+    ". anger ."
     "anxiety . dread"; 
   grid-area: worm-box; 
   cursor: pointer;
@@ -179,18 +179,18 @@ button:hover {
 	background-position-y: 81px;
 }
 
-.shyness { 
-	grid-area: shyness;
-	background-image: url("../images/shy-worm.webp");
+.greed { 
+	grid-area: greed;
+	background-image: url("../images/greedy-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
 	background-position-y: 81px;
 }
 
-.embarrassment { 
-	grid-area: embarrassment;
-	background-image: url("../images/embarrassed-worm.webp");
+.anger { 
+	grid-area: anger;
+	background-image: url("../images/angry-worm.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
@@ -427,8 +427,8 @@ button:hover {
 		grid-auto-flow: row;
 		grid-template-areas:
 		  ". fear ."
-		  "shame . shyness"
-		  ". embarrassment ."
+		  "shame . greed"
+		  ". anger ."
 		  "anxiety . dread";
 		grid-area: worm-box;
 	}
@@ -437,9 +437,9 @@ button:hover {
 	  
 	  .shame { grid-area: shame; }
 	  
-	  .shyness { grid-area: shyness; }
+	  .greed { grid-area: greed; }
 	  
-	  .embarrassment { grid-area: embarrassment; }
+	  .anger { grid-area: anger; }
 	  
 	  .anxiety { grid-area: anxiety; }
 	  

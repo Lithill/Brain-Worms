@@ -136,7 +136,7 @@ function generateRandomNum (min, max) {
 }
 
 var animateWormsInterval;
-const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
+const wormArr = ["empty", "fear", "shame", "greed", "anger", "anxiety", "dread"];
 let htmlCounter = "00:00";
 let lastWorm = 0;
 let intervalNum = 1000;
