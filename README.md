@@ -181,19 +181,19 @@ esting was ongoing throughout the entire build. I utilised Chrome developer tool
 
 The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML on all pages of the website. 
 
-Results from the [W3C HTML Validator](assets/images/readme/html-checker.png).
+Results from the [check](assets/images/readme/html-checker.png).
 
 ### CSS Validator
 
 The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS in the style.css file.
 
-Results from the [W3C HTML Validator](assets/images/readme/css-checker.png).
+Results from the [check](assets/images/readme/css-checker.png).
 
 ### JSLint Validator
 
 The [JSLint Validator](https://www.jslint.com/) was used to validate the JavaScript in the script.js file.
 
-Results from the [JSLint Validator](assets/images/readme/js-checker.png).
+Results from the [check](assets/images/readme/js-checker.png).
 
 ### Solved Bugs
 
@@ -264,7 +264,26 @@ Results from the [JSLint Validator](assets/images/readme/js-checker.png).
    
 ### Known Bugs
 
+   1. Expected behaviour: 
+    2. Actual behaviour: When restart button is pressed first, overlay shows "Game isn't playing" and then starts the game without player pressing play. Then the pause button doesn't work.
+    3. Solution:  
+
+     1. Expected behaviour: 
+    2. Actual behaviour: Disabled buttons don't look disabled.
+    3. Solution: 
+
 ### Lighthouse
+
+I used Lighthouse through Chrome Developer Tools to test accessibility, performance, best practices and SEO of the website.
+
+#### Initial Testing
+
+[Desktop](assets/images/lighthouse-desktop-index1.png) ~ [Mobile](assets/images/readme/mobile-lighthouse.png)
+
+Mobile improvements recommended:
+
+* [user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5.
+* Serves images with low resolution
 
 ### Full Testing
 

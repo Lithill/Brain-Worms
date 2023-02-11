@@ -124,6 +124,18 @@ button:hover {
 	height: auto;
 }
 
+#playButton, #pauseButton, #restartButton {
+	width: 70px;
+}
+
+#playButton:disabled, 
+#pauseButton:disabled, 
+#restartButton:disabled, 
+#leaderboard-button:disabled {
+	background-color: #cccccc;
+  	color: #666666;
+}
+
 /******************************** Overlays */
 
 .overlay {
@@ -504,4 +516,3 @@ button:hover {
 		grid-template-rows: 1fr 4fr 2.5fr; 			
 	}
 }
-
