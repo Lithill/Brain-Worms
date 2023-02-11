@@ -366,12 +366,16 @@ function leaderboardHTML() {
     let paragraphs = '';
     let index = 0;
     
-    for (let i in leaderboardArr) {
-      index ++;  
-      paragraphs += `<p>${(index)}- ${leaderboardArr[i]['player']}: ${leaderboardArr[i]['score']}</p>`;
+    if (leaderboardArr.length === 0) {
+        return;
+    } else {
+        for (let i in leaderboardArr) {
+            index ++;  
+            paragraphs += `<p>${(index)}- ${leaderboardArr[i]['player']}: ${leaderboardArr[i]['score']}</p>`;
+          }
+
+          document.getElementById("leaderboard-overlay-text").innerHTML = paragraphs;
     }
-    
-    document.getElementById("leaderboard-overlay-text").innerHTML = paragraphs;
 }
 
 //populates leaderboard overlay and makes itvisible

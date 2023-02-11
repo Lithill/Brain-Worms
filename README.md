@@ -253,9 +253,9 @@ To clone the Brain Worms repository:
    2. Actual behaviour: Worms can sometimes be seen before animation on bigger screen sizes
    3. Solution: 
 
-   1. Expected behaviour: 
-   2. Actual behaviour: 
-   3. Solution: 
+   1. Expected behaviour: When there are no high scores on the leaderboard, the overlay reads "You don't have any high scores yet!"
+   2. Actual behaviour: The overlay does not include this sentance.
+   3. Solution: Put if statement in leaderboardHTML function, so the phrase isn't overwritten with nothing if there is nothing in local storage. 
 
 ### Lighthouse
 
