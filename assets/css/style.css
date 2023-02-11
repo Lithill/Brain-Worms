@@ -10,7 +10,7 @@ h1, h2 {
 	font-family: Eater;
 }
 
-p {
+p, label {
 	font-family: "East Sea Dokdo";
 	font-size: 37px;
 	margin: 10px 10px;
@@ -68,16 +68,18 @@ hr {
 	width: auto;
 }
 
-#title-o {
+.title-o {
 	width: 40px;
 	height: auto;
 }
 
 /******************************** Buttons */
 
-#overlay-play-button {
+#overlay-play-button, .ok-button, #leaderboard-button {
 	font-family: Eater;
 	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 1.2em;
 }
 
 #leaderboard-button {
@@ -406,7 +408,7 @@ button:hover {
 	  
 	.counter-class { 
 		grid-area: counter-class;
-		margin-left: 20; 
+		margin-left: 20px; 
 		margin-right: auto;
 	}
 	  
@@ -419,7 +421,7 @@ button:hover {
 	  
 	.score-class { 
 		grid-area: score-class; 
-		margin-left: 20; 
+		margin-left: 20px; 
 		margin-right: auto;
 	}
 

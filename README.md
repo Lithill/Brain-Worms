@@ -175,7 +175,25 @@ To clone the Brain Worms repository:
    
 ## Testing
 
+esting was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along.
+
 ### W3C Validator
+
+The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML on all pages of the website. 
+
+Results from the [W3C HTML Validator](assets/images/readme/html-checker.png).
+
+### CSS Validator
+
+The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS in the style.css file.
+
+Results from the [W3C HTML Validator](assets/images/readme/css-checker.png).
+
+### JSLint Validator
+
+The [JSLint Validator](https://www.jslint.com/) was used to validate the JavaScript in the script.js file.
+
+Results from the [JSLint Validator](assets/images/readme/js-checker.png).
 
 ### Solved Bugs
 

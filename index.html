@@ -14,7 +14,7 @@
   	<meta name="msapplication-TileColor" content="#00aba9">
   	<meta name="msapplication-config" content="/assets/images/browserconfig.xml">
   	<meta name="theme-color" content="#ffffff">
-<!-- 	end of favicon info -->
+<!-- end of favicon info -->
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
   	<meta name="description"
 		content="A Whack-a-Mole game about brain-eating worms.">
@@ -23,10 +23,10 @@
 </head>
 <body>
 	<div class="container">
-<!-------------------- Overlays -->
+<!-- Overlays -->
 		<div class="overlay" id="intro-overlay">
 			<br>
-			<h1>Brain <span id="no-wrap">W<span><img src="assets/images/title-o.webp" alt="o" id="title-o"></span>rms</span></h1>
+			<h1>Brain <span id="no-wrap">W<span><img src="assets/images/title-o.webp" alt="o" class="title-o"></span>rms</span></h1>
 			<p>(Scroll down)</p>
 			<hr>
 			<h2>How to Play:</h2>
@@ -34,49 +34,37 @@
 			<p>Click each worm as it appears</p>
 			<img src="assets/images/tilde-worm2.webp" class="tilde" alt="Tilde worm">
 			<p>Don't let the worms eat your brain</p>
-			<button class ="ok-button" onclick="introOverlay()">
-				<p>Got it</p>
-			</button>
+			<button class ="ok-button" onclick="introOverlay()">Got it</button>
 		</div>
 		<div class="overlay" id="player-name-overlay">
 			<form id="form" onsubmit="return false"> 
-				<label for="player-name"><p>Please enter three initials</p></label><br>
+				<label for="player-name">Please enter three initials</label><br>
 				<input type="text" id="player-name" name="player-name" placeholder='E.g. "HPD"' required><br><br>
-				<input type="submit" id ="overlay-play-button" onclick="testPlayerName();"></input>
+				<input type="submit" id ="overlay-play-button" onclick="testPlayerName();">
 			</form>
 		</div>
 		<div class="overlay" id="greeting">
 			<p id="greeting-text">Insert text here</p>
-			<button class ="ok-button" onclick="smashWorms()">
-				<p>Show Me the Worms</p>
-			</button>
+			<button class ="ok-button" onclick="smashWorms()">Show Me the Worms</button>
 		</div>
 		<div class="overlay" id="pause-game">
 			<p id="pause-text">Insert text here</p>
-			<button class ="ok-button" id ="pause-overlay" onclick="playGame()">
-				<p>OK</p>
-			</button>
+			<button class ="ok-button" id ="pause-overlay" onclick="playGame()">OK</button>
 		</div>
 		<div class="overlay" id="restart-game">
 			<p id="restart-text">Insert text here</p>
-			<button class ="ok-button" id ="restart-button" onclick="okRestartGame()">
-				<p>OK</p>
-			</button>
+			<button class ="ok-button" id ="restart-button" onclick="okRestartGame()">OK</button>
 		</div>
 		<div class="overlay" id="game-over">
 			<h2>Game Over</h2>
 			<p id="game-over-text">Insert text here</p>
-			<button class ="ok-button" onclick="ifHighScore()">
-				<p>OK</p>
-			</button>
+			<button class ="ok-button" onclick="ifHighScore()">OK</button>
 		</div>
 		<div class="overlay" id="double-play">
 			<p>Did you mean to pause the game?</p>
 			<p><strong>Game is paused.</strong></p>
 			<p>Press 'OK' when you want to resume, then 'restart' if you want to start a new game.</p>
-			<button class ="ok-button" onclick="doublePlay()">
-				<p>OK</p>
-			</button>
+			<button class ="ok-button" onclick="doublePlay()">OK</button>
 		</div>
 <!-- Left column -->
 		<div class="left-column">
@@ -92,24 +80,20 @@
 					<p>Don't let the worms eat your brain</p>
 				</div>
 				<!-- Leaderboard -->
-				<div class="leaderboard" class="hide">
-					<button id ="leaderboard-button" class="hide" onclick="openLeaderboard()">
-						<h2>Leaderboard</h2>
-					</button>
+				<div class="leaderboard hide">
+					<button id ="leaderboard-button" class="hide" onclick="openLeaderboard()">Leaderboard</button>
 				</div>
 		</div>
 <!-- Middle column -->
 		<div class="title hide">
-					<h1>Brain W<span><img src="assets/images/title-o.webp" alt="o" id="title-o"></span>rms</h1>
+					<h1>Brain W<span><img src="assets/images/title-o.webp" alt="o" class="title-o"></span>rms</h1>
 		</div>
 		<div class="brain">
 				<div class="overlay" id="leaderboard-overlay">
 					<h2>Leaderboard</h2>
 					<p id="leaderboard-overlay-text">You don't have any high scores yet! Play the game to add some.</p>
 					<br>
-					<button class ="ok-button" onclick="exitLeaderboard()">
-						<p>Exit</p>
-					</button>
+					<button class ="ok-button" onclick="exitLeaderboard()">Exit</button>
 				</div>
 				<div class="worm-box" id="worm-box">
 					<div class="fear worm"></div>
