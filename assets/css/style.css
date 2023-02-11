@@ -6,14 +6,6 @@ h1, h2 {
 	font-family: Eater;
 }
 
-
-/* Taken from https://css-tricks.com/examples/hrs/ */
-hr {
-    border: 0;
-    height: 3px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
 p {
 	font-family: "East Sea Dokdo";
 	font-size: 37px;
@@ -22,24 +14,6 @@ p {
 
 #leaderboard-overlay-text p {
 	font-size: 4vmin;
-}
-
-#overlay-play-button {
-	font-family: Eater;
-	margin-bottom: 10px;
-}
-
-#leaderboard-button {
-	margin-top: 20px;
-}
-
-.tilde {
-	margin-left: auto;
-  	margin-right: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	height: 25px;
-	width: auto;
 }
 
 /* https://www.w3schools.com/howto/howto_css_responsive_form.asp */
@@ -52,11 +26,58 @@ input[type=text] {
   	resize: vertical;
 }
 
-/********************************  */
+/******************************** General */
 
 body {
 	background-color: #E2DEE5;
 	text-align: center;
+}
+
+/* Taken from https://css-tricks.com/examples/hrs/ */
+hr {
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#no-wrap {
+	white-space: nowrap;
+}
+
+/******************************** Images */
+
+.tilde {
+	margin-left: auto;
+  	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 25px;
+	width: auto;
+}
+
+.reverse-tilde {
+	margin-left: auto;
+  	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 25px;
+	width: auto;
+}
+
+#title-o {
+	width: 40px;
+	height: auto;
+}
+
+/******************************** Buttons */
+
+#overlay-play-button {
+	font-family: Eater;
+	margin-bottom: 10px;
+}
+
+#leaderboard-button {
+	margin-top: 20px;
 }
 
 button, #overlay-play-button {
@@ -80,23 +101,53 @@ button:hover {
 	background-color: #b2e7e9;
 }
 
+.ok-button, #smash-button, #overlay-play-button, #leaderboard-button {
+	background-color:  rgba(255, 255, 255, 0.5);
+	transition-property: background-color;
+  	transition-duration: 750ms;
+	margin: 10px;
+	color: black;
+}
+
+.ok-button:hover, #smash-button:hover, #overlay-play-button:hover, #leaderboard-button:hover {
+	background-color: #b2e7e9;
+}
+
+#play-button-image, #pause-button-image, #restart-button-image {
+	width: 90%;
+	height: auto;
+}
+
+/******************************** Overlays */
+
+.overlay {
+	display: none; 
+	width: 50%; 
+	height: auto; 
+	max-height: 98vh;
+	background-color: whitesmoke; 
+	z-index: 2; 
+	border: 4px solid black;
+	position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
 #intro-overlay {
 	overflow-y:auto;
 	height: 70vh;
 	width: 70vw;
 }
 
-/******************************** Left Column Grid */
+/******************************** Left Column */
 
 .left-column {
 	grid-area: left-column; 
-	/* height: 100%;
-	width: 100%; */
 	align-items: baseline;
 	justify-items: center;
 	align-content: center;
 	display: grid; 
-	gap: 0px 0px; 
 	grid-template-areas: 
 		"instructions-title"
 		"instructions"
@@ -111,22 +162,7 @@ button:hover {
 	grid-area: instructions; 
 }
 
-.play-button-div { 
-	grid-area: play-button-div; 
-	margin: 10px 5px;
-}
-
-.pause-button-div { 
-	grid-area: pause-button-div; 
-	margin: 10px 5px;
-}
-
-.restart-button-div { 
-	grid-area: restart-button-div; 
-	margin: 10px 5px;
-}
-
-/******************************** Central Grid layout  */
+/******************************** Central Column  */
 
 .container { 
 	height: 96vh;
@@ -146,19 +182,6 @@ button:hover {
 	grid-area: title;
 }
 
-#title-o {
-	width: 40px;
-	height: auto;
-}
-
-#no-wrap {
-	white-space: nowrap;
-}
-
-.brain-image {
-	z-index: -5;
-}
-
 .brain {  
 	background-image: url("../images/brain.webp");
 	background-repeat: no-repeat;
@@ -167,7 +190,6 @@ button:hover {
 	display: grid; 
 	grid-template-columns: 1fr 1.5fr 1fr; 
 	grid-template-rows: 1.25fr 2.5fr 2fr; 
-	gap: 0px 0px; 
 	grid-template-areas: 
 		". . ."
 		". worm-box ."
@@ -179,17 +201,15 @@ button:hover {
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
   grid-template-rows: 1fr 1fr 1fr 1fr; 
-  gap: 0px 0px; 
   grid-template-areas: 
     ". fear ."
     "shame . greed"
     ". anger ."
     "anxiety . dread"; 
   grid-area: worm-box; 
-  cursor: pointer;
 }
 
-/******************************** Worms  */
+/******************************** Worms */
 
 .fear { 
 	grid-area: fear; 
@@ -245,45 +265,16 @@ button:hover {
 	background-position-y: 81px;
 }
 
-/******************************** Overlays  */
-
-.overlay {
-	display: none; 
-	width: 50%; 
-	height: auto; 
-	max-height: 98vh;
-	background-color: whitesmoke; 
-	z-index: 2; 
-	border: 4px solid black;
-	position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-}
-
-.ok-button, #smash-button, #overlay-play-button, #leaderboard-button {
-	background-color:  rgba(255, 255, 255, 0.5);
-	transition-property: background-color;
-  	transition-duration: 750ms;
-	margin: 10px;
-	color: black;
-}
-
-.ok-button:hover, #smash-button:hover, #overlay-play-button:hover, #leaderboard-button:hover {
-	background-color: #b2e7e9;
-
-}
-
-#pow {
+/* #pow {
 	background-image: url("../images/pow.webp");
 	background-repeat: no-repeat;
 	background-size: contain;
-	position: fixed; /* Sit on top of the page content */
+	position: fixed; 
 	display: none; 
-	width: 25%; /* Full width (cover the whole page) */
-	height: 25%; /* Full height (cover the whole page) */
-	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  }
+	width: 25%; 
+	height: 25%; 
+	z-index: 2; 
+  } */
 
 /******************************** Animation */
 
@@ -295,7 +286,7 @@ button:hover {
 	cursor: pointer;
   }
 
-  @keyframes slide {
+@keyframes slide {
 	0% {
 	  background-position-y: 81px;
 	}
@@ -305,19 +296,16 @@ button:hover {
 	100% {
 	  background-position-y: 81px;
 	}
-  }
+}
 
-/******************************** Right column Grid */
+/******************************** Right column */
 
 .right-column { 
 	grid-area: right-column; 
-	/* height: 100%;
-	width: 100%; */
 	align-items: baseline;
 	justify-items: center;
 	align-content: center;
 	display: grid; 
-	gap: 0px 0px; 
 	grid-template-areas: 
 		"timer-name"
 		"counter-class"
@@ -329,42 +317,33 @@ button:hover {
 .game-buttons {  
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	/* grid-template-rows: 1fr 1fr; */
-	gap: 0px 0px;
 	grid-auto-flow: row;
 	grid-template-areas:
 		"play-button-div pause-button-div restart-button-div";
-	/* grid-area: game-buttons; */
-	/* cursor: pointer; */
 	margin-left: 10px;
 	margin-top: 20px;
 }
 
-.reverse-tilde {
-	margin-left: auto;
-  	margin-right: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	height: 25px;
-	width: auto;
+.play-button-div { 
+	grid-area: play-button-div; 
+	margin: 10px 5px;
 }
 
-#playButton {
-	/* float: none;
-	display: block; */
+.pause-button-div { 
+	grid-area: pause-button-div; 
+	margin: 10px 5px;
 }
 
-#play-button-image, #pause-button-image, #restart-button-image {
-	width: 90%;
-	height: auto;
+.restart-button-div { 
+	grid-area: restart-button-div; 
+	margin: 10px 5px;
 }
 
 /******************************** Media Queries */
 
 @media (max-width: 956px) {
-
-	button, #overlay-play-button {
-		background-color: white;
+	button, .ok-button, #overlay-play-button {
+		background-color: #b2e7e9;
 	}
 
 	.instructions-title, .instructions, .hide {
@@ -375,48 +354,42 @@ button:hover {
 		display: block;
 	}
 
-	.container {  display: grid;
+	.container {  
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 4fr;
-		gap: 0px 0px;
-		grid-auto-flow: row;
 		grid-template-areas:
 		  "right-column"
 		  "brain";
-	  }
-	  
-	.right-column {  display: grid;
+	}
+
+	.right-column {  
 		grid-template-columns: 1.6fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
-		gap: 0px 0px;
 		grid-auto-flow: row;
 		grid-template-areas:
 		  "timer-name counter-class score-word score-class"
 		  "game-buttons game-buttons game-buttons game-buttons";
-		grid-area: right-column;
-		justify-items: center;
 		align-items: end;
+	}
 
+	.game-buttons {  
+		grid-template-rows: 1fr;
+		grid-area: game-buttons;
 	}
 	  
-	.game-buttons {  display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
-		gap: 0px 0px;
-		grid-auto-flow: row;
-		grid-template-areas:
-		  "play-button-div pause-button-div restart-button-div";
-		grid-area: game-buttons;
-	  }
+	.play-button-div { 
+		grid-area: play-button-div; 
+	}
 	  
-	  .play-button-div { grid-area: play-button-div; }
+	.pause-button-div { 
+		grid-area: pause-button-div; 
+	}
 	  
-	  .pause-button-div { grid-area: pause-button-div; }
-	  
-	  .restart-button-div { grid-area: restart-button-div; }
-	  
+	.restart-button-div { 
+		grid-area: restart-button-div; 
+	}
 
-	  /* https://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements */
+	/* https://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements */
 	.timer-name { 
 		grid-area: timer-name; 
 		margin-left: auto; 
@@ -437,71 +410,25 @@ button:hover {
 		white-space: nowrap;
 	}
 	  
-	  .score-class { 
+	.score-class { 
 		grid-area: score-class; 
 		margin-left: 20; 
 		margin-right: auto;
 	}
-	  
+
 	.brain {  
-		background-image: url("../images/brain.webp");
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;
-		display: grid;
-		gap: 0px 0px;
 		grid-auto-flow: row;
 		grid-template-columns: 0.8fr 1fr 0.8fr; 
-		grid-template-rows: 0.6fr 1fr 0.9fr; 
-		gap: 0px 0px; 
-		grid-template-areas: 
-			". . ."
-			". worm-box ."
-			". . ."; 
-		grid-area: brain;
+		grid-template-rows: 0.6fr 1fr 0.9fr;  
 	}
-	  
-	.worm-box {  display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-		gap: 0px 0px;
-		grid-auto-flow: row;
-		grid-template-areas:
-		  ". fear ."
-		  "shame . greed"
-		  ". anger ."
-		  "anxiety . dread";
-		grid-area: worm-box;
-	}
-	  
-	  .fear { grid-area: fear; }
-	  
-	  .shame { grid-area: shame; }
-	  
-	  .greed { grid-area: greed; }
-	  
-	  .anger { grid-area: anger; }
-	  
-	  .anxiety { grid-area: anxiety; }
-	  
-	  .dread { grid-area: dread; }
-	  
-
 }
 
 @media (max-width: 557px) {
-
-	button, .ok-button, #overlay-play-button {
-		background-color: #b2e7e9;
-	}
-
-	.container {  display: grid;
+	.container {  
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 5fr;
-		gap: 0px 0px;
 		width: 95vw;
 		height: 95vh;
-		grid-auto-flow: row;
 		grid-template-areas:
 		  "right-column"
 		  "brain";
@@ -509,79 +436,63 @@ button:hover {
 
 	.brain {  
 		background-image: url("../images/mobile-brain.webp");
-		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: center;
 		border: 5px solid black;
-		display: grid;
-		gap: 0px 0px;
-		grid-auto-flow: row;
 		grid-template-columns: 1fr 6fr 1fr; 
 		grid-template-rows: 0fr 4fr 1.5fr; 
-		gap: 0px 0px; 
 		grid-template-areas: 
 			". . ."
 			"worm-box"
 			". . ."; 
-		grid-area: brain;
 		width: 95vw;
 		height: auto;
-		
 	}
 
 	.game-buttons {
 		margin-left: 0px;
 		margin-top: 0px;
 	}
-
-	@media (max-width: 514px) {
-
-		.container {
-			width: 95vw;
-		}
-
-		.right-column {
-			/* width: 50vw;
-			height: auto; */
-			grid-template-rows: 1fr 1.5fr;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-
-		.brain {
-			width: 89vw;
-			height: auto;
-			grid-template-columns: 1fr 6fr 1fr; 
-			grid-template-rows: 1.5fr 4fr 2.5fr;
-		}
-
-		h2 {
-			font-size: 5vmin;
-		}
-
-		p {
-			font-size: 8vmin;
-		}
-
-		.counter-class {
-			margin-right: 10px;
-		}
-
-		.container {
-			justify-items: center;
-			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 4fr;
-			grid-template-areas:
-	  			"right-column"
-	  			"brain";
-		}
-
-	}
-
-	@media (max-width: 360px) {
-		.brain {  
-			grid-template-columns: 1fr 6fr 1fr; 
-			grid-template-rows: 1fr 4fr 2.5fr; 			
-		}
-	}
-
 }
+
+@media (max-width: 514px) {
+	.right-column {
+		grid-template-rows: 1fr 1.5fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.brain {
+		width: 89vw;
+		height: auto;
+		grid-template-columns: 1fr 6fr 1fr; 
+		grid-template-rows: 1.5fr 4fr 2.5fr;
+	}
+
+	h2 {
+		font-size: 5vmin;
+	}
+
+	p {
+		font-size: 8vmin;
+	}
+
+	.counter-class {
+		margin-right: 10px;
+	}
+		
+	.container {
+		justify-items: center;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 4fr;
+		grid-template-areas:
+	  		"right-column"
+	  		"brain";
+	}
+}
+
+@media (max-width: 360px) {
+	.brain {  
+		grid-template-columns: 1fr 6fr 1fr; 
+		grid-template-rows: 1fr 4fr 2.5fr; 			
+	}
+}
+
