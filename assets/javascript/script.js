@@ -1,5 +1,6 @@
 // ********************* Disable/Enable Game Buttons
 
+//disabled buttons
 function disableButtons() {
     document.querySelector('#playButton').disabled = true;
     document.querySelector('#pauseButton').disabled = true;
@@ -7,6 +8,7 @@ function disableButtons() {
     document.querySelector('#leaderboard-button').disabled = true;
 }
 
+//enables buttons
 function enableButtons() {
     document.querySelector('#playButton').disabled = false;
     document.querySelector('#pauseButton').disabled = false;
@@ -18,6 +20,7 @@ function enableButtons() {
 
 // ********************* intro overlay (mobile view)
 
+//hides introOverlay
 function introOverlay() {
     document.getElementById("intro-overlay").style.display = "none";
 }
@@ -31,14 +34,6 @@ let gameIsPlaying = false;
 //returns true if string only contains letters, false if not
 function onlyLetters(str) {
 	return /^[A-Za-z]*$/.test(str); 
-}
-
-//gets called after overlay player sees when they hit play button during gameplay
-function doublePlay() {
-    document.getElementById("double-play").style.display = "none";
-    enableButtons();
-    pickWorm();
-    countdown(1);
 }
 
 //gets called when player presses play button. Gets player name and starts the game
@@ -77,6 +72,14 @@ function smashWorms() {
     document.getElementById("greeting").style.display = "none";
     enableButtons();
     playGame();
+}
+
+//gets called after the overlay that the player sees when they hit the play button during gameplay
+function doublePlay() {
+    document.getElementById("double-play").style.display = "none";
+    enableButtons();
+    pickWorm();
+    countdown(1);
 }
 
 /*
@@ -148,7 +151,7 @@ function okRestartGame() {
     pickWorm();
 }
 
-// ********************* random num and animation
+// ********************* Animation
 
 //generates a random number
 function generateRandomNum (min, max) {
@@ -334,18 +337,6 @@ function gameOver() {
     disableButtons();
 }
 
-//hides leaderboard overlay and resets game
-function exitLeaderboard() {
-    enableButtons();
-    document.getElementById("leaderboard-overlay").style.display = "none";    
-    playerScore = 0; 
-    document.getElementById("score").innerHTML = playerScore; 
-    tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
-    tickSeconds = 60;
-    document.getElementById("counter").innerHTML = "00:00"; 
-    intervalNum = 1000;
-}
-
 // ********************* Leaderboard
 
 let leaderboardArr = [];
@@ -389,4 +380,16 @@ function openLeaderboard() {
     document.getElementById("leaderboard-overlay").style.display = "block";
     disableButtons();
     leaderboardHTML();
+}
+
+//hides leaderboard overlay and resets game
+function exitLeaderboard() {
+    enableButtons();
+    document.getElementById("leaderboard-overlay").style.display = "none";    
+    playerScore = 0; 
+    document.getElementById("score").innerHTML = playerScore; 
+    tickMinutes = 1;//this line and line below resets timer, change these if you change timer elsewhere
+    tickSeconds = 60;
+    document.getElementById("counter").innerHTML = "00:00"; 
+    intervalNum = 1000;
 }

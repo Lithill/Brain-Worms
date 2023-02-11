@@ -191,27 +191,6 @@ To clone the Brain Worms repository:
 2.
 	1. Expected behaviour: Worm animations always smooth 
    2. Actual behaviour: Sometimes animations stop halfway through the animation and disapear
-
-```JavaScript
-   function pickWorm () {
-
-      const wormArr = ["empty", "fear", "shame", "shyness", "embarrassment", "anxiety", "dread"];
-
-      function animateWormFunction () {  
-    
-        setInterval(function () {
-            let randomWormNumber = generateRandomNum(1, 6); //generates number between 1-6
-            let activeWorm = wormArr[randomWormNumber]; //assigns this number to wormArr index
-            let activeWormString = "." + activeWorm; //creates class name for worm that has been picked
-
-            //assigns .slide class to the picked worm
-            let worm = document.querySelector(activeWormString);//assigning picked worm class
-
-            worm.classList.toggle("slide"); //do I need to toggle this off afterwards?
-        }, 1000);
-    }
-```
-
    3. Solution: Stop the function from animating the same worm twice in a row
 
 3.
@@ -250,24 +229,19 @@ To clone the Brain Worms repository:
    3. Solution: Swap alert boxes for overlays.
 
 10.
-   1. Expected behaviour: User can't gain more points by multiply clicks per animation.
-   2. Actual behaviour: Users can get multiple points by clicking on the same animation.
-   3. Solution: Insert click counter and if statement - if clicked once then add point.
+    1. Expected behaviour: User can't gain more points by multiply clicks per animation.
+    2. Actual behaviour: Users can get multiple points by clicking on the same animation.
+    3. Solution: Insert click counter and if statement - if clicked once then add point.
 
 11.
-   1. Expected behaviour: Player's "You scored x" number is the same across different parts of the page.
-   2. Actual behaviour: Player's "You scored x" overlay number can be less than the actual score due to animation still being clickable after the overlay uses the playerScore. 
-   3. Solution: setTimeout on game-over overlay.
+    1. Expected behaviour: Player's "You scored x" number is the same across different parts of the page.
+    2. Actual behaviour: Player's "You scored x" overlay number can be less than the actual score due to animation still being clickable after the overlay uses the playerScore. 
+    3. Solution: setTimeout on game-over overlay.
 
 12.
-   1. Expected behaviour: Leaderboard to appear and buttons to unfreeze after game ends.
-   2. Actual behaviour: Leaderboard did not appear and buttons did not unfreeze after game ends. 
-   3. Solution: Create if statement to check if leaderboardArr is null. 
-
-13.
-   1. Expected behaviour: 
-   2. Actual behaviour: 
-   3. Solution: 
+    1. Expected behaviour: Leaderboard to appear and buttons to unfreeze after game ends.
+    2. Actual behaviour: Leaderboard did not appear and buttons did not unfreeze after game ends. 
+    3. Solution: Create if statement to check if leaderboardArr is null. 
    
 ### Known Bugs
 
