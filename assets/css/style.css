@@ -2,6 +2,10 @@
 
 @import url(https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Eater);
 
+h1 {
+	margin: 0px;
+}
+
 h1, h2 {
 	font-family: Eater;
 }
