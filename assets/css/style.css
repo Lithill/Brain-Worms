@@ -180,10 +180,9 @@ button:hover {
 
 .title {
 	grid-area: title;
-	/* Code below taken from http://howtocenterincss.com/ */
-	display:flex;
-	justify-content:center;
-	align-items:center;
+	display: flex;
+	justify-content: center;
+	align-items: end;
 }
 
 .brain {  
