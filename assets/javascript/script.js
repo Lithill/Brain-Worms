@@ -33,6 +33,7 @@ function onlyLetters(str) {
 	return /^[A-Za-z]*$/.test(str); 
 }
 
+//gets called after overlay player sees when they hit play button during gameplay
 function doublePlay() {
     document.getElementById("double-play").style.display = "none";
     enableButtons();
@@ -40,7 +41,7 @@ function doublePlay() {
     countdown(1);
 }
 
-//getting player name and starting game
+//gets called when player presses play button. Gets player name and starts the game
 function pressPlay() { 
     disableButtons();
 
@@ -48,38 +49,42 @@ function pressPlay() {
         document.getElementById("double-play").style.display = "block";
         pauseGame();
     } else {
-        document.getElementById("play-game").style.display = "block";
+        document.getElementById("player-name-overlay").style.display = "block";
     }
 }
 
-
-//allowing only three letters as a username
-function hello() {
-    playerName = document.getElementById('playerName').value;
+//gets called when player submits username. Allows only three letters
+function testPlayerName() {
+    playerName = document.getElementById('player-name').value;
 
     if ((playerName.length === 3) && (onlyLetters(playerName))) {
         greeting()
-        document.getElementById("play-game").style.display = "none";
+        document.getElementById("player-name-overlay").style.display = "none";
     } else {
-        hello();
-        document.getElementById("play-game").style.display = "block";
+        testPlayerName();
+        document.getElementById("player-name-overlay").style.display = "block";
     }
 }
 
+//greets player after successful username submission
 function greeting() {
-    document.getElementById("hello-text").innerHTML = "Thank you " + playerName.toUpperCase() + "! Are you ready to smash some worms?";
-    document.getElementById("hello-div").style.display = "block";
+    document.getElementById("greeting-text").innerHTML = "Hi " + playerName.toUpperCase() + "! Are you ready to smash some worms?";
+    document.getElementById("greeting").style.display = "block";
 }
 
+//gets called when player presses button on greeting overlay
 function smashWorms() {
-    document.getElementById("hello-div").style.display = "none";
+    document.getElementById("greeting").style.display = "none";
     enableButtons();
     playGame();
 }
 
-//hiding overlays, enabling game buttons, and starting countdown timer and animation
+/*
+gets calls at start of game. Hides overlays, enables game buttons, 
+and starts countdown timer and animation
+*/
 function playGame() {
-    document.getElementById("hello-div").style.display = "none";
+    document.getElementById("greeting").style.display = "none";
     document.getElementById("pause-game").style.display = "none";
     enableButtons();
     countdown(1);
@@ -90,6 +95,7 @@ function playGame() {
 
 // ********************* Pause button function
 
+//gets called when player presses pause button
 function pauseButton() {
     document.getElementById("pause-game").style.display = "block";
     disableButtons();
@@ -111,6 +117,7 @@ function pauseGame() {
 
 // ********************* Restart button functions
 
+//gets called when player presses restart button
 function restartGame() {
     document.getElementById("restart-game").style.display = "block";
     disableButtons();
@@ -124,15 +131,18 @@ function restartGame() {
     } 
 } 
 
-//resets and plays game if player wants to restart halfway through a game
+/*
+gets called when player says 'OK' when asked if they want to restart the game. 
+Resets and plays game if player wants to restart halfway through a game
+*/
 function okRestartGame() {
     document.getElementById("restart-game").style.display = "none";
     enableButtons();
     clearInterval(animateWormsInterval);
     playerScore = 0; 
     document.getElementById("score").innerHTML = playerScore;
-    tickMinutes = 1;//this line and line below resets timer, change these if you change the timer elsewhere
-    tickSeconds = 60;
+    tickMinutes = 1;//this line and line below resets timer 
+    tickSeconds = 60;//change these if you change the timer value elsewhere
     intervalNum = 1000;
     countdown(1);
     pickWorm();
@@ -193,7 +203,11 @@ function pickWorm () {
         worm.classList.toggle("slide");
         worm.addEventListener('click' , wormClick);
 
-        //assigns a new variable for the worm that is going through animation. This allows the old variable to be changed for overlapping animations 
+        /*
+        assigns a new variable for the worm that is going through 
+        animation. This allows the old variable to be changed, which 
+        makes overlapping animations possible.
+        */
         function setRemoveWorm () {
             removeWorm = worm;
             removeSlide();
@@ -306,7 +320,7 @@ function countdown(minutes) {
 
 // ********************* Game Over
 
-//shows game-over overlay and gets leaderboard from local storage
+//shows game-over overlay and gets leaderboard data from local storage
 function gameOver() {
     gameIsPlaying = false;
     document.getElementById("game-over-text").innerHTML = `You scored ${playerScore} points!`;
@@ -333,6 +347,7 @@ function exitLeaderboard() {
 }
 
 // ********************* Leaderboard
+
 let leaderboardArr = [];
 
 //adds players score to leaderboard if high enough, and sends it to local storage
@@ -368,7 +383,7 @@ function leaderboardHTML() {
     document.getElementById("leaderboard-overlay-text").innerHTML = paragraphs;
 }
 
-//populates leaderboard overlay and makes visible
+//populates leaderboard overlay and makes itvisible
 function openLeaderboard() {
     leaderboardArr = JSON.parse(localStorage.getItem('topTen'));
     document.getElementById("leaderboard-overlay").style.display = "block";

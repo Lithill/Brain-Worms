@@ -20,7 +20,6 @@
 		content="A Whack-a-Mole game about brain-eating worms.">
 	<meta name="keywords" content="whack, mole, brain, worms, game">
 	<meta name="author" content="Rossanne Hamilton">
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -38,15 +37,15 @@
 				<p>Got it</p>
 			</button>
 		</div>
-		<div class="overlay" id="play-game">
+		<div class="overlay" id="player-name-overlay">
 			<form id="form" onsubmit="return false"> 
-				<label for="playerName"><p>Please enter three initials</p></label><br>
-				<input type="text" id="playerName" name="playerName" placeholder='E.g. "HPD"' required><br><br>
-				<input type="submit" id ="overlay-play-button" onclick="hello();"></input>
+				<label for="player-name"><p>Please enter three initials</p></label><br>
+				<input type="text" id="player-name" name="player-name" placeholder='E.g. "HPD"' required><br><br>
+				<input type="submit" id ="overlay-play-button" onclick="testPlayerName();"></input>
 			</form>
 		</div>
-		<div class="overlay" id="hello-div">
-			<p id="hello-text">Insert text here</p>
+		<div class="overlay" id="greeting">
+			<p id="greeting-text">Insert text here</p>
 			<button class ="ok-button" onclick="smashWorms()">
 				<p>Show Me the Worms</p>
 			</button>
@@ -59,7 +58,7 @@
 		</div>
 		<div class="overlay" id="restart-game">
 			<p id="restart-text">Insert text here</p>
-			<button class ="ok-button" id ="restart-overlay" onclick="okRestartGame()">
+			<button class ="ok-button" id ="restart-button" onclick="okRestartGame()">
 				<p>OK</p>
 			</button>
 		</div>
@@ -125,10 +124,10 @@
 			<!-- Game timer -->
 			<h2 class="timer-name">Timer : </h2>
 			<p id="counter" class="counter-class">00:00</p>
-			<img src="assets/images/tilde-worm2-reverse.webp" alt="Brain Worm" class="hide reverse-tilde">
+			<img src="assets/images/tilde-worm2-reverse.webp" alt="Tilde Worm" class="hide reverse-tilde">
 			<h2 class="score-word">Score : </h2>
 			<p id="score" class="score-class">0</p>
-			<img src="assets/images/tilde-worm2-reverse.webp" alt="Brain Worm" class="hide reverse-tilde">
+			<img src="assets/images/tilde-worm2-reverse.webp" alt="Tilde Worm" class="hide reverse-tilde">
 			<!-- Game Buttons -->			
 			<div class="game-buttons">
 				<div class="play-button-div">
