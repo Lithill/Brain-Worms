@@ -261,16 +261,13 @@ Results from the [check](assets/images/readme/js-checker.png).
     1. Expected behaviour: When there are no high scores on the leaderboard, the overlay reads "You don't have any high scores yet!"
     2. Actual behaviour: The overlay does not include this sentance.
     3. Solution: Put if statement in leaderboardHTML function, so the phrase isn't overwritten with nothing if there is nothing in local storage. 
+
+14.
+    1. Expected behaviour: Buttons work as expected
+    2. Actual behaviour: When restart button is pressed first, overlay shows "Game isn't playing" and then starts the game without player pressing play. Then the pause button doesn't work.
+    3. Solution: Disable unnecessary buttons
    
 ### Known Bugs
-
-   1. Expected behaviour: 
-    2. Actual behaviour: When restart button is pressed first, overlay shows "Game isn't playing" and then starts the game without player pressing play. Then the pause button doesn't work.
-    3. Solution:  
-
-     1. Expected behaviour: 
-    2. Actual behaviour: Disabled buttons don't look disabled.
-    3. Solution: 
 
 ### Lighthouse
 

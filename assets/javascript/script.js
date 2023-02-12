@@ -2,22 +2,21 @@
 
 // ********************* Disable/Enable Game Buttons
 
-//disabled buttons
-function disableButtons() {
-    document.querySelector("#playButton").disabled = true;
-    document.querySelector("#pauseButton").disabled = true;
-    document.querySelector("#restartButton").disabled = true;
-    document.querySelector("#leaderboard-button").disabled = true;
-}
+document.querySelector("#pauseButton").disabled = true;
+document.querySelector("#restartButton").disabled = true;
 
-//enables buttons
-function enableButtons() {
-    document.querySelector("#playButton").disabled = false;
-    document.querySelector("#pauseButton").disabled = false;
-    document.querySelector("#restartButton").disabled = false;
-    document.querySelector("#leaderboard-button").disabled = false;
-    document.getElementById("pause-game").style.display = "none";
-    document.getElementById("restart-game").style.display = "none";
+function whichButtons() {
+    if (gameIsPlaying) {
+        document.querySelector("#leaderboard-button").disabled = true;
+        document.querySelector("#playButton").disabled = true;
+        document.querySelector("#restartButton").disabled = false;
+        document.querySelector("#pauseButton").disabled = false;
+    } else {
+        document.querySelector("#restartButton").disabled = true;
+        document.querySelector("#pauseButton").disabled = true;
+        document.querySelector("#leaderboard-button").disabled = false;
+        document.querySelector("#playButton").disabled = false;
+    }
 }
 
 // ********************* intro overlay (mobile view)
@@ -43,7 +42,7 @@ Gets called when player presses play button.
 Gets player name and starts the game
 */
 function pressPlay() {
-    disableButtons();
+    whichButtons();
 
     if (gameIsPlaying) {
         document.getElementById("double-play").style.display = "block";
@@ -77,8 +76,8 @@ function greeting() {
 //gets called when player presses button on greeting overlay
 function smashWorms() {
     document.getElementById("greeting").style.display = "none";
-    enableButtons();
     playGame();
+    whichButtons();
 }
 
 /*
@@ -87,7 +86,8 @@ sees when they hit the play button during gameplay
 */
 function doublePlay() {
     document.getElementById("double-play").style.display = "none";
-    enableButtons();
+    whichButtons();
+    document.querySelector("#leaderboard-button").disabled = true;
     pickWorm();
     countdown(1);
 }
@@ -99,7 +99,7 @@ and starts countdown timer and animation
 function playGame() {
     document.getElementById("greeting").style.display = "none";
     document.getElementById("pause-game").style.display = "none";
-    enableButtons();
+    whichButtons();
     countdown(1);
     pickWorm();
     gameIsPlaying = true;
@@ -111,7 +111,7 @@ function playGame() {
 //gets called when player presses pause button
 function pauseButton() {
     document.getElementById("pause-game").style.display = "block";
-    disableButtons();
+    whichButtons();
 
     if (gameIsPlaying) {
         pauseGame();
@@ -122,7 +122,7 @@ function pauseButton() {
         document.getElementById("pause-text").innerHTML =
         "Game isn't playing! Press play to start the game";
 
-        document.getElementById("pause-overlay").onclick = enableButtons;
+        document.getElementById("pause-overlay").onclick = whichButtons;
     }
 }
 
@@ -137,7 +137,8 @@ function pauseGame() {
 //gets called when player presses restart button
 function restartGame() {
     document.getElementById("restart-game").style.display = "block";
-    disableButtons();
+    document.querySelector("#leaderboard-button").disabled = true;
+    whichButtons();
 
     if (gameIsPlaying) {
         document.getElementById("restart-text").innerHTML =
@@ -148,7 +149,7 @@ function restartGame() {
         document.getElementById("restart-text").innerHTML =
         "Game isn't playing! Press 'Play' to start the game";
 
-        document.getElementById("restart-overlay").onclick = enableButtons;
+        document.getElementById("restart-overlay").onclick = whichButtons;
     }
 }
 
@@ -158,7 +159,7 @@ Resets and plays game if player wants to restart halfway through a game
 */
 function okRestartGame() {
     document.getElementById("restart-game").style.display = "none";
-    enableButtons();
+    whichButtons();
     clearInterval(animateWormsInterval);
     playerScore = 0;
     document.getElementById("score").innerHTML = playerScore;
@@ -361,7 +362,7 @@ function gameOver() {
         leaderboardArr = [];
     }
 
-    disableButtons();
+    whichButtons();
 }
 
 // ********************* Leaderboard
@@ -419,7 +420,9 @@ function leaderboardHTML() {
 function openLeaderboard() {
     leaderboardArr = JSON.parse(localStorage.getItem("topTen"));
     document.getElementById("leaderboard-overlay").style.display = "block";
-    disableButtons();
+    document.querySelector("#restartButton").disabled = true;
+    document.querySelector("#pauseButton").disabled = true;
+    whichButtons();
     leaderboardHTML();
 }
 
@@ -429,8 +432,10 @@ Change tickMinutes and tickSeconds value if
 you change the timer elsewhere.
 */
 function exitLeaderboard() {
-    enableButtons();
+    whichButtons();
     document.getElementById("leaderboard-overlay").style.display = "none";
+    document.querySelector("#restartButton").disabled = true;
+    document.querySelector("#pauseButton").disabled = true;
     playerScore = 0;
     document.getElementById("score").innerHTML = playerScore;
     tickMinutes = 1;
