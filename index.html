@@ -67,26 +67,26 @@
 			<button class ="ok-button" onclick="exitLeaderboard()">Exit</button>
 		</div>
 <!-- Left column -->
-		<div class="left-column">
-				<!-- Instructions Heading -->
-				<div class="instructions-title">
-					<h2>How to Play:</h2>
-					<img src="assets/images/tilde-worm2.webp" class="tilde" alt="Tilde worm">
-				</div>
-				<!-- Instructions -->
-				<div class="instructions">
-					<p>Click each worm as it appears</p>
-					<img src="assets/images/tilde-worm2.webp" class="tilde" alt="Tilde worm">
-					<p>Don't let the worms eat your brain</p>
-				</div>
-				<!-- Leaderboard -->
-				<div class="leaderboard hide">
-					<button id ="leaderboard-button" class="hide" onclick="openLeaderboard()">Leaderboard</button>
-				</div>
-		</div>
+		<section class="left-column">
+			<!-- Instructions Heading -->
+			<div class="instructions-title">
+				<h2>How to Play:</h2>
+				<img src="assets/images/tilde-worm2.webp" class="tilde" alt="Tilde worm">
+			</div>
+			<!-- Instructions -->
+			<div class="instructions">
+				<p>Click each worm as it appears</p>
+				<img src="assets/images/tilde-worm2.webp" class="tilde" alt="Tilde worm">
+				<p>Don't let the worms eat your brain</p>
+			</div>
+			<!-- Leaderboard -->
+			<div class="leaderboard hide">
+				<button id ="leaderboard-button" class="hide" onclick="openLeaderboard()">Leaderboard</button>
+			</div>
+		</section>
 <!-- Middle column -->
 		<title class="title hide">Brain Worms</title>
-		<div class="brain">
+		<section class="brain">
 			<div class="worm-box" id="worm-box">
 				<div class="fear worm"></div>
 				<div class="shame worm"></div>
@@ -95,35 +95,35 @@
 				<div class="anxiety worm"></div>
 				<div class="dread worm"></div>
 			</div>
-		</div>
+		</section>
 <!-- Right column -->
-		<div class="right-column">
-				<!-- Game timer -->
-				<h2 class="timer-name">Timer : </h2>
-				<p id="counter" class="counter-class">00:00</p>
-				<img src="assets/images/tilde-worm2-reverse.webp" alt="Tilde Worm" class="hide reverse-tilde">
-				<h2 class="score-word">Score : </h2>
-				<p id="score" class="score-class">0</p>
-				<img src="assets/images/tilde-worm2-reverse.webp" alt="Tilde Worm" class="hide reverse-tilde">
-				<!-- Game Buttons -->			
-				<div class="game-buttons">
-					<div class="play-button-div">
-						<button id ="playButton" onclick="pressPlay()">
-							<img src="assets/images/play-button.webp" id="play-button-image" alt="Play button">
-						</button>
-					</div>
-					<div class="pause-button-div">
-						<button id ="pauseButton" onclick="pauseButton()">
-							<img src="assets/images/pause-button.webp" id="pause-button-image" alt="Pause button">
-						</button>
-					</div>
-					<div class="restart-button-div">
-						<button id ="restartButton" onclick="restartGame()">
-							<img src="assets/images/restart-button.webp" id="restart-button-image" alt="Restart button">
-						</button>
-					</div>
+		<section class="right-column">
+			<!-- Game timer -->
+			<h2 class="timer-name">Timer : </h2>
+			<p id="counter" class="counter-class">00:00</p>
+			<img src="assets/images/tilde-worm2-reverse.webp" alt="Tilde Worm" class="hide reverse-tilde">
+			<h2 class="score-word">Score : </h2>
+			<p id="score" class="score-class">0</p>
+			<img src="assets/images/tilde-worm2-reverse.webp" alt="Tilde Worm" class="hide reverse-tilde">
+			<!-- Game Buttons -->			
+			<div class="game-buttons">
+				<div class="play-button-div">
+					<button id ="playButton" onclick="pressPlay()">
+						<img src="assets/images/play-button.webp" id="play-button-image" alt="Play button">
+					</button>
 				</div>
-		</div>	
+				<div class="pause-button-div">
+					<button id ="pauseButton" onclick="pauseButton()">
+						<img src="assets/images/pause-button.webp" id="pause-button-image" alt="Pause button">
+					</button>
+				</div>
+				<div class="restart-button-div">
+					<button id ="restartButton" onclick="restartGame()">
+						<img src="assets/images/restart-button.webp" id="restart-button-image" alt="Restart button">
+					</button>
+				</div>
+			</div>
+		</section>	
 	</div>
 	<script src="assets/javascript/script.js"></script>
 </body>
