@@ -5,20 +5,15 @@
 document.querySelector("#pauseButton").disabled = true;
 document.querySelector("#restartButton").disabled = true;
 
+//turns buttons on or off depending on whether game is playing
 function whichButtons() {
-    if (gameIsPlaying) {
-        document.querySelector("#leaderboard-button").disabled = true;
-        document.querySelector("#playButton").disabled = true;
-        document.querySelector("#restartButton").disabled = false;
-        document.querySelector("#pauseButton").disabled = false;
-    } else {
-        document.querySelector("#restartButton").disabled = true;
-        document.querySelector("#pauseButton").disabled = true;
-        document.querySelector("#leaderboard-button").disabled = false;
-        document.querySelector("#playButton").disabled = false;
-    }
+    document.querySelector("#leaderboard-button").disabled = gameIsPlaying;
+    document.querySelector("#playButton").disabled = gameIsPlaying;
+    document.querySelector("#restartButton").disabled = !gameIsPlaying;
+    document.querySelector("#pauseButton").disabled = !gameIsPlaying;
 }
 
+//turns all buttons off
 function allButtonsOff() {
     document.querySelector("#leaderboard-button").disabled = true;
     document.querySelector("#playButton").disabled = true;
@@ -359,7 +354,6 @@ function ifHighScore() {
       return b.score - a.score;
     });
 
-    //if more than 10 items, gets rid of smallest score
     if (leaderboardArr.length > 10) {
       leaderboardArr.pop();
     }
