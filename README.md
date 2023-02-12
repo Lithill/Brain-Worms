@@ -46,6 +46,17 @@ In recent years there has been a rise in games aimed at improving mental health.
 
 * To have my score displayed on a leaderboard if I reach the top 10.
 
+#### Possible Future Plans
+
+* For there to be a 'POW!' image that replaced each worm for a few seconds when clicked
+* To include sound effects and background music that the user is able to turn on and off. 
+* To see when I beat my own previous score.
+* To have a leaderboard that doesn't just gather data locally.
+* To get trophies based on the worms that have been most consistently hit. (Eg. If you always hit 'fear' you get the 'courage' trophy. If you hit them all you get the 'zen' trophy.)
+* To see the collection of trophies you have won since your first visit.
+* To enable the user to change the words on the worm labels.
+* For the screen to get darker with each worm missed, and lighter with each worm hit. 
+
 ## Design
 
 ### Early Design Phases
@@ -301,18 +312,32 @@ Tested each button on the page. Each button worked as expected, or was appropria
 
 #### Player Name Form:
 
+Tested the player name form with a variety of inputs, to ensure appropriate playername has been chosen. User is prompted with additional hints about the player name if they have failed to choose one that the form will accept.
 
+#### Worms:
+
+Tested clickability of worms and other spaces on the page. Worms only award points once per click during each animation. Non-animated sections of the page do not award clicks when clicked on.
+
+#### Leaderboard:
+
+Tested that leaderboard displays message of encouragement when there are no high scores on the users device. Checked that leaderboard does not go above having ten scores on there, that the scores are ordered from high to low, and that they are updated with each completion of the game, so long as the user has an appropriately high score.
 
 ## Credits
 
-* Thanks are given to [CodeBrainer](https://www.codebrainer.com/blog/contact-form-in-javascript) for their tutorial on building working forms.
-* Thanks are given to [Catalin Pit](https://catalins.tech/store-array-in-localstorage/) for their tutorial on local storage.
+Thanks are given for the following blogs and tutorials:
+
+* [CodeBrainer's](https://www.codebrainer.com/blog/contact-form-in-javascript) tutorial on building working forms.
+* [Catalin Pit's](https://catalins.tech/store-array-in-localstorage/) tutorial on local storage.
+* [W3School's](https://catalins.tech/store-array-in-localstorage/) tutorial on responsive forms.
 
 ### Code Used
 
 * [Layoutit!](https://grid.layoutit.com/) was used to create custom css code for the grid.
 * [adhithyan15's countdown.js](https://gist.github.com/adhithyan15/4350689) was used to create the countdown timer.
 * [Nikhil Aggarwal's for-loop on Stack Overflow](https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur) was used to iterate through the worm class for the click event listner.
+* [gen_Eric's code on Stack Overflow](https://stackoverflow.com/questions/17684921/sort-json-object-in-javascript) was used to return highest to lowest scores from leaderboardArr.
+* [CSS Tricks - simple styles for <hr>'s](https://css-tricks.com/examples/hrs/) was used to create custom line.
+* [pstanton's code on Stack Overflow](https://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements) was used to right-aline a div element.
 
 ### Content
 
@@ -327,7 +352,7 @@ Content for the website was made by Rossanne Hamilton.
 
 I would like to acknowledge the following people who helped me along the way in completing my second milestone project:
 
-- Rimi Hussain for her idea to call it Brain Worms (before the idea included a brain or worms in the design).
-- Chris Mugridge for suggesting I insert an if statement detailing what to do when randomWormNumber is the same as lastWorm, and adding or subtracting from randomWormNumbr before running the animateWorm function. (Instead of skipping the animateWorm function and trying to change the setInterval time for that specific loop around setInterval.)
-- My tutor Robert Mclaughlin for helpful feedback and sharing links for further learning.
 - My mentor Mitko Bachvarov for helpful feedback and sharing links for further learning.
+- Rimi Hussain for her idea to call it Brain Worms (before the idea included a brain or worms in the design).
+- Chris Mugridge for suggesting I insert an if-statement detailing what to do when randomWormNumber is the same as lastWorm, and adding or subtracting from randomWormNumbr before running the animateWorm function. (Instead of skipping the animateWorm function and trying to change the setInterval time for that specific loop around setInterval.)
+- My tutor Robert Mclaughlin for helpful feedback and sharing links for further learning.

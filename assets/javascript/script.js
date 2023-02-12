@@ -29,8 +29,6 @@ function introOverlay() {
     whichButtons();
 }
 
-
-
 if (document.getElementById("intro-overlay").style.display === "block") {
     allButtonsOff();
 }
@@ -64,7 +62,12 @@ function testPlayerName() {
         document.getElementById("player-name-overlay").style.display = "none";
         allButtonsOff();
     } else {
+        document.getElementById("form").innerHTML =
+            `<label for="player-name">Please enter three letters without spaces, punctuation, numbers or symbols:</label><br>
+			<input type="text" id="player-name" name="player-name" placeholder='E.g. "HPD"' required><br><br>
+			<input type="submit" id ="overlay-play-button" onclick="testPlayerName();"></input>`
         testPlayerName();
+
         document.getElementById("player-name-overlay").style.display = "block";
         allButtonsOff();
     }
@@ -384,7 +387,7 @@ function leaderboardHTML() {
     }
 }
 
-//populates leaderboard overlay and makes itvisible
+//populates leaderboard overlay and makes it visible
 function openLeaderboard() {
     leaderboardArr = JSON.parse(localStorage.getItem("topTen"));
     document.getElementById("leaderboard-overlay").style.display = "block";

@@ -99,8 +99,6 @@ button, #overlay-play-button {
 	border-radius: 8px;
 	opacity: 0.9;
     filter: alpha(opacity=90);
-	/* -webkit-appearance: none;
-	border-radius: 0; */
 }
 
 button p, button h2 {
@@ -289,17 +287,6 @@ button:hover {
 	background-position: center;
 	background-position-y: 81px;
 }
-
-/* #pow {
-	background-image: url("../images/pow.webp");
-	background-repeat: no-repeat;
-	background-size: contain;
-	position: fixed; 
-	display: none; 
-	width: 25%; 
-	height: 25%; 
-	z-index: 2; 
-  } */
 
 /******************************** Animation */
 
