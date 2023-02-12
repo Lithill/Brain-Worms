@@ -29,6 +29,8 @@ function introOverlay() {
     whichButtons();
 }
 
+
+
 if (document.getElementById("intro-overlay").style.display === "block") {
     allButtonsOff();
 }
@@ -173,7 +175,7 @@ function pickWorm () {
             randomWormNumber ++;
             animateWorm();
         } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {
-            randomWormNumber --; 
+            randomWormNumber --;
             animateWorm();
         } else {
             animateWorm();

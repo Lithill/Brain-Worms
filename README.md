@@ -275,12 +275,12 @@ I used Lighthouse through Chrome Developer Tools to test accessibility, performa
 
 #### Initial Testing
 
-[Desktop](assets/images/lighthouse-desktop-index1.png) ~ [Mobile](assets/images/readme/mobile-lighthouse.png)
+[Desktop](assets/images/#.png) ~ [Mobile](assets/images/readme/mobile-lighthouse.png)
 
 Mobile improvements recommended:
 
 * [user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5.
-* Serves images with low resolution
+* Serves images with low resolution.
 
 ### Full Testing
 
