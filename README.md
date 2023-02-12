@@ -282,6 +282,8 @@ Mobile improvements recommended:
 * [user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5.
 * Serves images with low resolution.
 
+Unfortunately, including a <title> section made the title unreadable
+
 ### Full Testing
 
 #### Links:
