@@ -48,11 +48,11 @@
 			<button class ="ok-button" onclick="smashWorms()">Show Me the Worms</button>
 		</div>
 		<div class="overlay" id="pause-game">
-			<p id="pause-text">Insert text here</p>
+			<p id="pause-text">Game is paused. Press 'OK' when you want to continue</p>
 			<button class ="ok-button" id ="pause-overlay" onclick="playGame()">OK</button>
 		</div>
 		<div class="overlay" id="restart-game">
-			<p id="restart-text">Insert text here</p>
+			<p id="restart-text">Are you ready to restart the game?</p>
 			<button class ="ok-button" id ="restart-button" onclick="okRestartGame()">OK</button>
 		</div>
 		<div class="overlay" id="game-over">
@@ -60,11 +60,11 @@
 			<p id="game-over-text">Insert text here</p>
 			<button class ="ok-button" onclick="ifHighScore()">OK</button>
 		</div>
-		<div class="overlay" id="double-play">
-			<p>Did you mean to pause the game?</p>
-			<p><strong>Game is paused.</strong></p>
-			<p>Press 'OK' when you want to resume, then 'restart' if you want to start a new game.</p>
-			<button class ="ok-button" onclick="doublePlay()">OK</button>
+		<div class="overlay" id="leaderboard-overlay">
+			<h2>Leaderboard</h2>
+			<p id="leaderboard-overlay-text">You don't have any high scores yet! Play the game to add some.</p>
+			<br>
+			<button class ="ok-button" onclick="exitLeaderboard()">Exit</button>
 		</div>
 <!-- Left column -->
 		<div class="left-column">
@@ -89,20 +89,14 @@
 					<h1>Brain W<span><img src="assets/images/title-o.webp" alt="o" class="title-o"></span>rms</h1>
 		</div>
 		<div class="brain">
-				<div class="overlay" id="leaderboard-overlay">
-					<h2>Leaderboard</h2>
-					<p id="leaderboard-overlay-text">You don't have any high scores yet! Play the game to add some.</p>
-					<br>
-					<button class ="ok-button" onclick="exitLeaderboard()">Exit</button>
-				</div>
-				<div class="worm-box" id="worm-box">
+			<div class="worm-box" id="worm-box">
 					<div class="fear worm"></div>
 					<div class="shame worm"></div>
 					<div class="greed worm"></div>
 					<div class="anger worm"></div>
 					<div class="anxiety worm"></div>
 					<div class="dread worm"></div>
-				</div>
+			</div>
 		</div>
 <!-- Right column -->
 		<div class="right-column">

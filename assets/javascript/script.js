@@ -19,11 +19,23 @@ function whichButtons() {
     }
 }
 
+function allButtonsOff() {
+    document.querySelector("#leaderboard-button").disabled = true;
+    document.querySelector("#playButton").disabled = true;
+    document.querySelector("#restartButton").disabled = true;
+    document.querySelector("#pauseButton").disabled = true;
+}
+
 // ********************* intro overlay (mobile view)
 
 //hides introOverlay
 function introOverlay() {
     document.getElementById("intro-overlay").style.display = "none";
+    whichButtons();
+}
+
+if (document.getElementById("intro-overlay").style.display === "block") {
+    allButtonsOff();
 }
 
 // ********************* Play button functions
@@ -42,14 +54,8 @@ Gets called when player presses play button.
 Gets player name and starts the game
 */
 function pressPlay() {
-    whichButtons();
-
-    if (gameIsPlaying) {
-        document.getElementById("double-play").style.display = "block";
-        pauseGame();
-    } else {
-        document.getElementById("player-name-overlay").style.display = "block";
-    }
+    document.getElementById("player-name-overlay").style.display = "block";
+    allButtonsOff();
 }
 
 //gets called when player submits username. Allows only three letters
@@ -59,9 +65,11 @@ function testPlayerName() {
     if ((playerName.length === 3) && (onlyLetters(playerName))) {
         greeting();
         document.getElementById("player-name-overlay").style.display = "none";
+        allButtonsOff();
     } else {
         testPlayerName();
         document.getElementById("player-name-overlay").style.display = "block";
+        allButtonsOff();
     }
 }
 
@@ -71,6 +79,7 @@ function greeting() {
     "Hi " + playerName.toUpperCase() + "! Are you ready to smash some worms?";
 
     document.getElementById("greeting").style.display = "block";
+    allButtonsOff();
 }
 
 //gets called when player presses button on greeting overlay
@@ -78,18 +87,6 @@ function smashWorms() {
     document.getElementById("greeting").style.display = "none";
     playGame();
     whichButtons();
-}
-
-/*
-Gets called after the overlay that the player
-sees when they hit the play button during gameplay
-*/
-function doublePlay() {
-    document.getElementById("double-play").style.display = "none";
-    whichButtons();
-    document.querySelector("#leaderboard-button").disabled = true;
-    pickWorm();
-    countdown(1);
 }
 
 /*
@@ -111,19 +108,8 @@ function playGame() {
 //gets called when player presses pause button
 function pauseButton() {
     document.getElementById("pause-game").style.display = "block";
-    whichButtons();
-
-    if (gameIsPlaying) {
-        pauseGame();
-
-        document.getElementById("pause-text").innerHTML =
-        "Game is paused. Press 'OK' when you want to continue";
-    } else {
-        document.getElementById("pause-text").innerHTML =
-        "Game isn't playing! Press play to start the game";
-
-        document.getElementById("pause-overlay").onclick = whichButtons;
-    }
+    allButtonsOff();
+    pauseGame();
 }
 
 //stops animation and countdown timer
@@ -137,20 +123,8 @@ function pauseGame() {
 //gets called when player presses restart button
 function restartGame() {
     document.getElementById("restart-game").style.display = "block";
-    document.querySelector("#leaderboard-button").disabled = true;
-    whichButtons();
-
-    if (gameIsPlaying) {
-        document.getElementById("restart-text").innerHTML =
-        "Are you ready to restart the game?";
-
-        pauseGame();
-    } else {
-        document.getElementById("restart-text").innerHTML =
-        "Game isn't playing! Press 'Play' to start the game";
-
-        document.getElementById("restart-overlay").onclick = whichButtons;
-    }
+    allButtonsOff();
+    pauseGame();
 }
 
 /*
@@ -356,13 +330,12 @@ function gameOver() {
         `You scored ${playerScore} points!`;
 
     document.getElementById("game-over").style.display = "block";
-
+    allButtonsOff();
     leaderboardArr = JSON.parse(localStorage.getItem("topTen"));
+
     if (leaderboardArr === null) {
         leaderboardArr = [];
     }
-
-    whichButtons();
 }
 
 // ********************* Leaderboard
@@ -375,7 +348,6 @@ and sends it to local storage
 */
 function ifHighScore() {
     document.getElementById("game-over").style.display = "none";
-
     leaderboardArr.push({player: playerName.toUpperCase(), score: playerScore});
 
     /*
@@ -420,9 +392,7 @@ function leaderboardHTML() {
 function openLeaderboard() {
     leaderboardArr = JSON.parse(localStorage.getItem("topTen"));
     document.getElementById("leaderboard-overlay").style.display = "block";
-    document.querySelector("#restartButton").disabled = true;
-    document.querySelector("#pauseButton").disabled = true;
-    whichButtons();
+    allButtonsOff();
     leaderboardHTML();
 }
 
