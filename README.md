@@ -275,18 +275,33 @@ I used Lighthouse through Chrome Developer Tools to test accessibility, performa
 
 #### Initial Testing
 
-[Desktop](assets/images/#.png) ~ [Mobile](assets/images/readme/mobile-lighthouse.png)
+Unfortunately, I forgot to get the initial desktop test before starting to make improvements from the mobile test. 
 
-Mobile improvements recommended:
+[Mobile](assets/images/readme/mobile-lighthouse.png)
+
+Improvements recommended:
 
 * [user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5.
 * Serves images with low resolution.
+* Does not include a title.
 
-Unfortunately, including a <title> section made the title unreadable
+#### Fixes and Most Recent Lighthouse Testing
+
+After fixing the recommended areas, this is the lighthouse tests that the webpage received:
+
+[Desktop](assets/images/readme/desktop-lighthouse-after.png) ~ [Mobile](assets/images/readme/mobile-lighthouse-after.png)
 
 ### Full Testing
 
-#### Links:
+To fully test my website, I used Google Chrome Developer Tools to ensure that the page was responsive on all available screen sizes. Testing was performed on a variety of browsers (Chrome, Microsoft Edge and Firefox) and devices (Gigabyte gaming laptop, iPhone SE, Android one+ 9 mobile, Lenovo Legion Laptop, Huawei P Smart Phone, Fair Phone).
+
+#### Buttons:
+
+Tested each button on the page. Each button worked as expected, or was appropriately disabled. All buttons were clicked during a variety of game-play-states, and in a variety of orders. 
+
+#### Player Name Form:
+
+
 
 ## Credits
 
