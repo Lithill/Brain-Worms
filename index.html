@@ -1,83 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Brain Worms</title>
-	<!-- for favicon, generated at https://realfavicongenerator.net/ -->
-	  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-	  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-	  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-	  <link rel="manifest" href="/assets/images/site.webmanifest">
-	  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
-	  <link rel="shortcut icon" href="/assets/images/favicon.ico">
-	  <meta name="msapplication-TileColor" content="#00aba9">
-	  <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
-	  <meta name="theme-color" content="#ffffff">
-	<!-- 	end of favicon info -->
-		<link href="assets/css/style.css" rel="stylesheet" type="text/css">
-	  <meta name="description"
-			content="A Whack-a-Mole game about brain-eating worms.">
-		<meta name="keywords" content="whack, mole, brain, worms, game">
-		<meta name="author" content="Rossanne Hamilton">
-	</head>
-	
-	<body>
-		<div class="container">
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1>
+	<title>Brain Worms</title>
+<!-- for favicon, generated at https://realfavicongenerator.net/ -->
+  	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  	<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  	<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  	<link rel="manifest" href="/assets/images/site.webmanifest">
+  	<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+  	<link rel="shortcut icon" href="/assets/images/favicon.ico">
+  	<meta name="msapplication-TileColor" content="#00aba9">
+  	<meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+  	<meta name="theme-color" content="#ffffff">
+<!-- end of favicon info -->
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  	<meta name="description"
+		content="A Whack-a-Mole game about brain-eating worms.">
+	<meta name="keywords" content="whack, mole, brain, worms, game">
+	<meta name="author" content="Rossanne Hamilton">
+</head>
+<body>
+	<div class="container">
+<!-- Overlays -->
+		<div class="overlay" id="intro-overlay">
+			<br>
+			<title class="title">Brain Worms</title>
+			<p>(Scroll down)</p>
+			<hr>
+			<h2>How to Play:</h2>
+			<img src="assets/images/tilde-worm.webp" class="tilde" alt="Tilde worm">
+			<p>Click each worm as it appears</p>
+			<img src="assets/images/tilde-worm.webp" class="tilde" alt="Tilde worm">
+			<p>Don't let the worms eat your brain</p>
+			<button class ="ok-button" onclick="introOverlay()">Got it</button>
+		</div>
+		<div class="overlay" id="player-name-overlay">
+			<form id="form" onsubmit="return false"> 
+				<label for="player-name">Please enter three initials</label><br>
+				<input type="text" id="player-name" name="player-name" placeholder='E.g. "HPD"' required><br><br>
+				<input type="submit" id ="overlay-play-button" onclick="testPlayerName();">
+			</form>
+		</div>
+		<div class="overlay" id="greeting">
+			<p id="greeting-text">Insert text here</p>
+			<button class ="ok-button" onclick="smashWorms()">Show Me the Worms</button>
+		</div>
+		<div class="overlay" id="pause-game">
+			<p id="pause-text">Game is paused. Press 'OK' when you want to continue</p>
+			<button class ="ok-button" id ="pause-overlay" onclick="playGame()">OK</button>
+		</div>
+		<div class="overlay" id="restart-game">
+			<p id="restart-text">Are you ready to restart the game?</p>
+			<button class ="ok-button" id ="restart-button" onclick="okRestartGame()">OK</button>
+		</div>
+		<div class="overlay" id="game-over">
+			<h2>Game Over</h2>
+			<p id="game-over-text">Insert text here</p>
+			<button class ="ok-button" onclick="ifHighScore()">OK</button>
+		</div>
+		<div class="overlay" id="leaderboard-overlay">
+			<h2>Leaderboard</h2>
+			<p id="leaderboard-overlay-text">You don't have any high scores yet! Play the game to add some.</p>
+			<br>
+			<button class ="ok-button" onclick="exitLeaderboard()">Exit</button>
+		</div>
 <!-- Left column -->
-		  <div class="title">
-				<h1>Brain Worms</h1>
-				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
+		<section class="left-column">
+			<!-- Instructions Heading -->
+			<div class="instructions-title">
+				<h2>How to Play:</h2>
+				<img src="assets/images/tilde-worm.webp" class="tilde" alt="Tilde worm">
 			</div>
-		  <div class="instructions">
+			<!-- Instructions -->
+			<div class="instructions">
 				<p>Click each worm as it appears</p>
-				<img src="assets/images/tilde-worm.webp" alt="Tilde worm">
+				<img src="assets/images/tilde-worm.webp" class="tilde" alt="Tilde worm">
 				<p>Don't let the worms eat your brain</p>
 			</div>
-		  <div class="game-buttons">
-		    <div class="play-button-div">
-					<button id ="playButton" onclick="playGame()">
-						<img src="assets/images/play-button.webp" alt="Play button">
-					</button>
-				</div>
-		    <div class="pause-button-div">
-					<button id ="pauseButton" onclick="pauseGame()">
-						<img src="assets/images/pause-button.webp" alt="Pause button">
-					</button>
-				</div>
-		    <div class="restart-button-div">
-					<button id ="restartButton" onclick="restartGame()">
-						<img src="assets/images/restart-button.webp" alt="Restart button">
-					</button>
-				</div>
-		    <div class="start-button-label">
-					<p>Play</p>
-				</div>
-		    <div class="pause-button-label">
-					<p>Pause</p>
-				</div>
-		    <div class="restart-button-label">
-					<p>Restart</p>
-				</div>
-		  </div>
-<!-- Middle column -->
-	  	<div class="brain">
-		    <div class="fear"></div>
-		    <div class="shame"></div>
-		    <div class="shyness"></div>
-		    <div class="embarrassment"></div>
-		    <div class="anxiety"></div>
-		    <div class="dread"></div>
-	  	</div>
-<!-- Right column -->
-			<div class="leaderboard">
-				<h1>Leaderboard</h1>
-				<img src="assets/images/tilde-worm-reverse.webp" alt="Brain Worms Game">
-				<p>Insert names and scores here</p>
+			<!-- Leaderboard -->
+			<div class="leaderboard hide">
+				<button id ="leaderboard-button" class="hide" onclick="openLeaderboard()">Leaderboard</button>
 			</div>
-		</div>
-		
-	  <script src="script.js"></script>
-	</body>
-
+		</section>
+<!-- Middle column -->
+		<title class="title hide">Brain Worms</title>
+		<section class="brain">
+			<div class="worm-box" id="worm-box">
+				<div class="fear worm"></div>
+				<div class="shame worm"></div>
+				<div class="greed worm"></div>
+				<div class="anger worm"></div>
+				<div class="anxiety worm"></div>
+				<div class="dread worm"></div>
+			</div>
+		</section>
+<!-- Right column -->
+		<section class="right-column">
+			<!-- Game timer -->
+			<h2 class="timer-name">Timer : </h2>
+			<p id="counter" class="counter-class">00:00</p>
+			<img src="assets/images/tilde-worm-reverse.webp" alt="Tilde Worm" class="hide reverse-tilde">
+			<h2 class="score-word">Score : </h2>
+			<p id="score" class="score-class">0</p>
+			<img src="assets/images/tilde-worm-reverse.webp" alt="Tilde Worm" class="hide reverse-tilde">
+			<!-- Game Buttons -->			
+			<div class="game-buttons">
+				<div class="play-button-div">
+					<button id ="playButton" onclick="pressPlay()">
+						<img src="assets/images/play-button.webp" id="play-button-image" alt="Play button">
+					</button>
+				</div>
+				<div class="pause-button-div">
+					<button id ="pauseButton" onclick="pauseButton()">
+						<img src="assets/images/pause-button.webp" id="pause-button-image" alt="Pause button">
+					</button>
+				</div>
+				<div class="restart-button-div">
+					<button id ="restartButton" onclick="restartGame()">
+						<img src="assets/images/restart-button.webp" id="restart-button-image" alt="Restart button">
+					</button>
+				</div>
+			</div>
+		</section>	
+	</div>
+	<script src="assets/javascript/script.js"></script>
+</body>
 </html>
