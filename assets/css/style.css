@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 /******************************** Font  */
 
 @import url(https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Eater);
@@ -160,7 +165,7 @@ button:hover {
 	width: 70vw;
 }
 
-/******************************** Left Column */
+/********************************  */
 
 .left-column {
 	grid-area: left-column; 
