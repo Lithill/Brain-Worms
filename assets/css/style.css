@@ -5,7 +5,8 @@ html, body {
 
 /******************************** Font  */
 
-@import url(https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Eater);
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Eater');
+
 
 h1 {
 	margin: 0px;
