@@ -235,7 +235,7 @@ button:hover {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	background-position-y: 90px;
+	/* background-position-y: 90px; */
 }
 
 .shame { 
@@ -244,7 +244,7 @@ button:hover {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	background-position-y: 81px;
+	/* background-position-y: 81px; */
 }
 
 .greed { 
@@ -253,7 +253,7 @@ button:hover {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	background-position-y: 81px;
+	/* background-position-y: 81px; */
 }
 
 .anger { 
@@ -262,7 +262,7 @@ button:hover {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	background-position-y: 100px;
+	/* background-position-y: 100px; */
 }
 
 .anxiety { 
@@ -271,7 +271,7 @@ button:hover {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	background-position-y: 93px;
+	/* background-position-y: 93px; */
 }
 
 .dread { 
@@ -280,7 +280,7 @@ button:hover {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	background-position-y: 81px;
+	/* background-position-y: 81px; */
 }
 
 /******************************** Animation */

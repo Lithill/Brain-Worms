@@ -10,7 +10,6 @@ This website has been created to offer a Whack-A-Mole style game, where the mole
 
 1. [User Experience](#user-experience)
 3. [Design](#design)
-4. [Wireframes](#wireframes)
 5. [Features](#features)
 6. [Accessibility](#accessibility)
 7. [Technologies Used](#technologies-used)
@@ -45,17 +44,6 @@ In recent years there has been a rise in games aimed at improving mental health.
 #### Returning Visitor Goals 
 
 * To have my score displayed on a leaderboard if I reach the top 10.
-
-#### Possible Future Plans
-
-* For there to be a 'POW!' image that replaced each worm for a few seconds when clicked
-* To include sound effects and background music that the user is able to turn on and off. 
-* To see when I beat my own previous score.
-* To have a leaderboard that doesn't just gather data locally.
-* To get trophies based on the worms that have been most consistently hit. (Eg. If you always hit 'fear' you get the 'courage' trophy. If you hit them all you get the 'zen' trophy.)
-* To see the collection of trophies you have won since your first visit.
-* To enable the user to change the words on the worm labels.
-* For the screen to get darker with each worm missed, and lighter with each worm hit. 
 
 ## Design
 
@@ -96,17 +84,106 @@ Google Fonts was used for the following fonts:
 
 * [Dall-E 2](https://openai.com/dall-e-2/) was used to create the basis of all of the artwork. Most of the artwork was then edited further by the developer. 
 
-### Features
+### Wireframes
+
+The Wireframes were made via [Paint.net](https://www.getpaint.net/). This is a mobile-first build. 
+
+#### Mobile Wireframe
+
+Early version
+
+![Early mobile wireframe](assets/images/readme/mobile-wireframe.png)
+
+Later version
+
+![Later mobile wireframe](assets/images/readme/later-mobile-wireframe.jpg)
+
+#### Desktop Wireframe
+
+Early version
+
+![Early desktop wireframe](assets/images/readme/desktop-wireframe.png) 
+
+Later version
+
+![Later desktop wireframe](assets/images/readme/later-desktop-wireframe.jpg) 
+
+## Features
 
 The website is comprised of one page. This page has the following features:
 
-* Instructions on how to play the game.
-* Buttons that start, pause and restart the game.
-* A whack-a-mole style game.
-* A leaderboard.
-* Several overlays containing extra information.
+* Game buttons:
+   * Play button, which starts the game. Buttons is greyed out whilst overlays are visible, or game is playing.
 
-### Accessibility
+   ![Play button](assets/images/readme/play-button.jpg)
+
+   * Pause button, which pauses the game. Button is greyed out whilst game isn't playing.
+
+   ![Pause button](assets/images/readme/pause-button.jpg)
+
+   * Restart button, which restarts the game. Button is greyed out whilst game isn't playing.
+
+   ![Restart button](assets/images/readme/restart-button.jpg)
+
+   * Leaderboard button, which displays the leaderboard overlay. Button is greyed out whilst game is playing and overlays are visible.
+
+   ![Leaderboard button](assets/images/readme/leaderboard-button.jpg)
+
+* Several overlays containing extra information:
+
+   * How to play the game. Appears on page load in mobile and tablet views. Disapears when "Got It" button is pressed. 
+
+   ![Instructions overlay](assets/images/readme/instructions-overlay.jpg)
+
+   * Asking for player name. Appears when play button is pressed. Changes inner html if an inappropriate name is given and player presses submit button. Disapears when submit button is pressed after appropriate name is given. 
+
+   ![Name overlay](assets/images/readme/name-overlay.jpg)
+   ![Name overlay](assets/images/readme/name-overlay2.jpg)
+
+   * Player greeting. Appears when player offers an appropriate name. Includes the name offered by the player. Disapears when player presses "show me the worms" button.
+
+   ![Greeting overlay](assets/images/readme/greeting-overlay.jpg)
+
+   * Pause game. Appears when player presses pause button during gameplay. Disapears when player presses ok button.
+
+   ![Pause overlay](assets/images/readme/pause-overlay.jpg)
+
+   * Restart game. Appears when player presses restart button during gameplay. Disapears when player presses ok button.
+
+   ![Restart overlay](assets/images/readme/restart-overlay.jpg)
+
+   * Game over. Appears when countdown timer reaches 0. Displays players score. Disapears when player presses ok button.
+
+   ![Game over overlay](assets/images/readme/game-overlay.jpg)
+
+   * Local storage leaderboard. Displaying the top ten scores. Disapears when player presses the exit button.
+
+   ![Local storage leaderboard](assets/images/readme/leaderboard-overlay.jpg)
+
+* Game timer. Counts down the time left until end of gameplay. 
+
+   ![Game timer](assets/images/readme/timer.jpg)
+
+* Player score. Shows the player what score they currently have.
+
+   ![Player score](assets/images/readme/score.jpg)
+
+* Worm sprites. Worms for the player to click on in order to add to their score. 
+
+   ![Player score](assets/images/readme/worms.jpg)
+
+### Future Features
+
+* For there to be a 'POW!' image that replaced each worm for a few seconds when clicked
+* To include sound effects and background music that the user is able to turn on and off. 
+* To see when I beat my own previous score.
+* To have a leaderboard that doesn't just gather data locally.
+* To get trophies based on the worms that have been most consistently hit. (Eg. If you always hit 'fear' you get the 'courage' trophy. If you hit them all you get the 'zen' trophy.)
+* To see the collection of trophies you have won since your first visit.
+* To enable the user to change the words on the worm labels.
+* For the screen to get darker with each worm missed, and lighter with each worm hit. 
+
+## Accessibility
 
 I have been mindful during coding to ensure that the website is as accessible as possible. I have achieved this by:
 
@@ -114,19 +191,6 @@ I have been mindful during coding to ensure that the website is as accessible as
 * Using descriptive alt attributes on images on the site.
 * Providing information for screen readers where there are icons used and no text, such as footer icons.
 * Guaranteeing adequate colour contrast throughout the site.
-  
-## Wireframes
-
-The Wireframes were made via [Paint.net](https://www.getpaint.net/). This is a mobile-first build. 
-
-#### Mobile Wireframe
-
-![Mobile wireframe](assets/images/readme/mobile-wireframe.png)
-
-#### Desktop Wireframe
-
-![Desktop wireframe](assets/images/readme/desktop-wireframe.png)
-
 
 ## Technologies Used
 
@@ -279,6 +343,8 @@ Results from the [check](assets/images/readme/js-checker.png).
     3. Solution: Disable unnecessary buttons
    
 ### Known Bugs
+
+No currently known bugs.
 
 ### Lighthouse
 
