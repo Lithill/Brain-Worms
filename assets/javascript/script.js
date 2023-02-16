@@ -1,4 +1,20 @@
-/*jslint browser:true */
+// ********************* Global Variables
+
+let playerName;
+let playerScore = 0;
+let gameIsPlaying = false;
+let animateWormsInterval;
+const wormArr =
+["empty", "fear", "shame", "greed", "anger", "anxiety", "dread"];
+
+let htmlCounter = "00:00";
+let lastWorm = 0;
+let intervalNum = 1000;
+let tickCounter;
+let tickMinutes;
+let tickSeconds = 60;
+let clockTimeout;
+let leaderboardArr = [];
 
 // ********************* Disable/Enable Game Buttons
 
@@ -35,10 +51,6 @@ if (document.getElementById("intro-overlay").style.display === "block") {
 
 // ********************* Play button functions
 
-let playerName;
-let playerScore = 0;
-let gameIsPlaying = false;
-
 //returns true if string only contains letters, false if not
 function onlyLetters(str) {
     return /^[A-Za-z]*$/.test(str);
@@ -63,9 +75,12 @@ function testPlayerName() {
         allButtonsOff();
     } else {
         document.getElementById("form").innerHTML =
-            `<label for="player-name">Please enter three letters without spaces, punctuation, numbers or symbols:</label><br>
-			<input type="text" id="player-name" name="player-name" placeholder='E.g. "HPD"' required><br><br>
-			<input type="submit" id ="overlay-play-button" onclick="testPlayerName();"></input>`
+            `<label for="player-name">Please enter three letters without spaces,
+                punctuation, numbers or symbols:</label><br>
+            <input type="text" id="player-name" name="player-name" placeholder=
+                'E.g. "HPD"' required><br><br>
+            <input type="submit" id ="overlay-play-button"
+                onclick="testPlayerName()"></input>`;
         testPlayerName();
 
         document.getElementById("player-name-overlay").style.display = "block";
@@ -151,14 +166,6 @@ function generateRandomNum (min, max) {
     let random = Math.floor(Math.random() * (max - min + 1) + min);
     return random;
 }
-
-let animateWormsInterval;
-const wormArr =
-["empty", "fear", "shame", "greed", "anger", "anxiety", "dread"];
-
-let htmlCounter = "00:00";
-let lastWorm = 0;
-let intervalNum = 1000;
 
 //handles the animation
 function pickWorm () {
@@ -291,11 +298,6 @@ function pickWorm () {
 
 // ********************* Game timer
 
-let tickCounter;
-let tickMinutes;
-let tickSeconds = 60;
-let clockTimeout;
-
 /*creates countdown timer
 This countdown function is edited code
 from https://gist.github.com/adhithyan15/4350689
@@ -339,8 +341,6 @@ function gameOver() {
 }
 
 // ********************* Leaderboard
-
-let leaderboardArr = [];
 
 /*
 Adds players score to leaderboard if high enough,
