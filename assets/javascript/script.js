@@ -182,10 +182,10 @@ function pickWorm () {
         if (div.classList.contains("slide")) {
             return;
         } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {
-            randomWormNumber ++;
+            randomWormNumber++;
             animateWorm();
         } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {
-            randomWormNumber --;
+            randomWormNumber--;
             animateWorm();
         } else {
             animateWorm();
@@ -231,7 +231,7 @@ function pickWorm () {
 
         //controls players score
         function wormClick() {
-            clickNumber ++;
+            clickNumber++;
 
             if (clickNumber === 1) {
                 switch (intervalNum) {
@@ -376,7 +376,7 @@ function leaderboardHTML() {
         return;
     } else {
         for (i in leaderboardArr) {
-            index ++;
+            index++;
 
             paragraphs += `<p>${(index)}- ${leaderboardArr[i]["player"]}:
             ${leaderboardArr[i]["score"]}</p>`;
