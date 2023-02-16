@@ -181,7 +181,8 @@ function pickWorm () {
         //prevents the same worm from appearing twice in a row
         if (div.classList.contains("slide")) {
             return;
-        } else if ((lastWorm === randomWormNumber) && ((randomWormNumber <= (wormArr.length - 2)))) {
+        } else if ((lastWorm === randomWormNumber) && 
+        ((randomWormNumber <= (wormArr.length - 2)))) {
             randomWormNumber++;
             animateWorm();
         } else if ((lastWorm === randomWormNumber) && (randomWormNumber >= 2)) {
