@@ -376,15 +376,18 @@ function leaderboardHTML() {
     if (leaderboardArr === null) {
         return;
     } else {
-        for (i in leaderboardArr) {
-            index++;
+        for (let i in leaderboardArr) {
+            if(leaderboardArr.hasOwnProperty(i)) {
+             
+                index++;
 
-            paragraphs += `<p>${(index)}- ${leaderboardArr[i]["player"]}:
-            ${leaderboardArr[i]["score"]}</p>`;
-          }
+                paragraphs += `<p>${(index)}- ${leaderboardArr[i].player}:
+                ${leaderboardArr[i].score}</p>`;
+            }
+        }
 
-          document.getElementById("leaderboard-overlay-text")
-              .innerHTML = paragraphs;
+        document.getElementById("leaderboard-overlay-text")
+            .innerHTML = paragraphs;
     }
 }
 
