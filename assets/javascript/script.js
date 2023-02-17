@@ -232,6 +232,7 @@ function pickWorm () {
 
         //controls players score
         function wormClick() {
+          	const score = document.getElementById("score");
             clickNumber++;
 
             if (clickNumber === 1) {
@@ -310,6 +311,7 @@ function countdown(minutes) {
         tickCounter = document.getElementById("counter");
         let current_minutes = tickMinutes-1;
         tickSeconds--;
+      	const counter = document.getElementById("counter");
         counter.innerHTML = current_minutes.toString() + ":"
             + (tickSeconds < 10 ? "0" : "") + String(tickSeconds);
 
