@@ -13,7 +13,7 @@ This website has been created to offer a Whack-A-Mole style game, where the mole
 5. [Features](#features)
 6. [Accessibility](#accessibility)
 7. [Technologies Used](#technologies-used)
-8. [Deployment and Local Development](#deployment-and-local-development)
+8. [Deployment and Local Development](#deployment-&-local-development)
 9. [Testing](#testing)
 10. [Credits](#credits)
     
@@ -21,7 +21,7 @@ This website has been created to offer a Whack-A-Mole style game, where the mole
 
 ### Initial Discussion
 
-In recent years there has been a rise in games aimed at improving mental health. For example, the [Happify](https://www.happify.com/) app includes a game called Negative Knockout, which lets the user pick negative words they associate with how they are feeling, and proceed to eliminate them in an Angry-Birds-esque game. These games are typically cutesy in style. Brain Worms aims to be a fun version of this type of game for users with a darker sense of humour.
+In recent years there has been a rise in games aimed at improving mental health. For example, the [Happify](https://www.happify.com/) app includes a game called Negative Knockout, which lets the user pick negative words they associate with how they are feeling and eliminate them in an Angry-Birds-esque game. These games are typically cutesy in style. Brain Worms aims to be a fun version of this type of game for users with a darker sense of humour.
 
 #### Key information for the site
 
@@ -49,7 +49,7 @@ In recent years there has been a rise in games aimed at improving mental health.
 
 ### Early Design Phases
 
-The design was created mobile-first. The first version of the design featured realistic images of a brain and a worm, created by Dall-E 2 and spliced together. It demonstrated that a realistic approach was unsuitable. 
+The design was created mobile-first. The first version of the design featured realistic images of a brain and a worm, created by Dall-E 2 and spliced together. It showed that a realistic approach was unsuitable. 
 
 [Early design featuring a realistic brain with a worm emerging from it](assets/images/readme/realistic-brain.JPG)
 
@@ -69,7 +69,7 @@ The rest of the designs started out as the following:
 
 ### Colour scheme
 
-The website uses a palette of pastel colours that also lends themselves to pop-art. This was chosen as a counterweight to the creepiness of the theme. 
+The website uses a palette of pastel colours that lends itself to pop-art. This was chosen as a counterweight to the creepiness of the theme. 
 
 ![Colour Scheme](assets/images/readme/colour-palette.webp)
 
@@ -82,7 +82,7 @@ Google Fonts was used for the following fonts:
 
 ### Media
 
-* [Dall-E 2](https://openai.com/dall-e-2/) was used to create the basis of all of the artwork. Most of the artwork was then edited further by the developer. 
+* [Dall-E 2](https://openai.com/dall-e-2/) was used to create the basis of all the artwork. Most of the artwork was then edited further by the developer. 
 
 ### Wireframes
 
@@ -110,7 +110,7 @@ Later version
 
 ## Features
 
-The website is comprised of one page. This page has the following features:
+The website is made up of one page. This page has the following features:
 
 * Game buttons:
    * Play button, which starts the game. Buttons is greyed out whilst overlays are visible, or game is playing.
@@ -125,38 +125,38 @@ The website is comprised of one page. This page has the following features:
 
    ![Restart button](assets/images/readme/restart-button.jpg)
 
-   * Leaderboard button, which displays the leaderboard overlay. Button is greyed out whilst game is playing and overlays are visible.
+   * Leaderboard button, which displays the leaderboard overlay. Button is greyed out whilst game is playing, and overlays are visible.
 
    ![Leaderboard button](assets/images/readme/leaderboard-button.jpg)
 
 * Several overlays containing extra information:
 
-   * How to play the game. Appears on page load in mobile and tablet views. Disapears when "Got It" button is pressed. 
+   * How to play the game. Appears on page load in mobile and tablet views. Disappears when "Got It" button is pressed. 
 
    ![Instructions overlay](assets/images/readme/instructions-overlay.jpg)
 
-   * Asking for player name. Appears when play button is pressed. Changes inner html if an inappropriate name is given and player presses submit button. Disapears when submit button is pressed after appropriate name is given. 
+   * Asking for player name. Appears when play button is pressed. Changes inner html if an inappropriate name is given and player presses ‘submit’ button. Disappears when submit button is pressed after appropriate name is given. 
 
    ![Name overlay](assets/images/readme/name-overlay.jpg)
    ![Name overlay](assets/images/readme/name-overlay2.jpg)
 
-   * Player greeting. Appears when player offers an appropriate name. Includes the name offered by the player. Disapears when player presses "show me the worms" button.
+   * Player greeting. Appears when player offers a suitable name. Includes the name offered by the player. Disappears when player presses "show me the worms" button.
 
    ![Greeting overlay](assets/images/readme/greeting-overlay.jpg)
 
-   * Pause game. Appears when player presses pause button during gameplay. Disapears when player presses ok button.
+   * Pause game. Appears when player presses pause button during gameplay. Disappears when player presses ok button.
 
    ![Pause overlay](assets/images/readme/pause-overlay.jpg)
 
-   * Restart game. Appears when player presses restart button during gameplay. Disapears when player presses ok button.
+   * Restart game. Appears when player presses restart button during gameplay. Disappears when player presses ok button.
 
    ![Restart overlay](assets/images/readme/restart-overlay.jpg)
 
-   * Game over. Appears when countdown timer reaches 0. Displays players score. Disapears when player presses ok button.
+   * Game over. Appears when countdown timer reaches 0. Displays players’ score. Disappears when player presses ok button.
 
    ![Game over overlay](assets/images/readme/game-overlay.jpg)
 
-   * Local storage leaderboard. Displaying the top ten scores. Disapears when player presses the exit button.
+   * Local storage leaderboard. Displaying the top ten scores. Disappears when player presses the exit button.
 
    ![Local storage leaderboard](assets/images/readme/leaderboard-overlay.jpg)
 
@@ -168,17 +168,18 @@ The website is comprised of one page. This page has the following features:
 
    ![Player score](assets/images/readme/score.jpg)
 
-* Worm sprites. Worms for the player to click on in order to add to their score. 
+* Worm sprites. Worms for the player to click on to add to their score. 
 
    ![Player score](assets/images/readme/worms.jpg)
 
 ### Future Features
 
-* For there to be a 'POW!' image that replaced each worm for a few seconds when clicked
+* For there to be a 'POW!' image that replaced each worm for a few seconds when clicked.
+* To make game playable via voice recognition software.
 * To include sound effects and background music that the user is able to turn on and off. 
 * To see when I beat my own previous score.
 * To have a leaderboard that doesn't just gather data locally.
-* To get trophies based on the worms that have been most consistently hit. (Eg. If you always hit 'fear' you get the 'courage' trophy. If you hit them all you get the 'zen' trophy.)
+* To get trophies based on the worms that have been most consistently hit. (E.g., If you always hit 'fear' you get the 'courage' trophy. If you hit them all you get the 'zen' trophy.)
 * To see the collection of trophies you have won since your first visit.
 * To enable the user to change the words on the worm labels.
 * For the screen to get darker with each worm missed, and lighter with each worm hit. 
@@ -189,7 +190,7 @@ I have been mindful during coding to ensure that the website is as accessible as
 
 * Using semantic HTML.
 * Using descriptive alt attributes on images on the site.
-* Providing information for screen readers where there are icons used and no text, such as footer icons.
+* Supplying information for screen readers where there are icons used and no text, such as footer icons.
 * Guaranteeing adequate colour contrast throughout the site.
 
 ## Technologies Used
@@ -207,12 +208,11 @@ HTML5, CSS3 and JavaScript were used to create this website.
 * [Paint.Net](https://www.getpaint.net/download.html) was used to edit the Dall-E 2 images.
 * [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) was used to troubleshoot and test features and solve issues with responsiveness and styling.
 * [Am I Responsive?](https://ui.dev/amiresponsive) was used to show the website on a range of devices.
-* [Balsamiq](https://balsamiq.com/) was used to grab a screenshot of an iphone SE wireframe template.
+* [Balsamiq](https://balsamiq.com/) was used to grab a screenshot of an iPhone SE wireframe template.
 * [Readme.so](https://readme.so/editor) was used to create the early version of the readme.
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) was used for debugging.
 * [Real Favicon Generator](https://realfavicongenerator.net/) was used to create a favicon and generate the code needed to insert it.
-* [Layoutit!](https://grid.layoutit.com/) was used to create the css grid.
-
+* [Layoutit!](https://grid.layoutit.com/) was used to create the CSS grid.
 
 ## Deployment & Local Development
 
@@ -250,7 +250,7 @@ To clone the Brain Worms repository:
    
 ## Testing
 
-esting was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along.
+Testing was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along.
 
 ### W3C Validator
 
@@ -275,34 +275,34 @@ Although the checker says "nine unused variables", each of these variables are u
 ### Solved Bugs
 
 1.
-	1. Expected behaviour: Initial alert box does not accept any input that isn't a letter.
-   2. Actual behaviour: Initial alert box accepts ### as a value.
+   1. Expected behaviour: First alert box does not accept any input that isn't a letter.
+   2. Actual behaviour: First alert box accepts ### as a value.
    3. Solution: Build in a function that checks for letters only.
 
 2.
-	1. Expected behaviour: Worm animations are always smooth .
-   2. Actual behaviour: Sometimes animations stop halfway through the animation and disapear.
+   1. Expected behaviour: Worm animations are always smooth .
+   2. Actual behaviour: Sometimes animations stop halfway through the animation and disappear.
    3. Solution: Stop the function from animating the same worm twice in a row.
 
 3.
-	1. Expected behaviour: Worm animations are always visible when requested by the code.
-   2. Actual behaviour: Sometimes some picked worm animations are skipped, even though they are not repeats of the previous picked worm.
+   1. Expected behaviour: Worm animations are always visible when requested by the code.
+   2. Actual behaviour: Sometimes some picked worm animations are skipped, even though they are not repeats of the previously picked worm.
    3. Solution: There seemed to be gaps because instead of animating, it was toggling off .slide from worms it had previously been applied to. Applying toggle again at the end of the function prevented this. 
 
 4.
-	1. Expected behaviour: Worm animations don't have a gap between them.
+   1. Expected behaviour: Worm animations don't have a gap between them.
    2. Actual behaviour: Sometimes there was a second gap with no worm animation.
    3. Solution: Take out the code that skipped animation if the same worm had been animated previously. Instead, insert if statement detailing what to do in this instance, and adding or subtracting from randomWormNumbr before running the animateWorm function. 
 
 5.
-	1. Expected behaviour: Players should earn the same amount of points when clicking on worms after restarting the game.
+   1. Expected behaviour: Players should earn the same number of points when clicking on worms after restarting the game.
    2. Actual behaviour: Players earn extra points when restarting. After clicking restart once, points per click = 2. After clicking restart for a second time during the same session, points per click = 3. 
-   3. Solution: I didn't notice when this got fixed, as I think it was linked to something else I fixed. I think the game run-code was duplicating itself rather than stopping and starting again, causing interesting bugs in the process. 
+   3. Solution: I did not notice when this got fixed, as I think it was linked to something else I fixed. I think the game run-code was duplicating itself rather than stopping and starting again, causing interesting bugs in the process. 
 
 6.
-	1. Expected behaviour: Worm animations are smooth and do not blink off.
-   2. Actual behaviour: When speed of setInterval increases, some worm animations disapear without running through the whole animation.
-   3. Solution: Add an if statement to see if the chosen worm is currently going through it's animation (e.g. if it has the "switch" class applied to it), and if it is, do not go to the animateWorm function for that setInterval round. 
+   1. Expected behaviour: Worm animations are smooth and do not blink off.
+   2. Actual behaviour: When speed of setInterval increases, some worm animations disappear without running through the whole animation.
+   3. Solution: Add an if statement to see if the chosen worm is currently going through its animation (e.g., if it has the "switch" class applied to it), and if it is, do not go to the animateWorm function for that setInterval round. 
 
 7.
    1. Expected behaviour: When player finishes the game, and presses play again, the game works the same way it did the first time around.
@@ -310,12 +310,12 @@ Although the checker says "nine unused variables", each of these variables are u
    3. Solution: Reset tickMinutes, tickSeconds and intervalNum before game is played again.
 
 8.
-	1. Expected behaviour: When pausing the game and navigating away from the page, everything should be paused when you come back to the page.
-   2. Actual behaviour: When pausing the game and navigating away from the page, the worm animation continues and the timer starts counting down from where it was set. 
-   3. Solution: Swap alert boxes for overlays.
+   1. Expected behaviour: When pausing the game and navigating away from the page, everything should be paused when you come back to the page.
+   2. Actual behaviour: When pausing the game and navigating away from the page, the worm animation continues, and the timer starts counting down from where it was set. 
+   3. Solution: Swap the alert boxes for overlays.
 
 9.
-	1. Expected behaviour: On iPhone, user isn't given the option to stop the alert boxes popping up. 
+   1. Expected behaviour: On iPhone, user isn't given the option to stop the alert boxes popping up. 
    2. Actual behaviour: On iPhone, user is given the option to "supress dialogs", which can break the game.
    3. Solution: Swap alert boxes for overlays.
 
@@ -325,18 +325,18 @@ Although the checker says "nine unused variables", each of these variables are u
     3. Solution: Insert click counter and if statement - only add point for the first click.
 
 11.
-    1. Expected behaviour: Player's "You scored x" number is the same across different parts of the page.
+    1. Expected behaviour: Player's "You scored x" number is the same across various parts of the page.
     2. Actual behaviour: Player's "You scored x" overlay number can be less than the actual score due to animation still being clickable after the overlay grabs the playerScore. 
     3. Solution: setTimeout on game-over overlay so that these don't overlap.
 
 12.
     1. Expected behaviour: Leaderboard to appear and buttons to unfreeze after game ends.
-    2. Actual behaviour: Leaderboard did not appear and buttons did not unfreeze after game ends. 
+    2. Actual behaviour: Leaderboard did not appear, and buttons did not unfreeze after game ends. 
     3. Solution: Create if statement to check if leaderboardArr is null. 
 
 13.
     1. Expected behaviour: When there are no high scores on the leaderboard, the overlay reads "You don't have any high scores yet!"
-    2. Actual behaviour: The overlay does not include this sentance.
+    2. Actual behaviour: The overlay does not include this sentence.
     3. Solution: Put if statement in leaderboardHTML function, so the phrase isn't overwritten with nothing if there is nothing in local storage. 
 
 14.
@@ -376,15 +376,15 @@ To fully test my website, I used Google Chrome Developer Tools to ensure that th
 
 #### Buttons:
 
-Tested each button on the page. Each button worked as expected, or was appropriately disabled. All buttons were clicked during a variety of game-play-states, and in a variety of orders. 
+Tested each button on the page. Each button worked as expected or was appropriately disabled. All buttons were clicked during a variety of game-play-states, and in a variety of orders. 
 
-#### Player Name Form:
+#### Username Form:
 
-Tested the player name form with a variety of inputs, to ensure appropriate playername has been chosen. User is prompted with additional hints about the player name if they have failed to choose one that the form will accept.
+Tested the username form with a variety of inputs, to ensure appropriate username has been chosen. User is prompted with additional hints about the username if they have failed to choose one that the form will accept.
 
 #### Worms:
 
-Tested clickability of worms and other spaces on the page. Worms only award points once per click during each animation. Non-animated sections of the page do not award clicks when clicked on.
+Tested ability to click worms and other spaces on the page. Worms only award points once per click during each animation. Non-animated sections of the page do not award clicks when clicked on.
 
 #### Leaderboard:
 
@@ -400,12 +400,12 @@ Thanks are given for the following blogs and tutorials:
 
 ### Code Used
 
-* [Layoutit!](https://grid.layoutit.com/) was used to create custom css code for the grid.
+* [Layoutit!](https://grid.layoutit.com/) was used to create custom CSS code for the grid.
 * [adhithyan15's countdown.js](https://gist.github.com/adhithyan15/4350689) was used to create the countdown timer.
-* [Nikhil Aggarwal's for-loop on Stack Overflow](https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur) was used to iterate through the worm class for the click event listner.
+* [Nikhil Aggarwal's for-loop on Stack Overflow](https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur) was used to iterate through the worm class for the click event listener.
 * [gen_Eric's code on Stack Overflow](https://stackoverflow.com/questions/17684921/sort-json-object-in-javascript) was used to return highest to lowest scores from leaderboardArr.
 * [CSS Tricks - simple styles for hr's](https://css-tricks.com/examples/hrs/) was used to create custom line.
-* [pstanton's code on Stack Overflow](https://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements) was used to right-aline a div element.
+* [pstanton's code on Stack Overflow](https://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements) was used to right-align a div element.
 
 ### Content
 
@@ -413,7 +413,7 @@ Content for the website was made by Rossanne Hamilton.
 
 ### Media
 
-* [Dall-E 2](https://openai.com/dall-e-2/) was used to create all of the artwork, which was then edited by Rossanne Hamilton to create the final graphics.
+* [Dall-E 2](https://openai.com/dall-e-2/) was used to create all the artwork, which was then edited by Rossanne Hamilton to create the final graphics.
 * Rossanne Hamilton created the menu, play, pause and restart icons. 
 
 ### Acknowledgements
