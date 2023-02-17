@@ -312,8 +312,7 @@ function countdown(minutes) {
         let current_minutes = tickMinutes-1;
         tickSeconds--;
       	const counter = document.getElementById("counter");
-        counter.innerHTML = current_minutes.toString() + ":"
-            + (tickSeconds < 10 ? "0" : "") + String(tickSeconds);
+        counter.innerHTML = current_minutes.toString() + ":" + (tickSeconds < 10 ? "0" : "") + String(tickSeconds);
 
         if ( tickSeconds > 0 ) {
             clockTimeout = setTimeout(tick, 1000);

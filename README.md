@@ -264,11 +264,13 @@ The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to valida
 
 Results from the [check](assets/images/readme/css-checker.png).
 
-### JSLint Validator
+### JSHint Validator
 
-The [JSLint Validator](https://www.jslint.com/) was used to validate the JavaScript in the script.js file.
+The [JSHint Validator](https://jshint.com/) was used to validate the JavaScript in the script.js file.
 
 Results from the [check](assets/images/readme/js-checker.png).
+
+Although the checker says "nine unused variables", each of these variables are used as functions that get called during an onclick event listener. 
 
 ### Solved Bugs
 
