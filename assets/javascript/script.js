@@ -387,7 +387,7 @@ function leaderboardHTML() {
         }
 
         document.getElementById("leaderboard-overlay-text")
-            .innerHTML = paragraphs;
+              .innerHTML = paragraphs;
     }
 }
 
