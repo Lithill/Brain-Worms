@@ -402,7 +402,7 @@ Thanks are given for the following blogs and tutorials:
 * [adhithyan15's countdown.js](https://gist.github.com/adhithyan15/4350689) was used to create the countdown timer.
 * [Nikhil Aggarwal's for-loop on Stack Overflow](https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur) was used to iterate through the worm class for the click event listner.
 * [gen_Eric's code on Stack Overflow](https://stackoverflow.com/questions/17684921/sort-json-object-in-javascript) was used to return highest to lowest scores from leaderboardArr.
-* [CSS Tricks - simple styles for <hr>'s](https://css-tricks.com/examples/hrs/) was used to create custom line.
+* [CSS Tricks - simple styles for hr's](https://css-tricks.com/examples/hrs/) was used to create custom line.
 * [pstanton's code on Stack Overflow](https://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements) was used to right-aline a div element.
 
 ### Content
