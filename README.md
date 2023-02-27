@@ -175,14 +175,15 @@ The website is made up of one page. This page has the following features:
 ### Future Features
 
 * For there to be a 'POW!' image that replaced each worm for a few seconds when clicked.
-* To make game playable via voice recognition software.
+* To make game playable via voice recognition software for users who are unable to use a mouse.
+* To create an accessibility button which allows the user to change font, size and colour of the website, so make it more accessible for certain disabilities. 
 * To include sound effects and background music that the user is able to turn on and off. 
-* To see when I beat my own previous score.
+* To enable the user to see when they beat their previous score.
 * To have a leaderboard that doesn't just gather data locally.
 * To get trophies based on the worms that have been most consistently hit. (E.g., If you always hit 'fear' you get the 'courage' trophy. If you hit them all you get the 'zen' trophy.)
 * To see the collection of trophies you have won since your first visit.
 * To enable the user to change the words on the worm labels.
-* For the screen to get darker with each worm missed, and lighter with each worm hit. 
+* For the screen to get darker with each worm missed, and lighter with each worm hit. (Although not if accessibility options have previously been ticked.)
 
 ## Accessibility
 
