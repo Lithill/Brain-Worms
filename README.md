@@ -269,6 +269,8 @@ Results from the [check](assets/images/readme/css-checker.png).
 
 The [JSHint Validator](https://jshint.com/) was used to validate the JavaScript in the script.js file.
 
+JSLint was previously used as a validator, but through research and discussion with peers, it was felt this it was not up-to-date enough currently. JSHint was suggested as a better alternative. 
+
 Results from the [check](assets/images/readme/js-checker.png).
 
 Although the checker says "nine unused variables", each of these variables are used as functions that get called during an onclick event listener. 
