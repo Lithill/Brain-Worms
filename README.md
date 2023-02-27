@@ -251,7 +251,12 @@ To clone the Brain Worms repository:
    
 ## Testing
 
-Testing was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along.
+Testing was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along. Both manual and automated testing were employed. The difference between these two types of tests is that:
+
+* manual testing is conducted by a person, who is seeing if they can break the product, or otherwise whether it behaves as expected for users.
+* automatic testing is conducted by automation frameworks, or some other kind of tool or piece of software. 
+
+I personally tested the page and had three people also manually test it on their own devices. For automated testing, I used W3C validator, CSS validator and Lighthouse. Jest was considered as a testing tool, but I came across it too late in the learning material to be able to incorporate it into the building of this page. 
 
 ### W3C Validator
 
